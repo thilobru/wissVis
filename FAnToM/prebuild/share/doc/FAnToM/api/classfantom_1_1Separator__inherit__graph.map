@@ -1,0 +1,4 @@
+<map id="fantom::Separator" name="fantom::Separator">
+<area shape="rect" id="node1" title="horizontal or vertical separation line (not for menus or toolboxes, but for usage in widget layouts)" alt="" coords="5,80,132,107"/>
+<area shape="rect" id="node2" href="$classfantom_1_1Widget.html" title="base class for all widgets" alt="" coords="13,5,124,32"/>
+</map>

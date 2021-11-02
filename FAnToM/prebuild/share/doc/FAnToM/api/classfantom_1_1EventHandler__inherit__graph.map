@@ -1,0 +1,5 @@
+<map id="fantom::EventHandler" name="fantom::EventHandler">
+<area shape="rect" id="node1" title="interface for a generic event handler for use in graphic views" alt="" coords="70,5,219,32"/>
+<area shape="rect" id="node2" href="$classfantom_1_1GlPainter.html" title="interface to an OpenGL painter reimplemented by algorithm" alt="" coords="5,87,129,114"/>
+<area shape="rect" id="node3" href="$classfantom_1_1Graphics2D_1_1ScenePainter.html" title=" " alt="" coords="154,80,293,121"/>
+</map>

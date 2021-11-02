@@ -1,0 +1,9 @@
+<map id="fantom::Algorithm::Progress" name="fantom::Algorithm::Progress">
+<area shape="rect" id="node1" title="algorithm progress" alt="" coords="49,364,183,405"/>
+<area shape="rect" id="node2" href="$classfantom_1_1Timing.html" title="Simple class for time measurements." alt="" coords="5,275,115,301"/>
+<area shape="rect" id="node3" href="$classfantom_1_1Algorithm.html" title="abstract base class of algorithms" alt="" coords="139,275,264,301"/>
+<area shape="rect" id="node4" href="$classfantom_1_1AlgorithmImpl.html" title=" " alt="" coords="126,185,277,212"/>
+<area shape="rect" id="node5" href="$classfantom_1_1DataOutputs_1_1Control.html" title="Abstract interface to the private implementation of Outputs." alt="" coords="44,81,188,123"/>
+<area shape="rect" id="node6" href="$classfantom_1_1Options_1_1Control.html" title="Private implementation of Options." alt="" coords="212,89,377,115"/>
+<area shape="rect" id="node7" href="$structfantom_1_1InputChangeNotifier.html" title="Interface for notifications about changed inputs." alt="" coords="201,5,388,32"/>
+</map>

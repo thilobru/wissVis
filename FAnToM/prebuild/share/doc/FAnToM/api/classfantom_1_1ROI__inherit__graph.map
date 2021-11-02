@@ -1,0 +1,5 @@
+<map id="fantom::ROI" name="fantom::ROI">
+<area shape="rect" id="node1" title="an ROI (Region of Interest) is a bounding box defined by two points in space." alt="" coords="26,155,121,181"/>
+<area shape="rect" id="node2" href="$classfantom_1_1DataObject.html" title="Representation of an object that carries data that can be passed between algorithms." alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node3" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="23,5,123,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="fantom::StatusBoxLayout" name="fantom::StatusBoxLayout">
+<area shape="rect" id="node1" title="layout that can be added to a main window as a status bar which arranges its widgets horizontally or ..." alt="" coords="5,95,176,121"/>
+<area shape="rect" id="node2" href="$classfantom_1_1Widget.html" title="base class for all widgets" alt="" coords="113,5,223,32"/>
+<area shape="rect" id="node3" href="$classfantom_1_1Menu.html" title="Menu bar or context menu." alt="" coords="201,95,303,121"/>
+</map>

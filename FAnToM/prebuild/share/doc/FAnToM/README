@@ -1,0 +1,88 @@
+FAnToM -- an interactive visualization program for tensor field topology
+
+FAnToM is regularly tested to build and run on
+- Linux (Ubuntu 16.04) using g++,
+- Mac OSX 10.7.X and Mac OSX 10.8.X using Clang,
+- and Windows 7 (using mingw32 and mingw-w64).
+
+---------------------------------------------------------------------------
+
+PREREQUISITES
+
+To run a binary version of FAnToM you need the following libraries:
+
+- Python 2.6+ (http://www.python.org)
+- Qt 5.1+ (http://www.trolltech.com/qt)
+
+The execution of some algorithms requires additional libraries. Their are
+listed in the README file in the toolbox repository. For further
+informations visit
+http://berkeley.informatik.uni-leipzig.de/trac/FAnToM_dev and
+http://berkeley.informatik.uni-leipzig.de/trac/FAnToM_toolboxes.
+
+To build your own plugins we suggest the use of CMake.
+
+---------------------------------------------------------------------------
+
+PLUGIN PREREQUISITES
+
+The execution of some FAnToM plugins requires the following libraries
+
+- OpenCL 1.1+,
+- NetCDF 4.0+ (http://www.unidata.ucar.edu/software/netcdf/) and
+
+---------------------------------------------------------------------------
+
+DOCUMENTATION
+
+FAnToM contains specialized documentation for different users.
+
+If you only want to use the program with the standard toolboxes, refer to
+the user manual distributed separately.
+
+If you want to extend FAnToM by writing new plugins, refer to FAnToM's
+programmer guide available at $PREFIX/share/doc/FAnToM/api where $PREFIX
+denotes the path of your FAnToM installation.
+
+---------------------------------------------------------------------------
+
+EXTERNAL PLUGINS
+
+The development of external plugins is possible with FAnToM.
+For an example, unpack the contents of $PREFIX/share/FAnToM/external-plugin.tar.gz
+into the directory that you want to build your external toolbox in.
+The README there will take you through the basic steps to develop your own plugin.
+
+---------------------------------------------------------------------------
+
+
+FAnToM (Field Analysis using Topological Methods)
+
+Copyright (C) 1997-2003
+Visualization Group
+Dept. of Computer Science
+University of Kaiserslautern, Germany
+
+Copyright (C) 2004-2011
+Image and Signal Processing Group
+Computer Science Institute
+University of Leipzig, Germany
+
+Copyright (C) 2011-2015
+Image and Signal Processing Group
+and
+Scientific Visualization Group
+Computer Science Institute
+University of Leipzig, Germany
+
+Copyright (C) 2015-2017
+Image and Signal Processing Group
+University of Leipzig, Germany
+and
+Computer Graphics Group
+HTWK Leipzig, Germany
+
+
+http://www.informatik.uni-leipzig.de/fantom
+
+contact: scheuermann@informatik.uni-leipzig.de

@@ -1,0 +1,6 @@
+<map id="fantom::InputEvent" name="fantom::InputEvent">
+<area shape="rect" id="node1" title="Event based input for interactions." alt="" coords="73,171,206,197"/>
+<area shape="rect" id="node2" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="75,95,204,121"/>
+<area shape="rect" id="node3" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="5,5,105,32"/>
+<area shape="rect" id="node4" href="$structfantom_1_1InputChangeNotifier.html" title="Interface for notifications about changed inputs." alt="" coords="130,5,317,32"/>
+</map>

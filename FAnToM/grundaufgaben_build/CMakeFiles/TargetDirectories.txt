@@ -1,0 +1,10 @@
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/install/strip.dir
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/install/local.dir
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/install.dir
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/list_install_components.dir
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/rebuild_cache.dir
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/edit_cache.dir
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin2.dir
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/debug.dir
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/run.dir

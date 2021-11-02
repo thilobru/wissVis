@@ -1,0 +1,5 @@
+<map id="fantom::DataObjectBundle" name="fantom::DataObjectBundle">
+<area shape="rect" id="node1" title=" " alt="" coords="5,155,181,181"/>
+<area shape="rect" id="node2" href="$classfantom_1_1DataObject.html" title="Representation of an object that carries data that can be passed between algorithms." alt="" coords="25,80,161,107"/>
+<area shape="rect" id="node3" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="43,5,143,32"/>
+</map>

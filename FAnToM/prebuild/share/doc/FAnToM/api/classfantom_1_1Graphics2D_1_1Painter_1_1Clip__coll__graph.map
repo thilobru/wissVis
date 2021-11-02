@@ -1,0 +1,4 @@
+<map id="fantom::Graphics2D::Painter::Clip" name="fantom::Graphics2D::Painter::Clip">
+<area shape="rect" id="node1" title="RAII class that represents that the Painter is clipped." alt="" coords="5,109,144,151"/>
+<area shape="rect" id="node2" href="$classfantom_1_1Graphics2D_1_1Painter.html" title="Interface for painters on images." alt="" coords="5,5,144,47"/>
+</map>

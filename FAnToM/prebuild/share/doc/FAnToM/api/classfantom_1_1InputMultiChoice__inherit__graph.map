@@ -1,0 +1,7 @@
+<map id="fantom::InputMultiChoice" name="fantom::InputMultiChoice">
+<area shape="rect" id="node1" title="specialized input for representing multiple choices The data value is a set of the selected indices." alt="" coords="5,319,173,345"/>
+<area shape="rect" id="node2" href="$classfantom_1_1Input.html" title=" " alt="" coords="25,229,154,271"/>
+<area shape="rect" id="node3" href="$classfantom_1_1InputObject.html" title="base class for input fields of complex classes with value semantics" alt="" coords="21,155,158,181"/>
+<area shape="rect" id="node4" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="25,80,154,107"/>
+<area shape="rect" id="node5" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="39,5,139,32"/>
+</map>

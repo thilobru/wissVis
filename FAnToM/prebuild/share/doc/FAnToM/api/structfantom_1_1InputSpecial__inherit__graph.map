@@ -1,0 +1,5 @@
+<map id="fantom::InputSpecial" name="fantom::InputSpecial">
+<area shape="rect" id="node1" title="Represents a special options definition event like a tab, a separator, a group or the end of a group...." alt="" coords="5,155,148,181"/>
+<area shape="rect" id="node2" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="12,80,141,107"/>
+<area shape="rect" id="node3" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="27,5,127,32"/>
+</map>

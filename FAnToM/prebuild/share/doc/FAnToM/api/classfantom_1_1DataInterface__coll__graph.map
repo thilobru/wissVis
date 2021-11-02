@@ -1,0 +1,4 @@
+<map id="fantom::DataInterface" name="fantom::DataInterface">
+<area shape="rect" id="node1" title="Representation of an interface to a DataObject in the sense of a special view on the data." alt="" coords="5,80,155,107"/>
+<area shape="rect" id="node2" href="$structfantom_1_1MetaType.html" title="Base class for meta types (like DataInterface) that can match DataObjects of various types." alt="" coords="17,5,143,32"/>
+</map>

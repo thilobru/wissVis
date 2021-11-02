@@ -1,0 +1,7 @@
+<map id="fantom::InputSavePath" name="fantom::InputSavePath">
+<area shape="rect" id="node1" title="specialized input for representing save paths" alt="" coords="5,319,161,345"/>
+<area shape="rect" id="node2" href="$classfantom_1_1Input.html" title=" " alt="" coords="19,229,148,271"/>
+<area shape="rect" id="node3" href="$classfantom_1_1InputObject.html" title="base class for input fields of complex classes with value semantics" alt="" coords="15,155,152,181"/>
+<area shape="rect" id="node4" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="19,80,148,107"/>
+<area shape="rect" id="node5" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="33,5,133,32"/>
+</map>

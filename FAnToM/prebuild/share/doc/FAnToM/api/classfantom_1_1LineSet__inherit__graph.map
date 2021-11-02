@@ -1,0 +1,10 @@
+<map id="fantom::LineSet&lt; D &gt;" name="fantom::LineSet&lt; D &gt;">
+<area shape="rect" id="node1" title="Collection of lines." alt="" coords="95,453,243,480"/>
+<area shape="rect" id="node2" href="$classfantom_1_1EmbeddedCellComplex.html" title="Cell complex that is embedded into Euclidean space." alt="" coords="49,379,290,405"/>
+<area shape="rect" id="node3" href="$classfantom_1_1PointSet.html" title="representation of a discrete set of points" alt="" coords="5,304,160,331"/>
+<area shape="rect" id="node4" href="$classfantom_1_1PointSetBase.html" title="base class of all point sets" alt="" coords="7,229,158,256"/>
+<area shape="rect" id="node5" href="$classfantom_1_1Domain.html" title="Discrete domain." alt="" coords="25,155,140,181"/>
+<area shape="rect" id="node6" href="$classfantom_1_1DataObject.html" title="Representation of an object that carries data that can be passed between algorithms." alt="" coords="15,80,151,107"/>
+<area shape="rect" id="node7" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="33,5,133,32"/>
+<area shape="rect" id="node8" href="$classfantom_1_1CellComplex.html" title="Cell complex." alt="" coords="185,304,330,331"/>
+</map>

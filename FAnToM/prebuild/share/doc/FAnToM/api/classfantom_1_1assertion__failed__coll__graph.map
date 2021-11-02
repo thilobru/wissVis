@@ -1,0 +1,5 @@
+<map id="fantom::assertion_failed" name="fantom::assertion_failed">
+<area shape="rect" id="node1" title="Exception thrown by fantom_assert (and it should be used only there)" alt="" coords="11,184,173,211"/>
+<area shape="rect" id="node2" href="$classfantom_1_1detail_1_1fantom__exception__type.html" title=" " alt="" coords="15,80,169,136"/>
+<area shape="rect" id="node3" href="$classfantom_1_1fantom__exception.html" title="A base class for all fantom&#45;created exceptions." alt="" coords="5,5,179,32"/>
+</map>

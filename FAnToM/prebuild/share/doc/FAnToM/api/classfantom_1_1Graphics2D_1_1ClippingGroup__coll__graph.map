@@ -1,0 +1,5 @@
+<map id="fantom::Graphics2D::ClippingGroup" name="fantom::Graphics2D::ClippingGroup">
+<area shape="rect" id="node1" title="Group that clips all its children to a given polygonal region. On creation, the children are clipped ..." alt="" coords="5,109,144,151"/>
+<area shape="rect" id="node2" href="$classfantom_1_1Graphics2D_1_1Group.html" title="Group of Items." alt="" coords="95,5,233,47"/>
+<area shape="rect" id="node3" href="$classfantom_1_1Graphics2D_1_1Item.html" title="base class for 2D graphics items" alt="" coords="168,109,307,151"/>
+</map>

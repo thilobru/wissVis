@@ -1,0 +1,8 @@
+<map id="fantom::ToolBarSeparator" name="fantom::ToolBarSeparator">
+<area shape="rect" id="node1" title="tool bar separator" alt="" coords="5,349,176,376"/>
+<area shape="rect" id="node2" href="$classfantom_1_1ToolBarItem.html" title="tool bar item" alt="" coords="21,273,161,300"/>
+<area shape="rect" id="node3" href="$classfantom_1_1ToolBar.html" title="tool bar" alt="" coords="33,184,148,211"/>
+<area shape="rect" id="node4" href="$classfantom_1_1MainWindow.html" title="top&#45;level window" alt="" coords="18,95,163,121"/>
+<area shape="rect" id="node5" href="$classfantom_1_1Widget.html" title="base class for all widgets" alt="" coords="99,5,210,32"/>
+<area shape="rect" id="node6" href="$classfantom_1_1Menu.html" title="Menu bar or context menu." alt="" coords="187,95,290,121"/>
+</map>

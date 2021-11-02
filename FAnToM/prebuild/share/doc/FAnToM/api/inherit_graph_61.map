@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$structfantom_1_1MetaType.html" title="Base class for meta types (like DataInterface) that can match DataObjects of various types." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node2" href="$classfantom_1_1DataInterface.html" title="Representation of an interface to a DataObject in the sense of a special view on the data." alt="" coords="180,5,329,32"/>
+<area shape="rect" id="node3" href="$classfantom_1_1Field.html" title="An analytical or interpolated tensor field." alt="" coords="377,5,525,32"/>
+</map>

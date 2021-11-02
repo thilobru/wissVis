@@ -1,0 +1,5 @@
+<map id="fantom::GroupBox" name="fantom::GroupBox">
+<area shape="rect" id="node1" title="widget group decorator" alt="" coords="5,95,133,121"/>
+<area shape="rect" id="node2" href="$classfantom_1_1Widget.html" title="base class for all widgets" alt="" coords="70,5,181,32"/>
+<area shape="rect" id="node3" href="$classfantom_1_1Menu.html" title="Menu bar or context menu." alt="" coords="158,95,261,121"/>
+</map>

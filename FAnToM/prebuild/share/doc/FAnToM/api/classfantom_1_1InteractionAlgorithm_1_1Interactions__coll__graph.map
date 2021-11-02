@@ -1,0 +1,8 @@
+<map id="fantom::InteractionAlgorithm::Interactions" name="fantom::InteractionAlgorithm::Interactions">
+<area shape="rect" id="node1" title=" " alt="" coords="201,275,388,316"/>
+<area shape="rect" id="node2" href="$classfantom_1_1AlgorithmImpl.html" title=" " alt="" coords="141,185,291,212"/>
+<area shape="rect" id="node3" href="$classfantom_1_1DataOutputs_1_1Control.html" title="Abstract interface to the private implementation of Outputs." alt="" coords="5,81,149,123"/>
+<area shape="rect" id="node4" href="$classfantom_1_1Options_1_1Control.html" title="Private implementation of Options." alt="" coords="232,89,397,115"/>
+<area shape="rect" id="node6" href="$classfantom_1_1Options.html" title="base class of options" alt="" coords="316,185,431,212"/>
+<area shape="rect" id="node5" href="$structfantom_1_1InputChangeNotifier.html" title="Interface for notifications about changed inputs." alt="" coords="221,5,408,32"/>
+</map>

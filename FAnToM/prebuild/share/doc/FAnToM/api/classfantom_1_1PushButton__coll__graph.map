@@ -1,0 +1,5 @@
+<map id="fantom::PushButton" name="fantom::PushButton">
+<area shape="rect" id="node1" title="widget for pushing" alt="" coords="5,95,144,121"/>
+<area shape="rect" id="node2" href="$classfantom_1_1Widget.html" title="base class for all widgets" alt="" coords="81,5,191,32"/>
+<area shape="rect" id="node3" href="$classfantom_1_1Menu.html" title="Menu bar or context menu." alt="" coords="169,95,271,121"/>
+</map>

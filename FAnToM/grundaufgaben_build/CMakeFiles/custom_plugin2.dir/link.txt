@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g -Wl,--no-undefined  -shared -Wl,-soname,libplugin2.so -o lib/fantom-plugins/custom/libplugin2.so CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.o  -Wl,-rpath,/home/thilo/Documents/wissVis/FAnToM/prebuild/lib: /home/thilo/Documents/wissVis/FAnToM/prebuild/lib/libfantom-lib.so -fopenmp -lpython2.7 

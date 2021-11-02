@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classfantom_1_1Algorithm.html" title="abstract base class of algorithms" alt="" coords="5,56,131,83"/>
+<area shape="rect" id="node2" href="$classfantom_1_1DataAlgorithm.html" title="base class of data algorithms" alt="" coords="195,5,349,32"/>
+<area shape="rect" id="node3" href="$classfantom_1_1InteractionAlgorithm.html" title="base class of algorithms for user interaction" alt="" coords="179,56,365,83"/>
+<area shape="rect" id="node4" href="$classfantom_1_1VisAlgorithm.html" title="base class of visualization algorithms" alt="" coords="200,107,344,133"/>
+</map>

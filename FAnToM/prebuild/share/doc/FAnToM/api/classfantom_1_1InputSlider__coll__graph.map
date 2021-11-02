@@ -1,0 +1,8 @@
+<map id="fantom::InputSlider" name="fantom::InputSlider">
+<area shape="rect" id="node1" title="Specialized input for representing Sliders in the options dialog." alt="" coords="73,337,205,364"/>
+<area shape="rect" id="node2" href="$classfantom_1_1InputArithmeticImpl.html" title=" " alt="" coords="48,247,231,288"/>
+<area shape="rect" id="node3" href="$classfantom_1_1InputArithmetic.html" title="base class for all c++ primitive types (integral and floating point)" alt="" coords="60,171,219,197"/>
+<area shape="rect" id="node4" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="75,95,204,121"/>
+<area shape="rect" id="node5" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="5,5,105,32"/>
+<area shape="rect" id="node6" href="$structfantom_1_1InputChangeNotifier.html" title="Interface for notifications about changed inputs." alt="" coords="130,5,317,32"/>
+</map>

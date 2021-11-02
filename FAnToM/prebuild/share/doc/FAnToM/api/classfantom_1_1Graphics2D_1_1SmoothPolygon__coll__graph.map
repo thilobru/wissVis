@@ -1,0 +1,6 @@
+<map id="fantom::Graphics2D::SmoothPolygon" name="fantom::Graphics2D::SmoothPolygon">
+<area shape="rect" id="node1" title="polygon its edges are bezier splines" alt="" coords="5,200,144,241"/>
+<area shape="rect" id="node2" href="$classfantom_1_1Graphics2D_1_1Polygon.html" title="arbitrary polygon" alt="" coords="5,109,144,151"/>
+<area shape="rect" id="node3" href="$classfantom_1_1Graphics2D_1_1Item.html" title="base class for 2D graphics items" alt="" coords="124,5,263,47"/>
+<area shape="rect" id="node4" href="$classfantom_1_1Graphics2D_1_1Group.html" title="Group of Items." alt="" coords="168,109,307,151"/>
+</map>

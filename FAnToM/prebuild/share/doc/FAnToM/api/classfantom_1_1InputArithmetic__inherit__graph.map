@@ -1,0 +1,10 @@
+<map id="fantom::InputArithmetic" name="fantom::InputArithmetic">
+<area shape="rect" id="node1" title="base class for all c++ primitive types (integral and floating point)" alt="" coords="331,64,489,91"/>
+<area shape="rect" id="node4" href="$classfantom_1_1InputArithmeticImpl.html" title="base class for primitive c++ type inputs" alt="" coords="537,5,752,32"/>
+<area shape="rect" id="node5" href="$classfantom_1_1InputArithmeticImpl.html" title=" " alt="" coords="553,57,736,98"/>
+<area shape="rect" id="node7" href="$classfantom_1_1InputArithmeticImpl.html" title=" " alt="" coords="553,122,736,163"/>
+<area shape="rect" id="node2" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="153,64,283,91"/>
+<area shape="rect" id="node3" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="5,64,105,91"/>
+<area shape="rect" id="node6" href="$classfantom_1_1InputSlider.html" title="Specialized input for representing Sliders in the options dialog." alt="" coords="800,64,932,91"/>
+<area shape="rect" id="node8" href="$classfantom_1_1InputSeed.html" title="specialized input for representing seed values for random variables" alt="" coords="801,129,931,156"/>
+</map>

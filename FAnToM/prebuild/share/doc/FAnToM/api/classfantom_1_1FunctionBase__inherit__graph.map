@@ -1,0 +1,6 @@
+<map id="fantom::FunctionBase" name="fantom::FunctionBase">
+<area shape="rect" id="node1" title="Base class for discrete (sample&#45;based) functions on Domains." alt="" coords="6,155,157,181"/>
+<area shape="rect" id="node4" href="$classfantom_1_1Function.html" title="Representation of data values on a discrete domain." alt="" coords="5,229,157,256"/>
+<area shape="rect" id="node2" href="$classfantom_1_1DataObject.html" title="Representation of an object that carries data that can be passed between algorithms." alt="" coords="13,80,149,107"/>
+<area shape="rect" id="node3" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="31,5,131,32"/>
+</map>

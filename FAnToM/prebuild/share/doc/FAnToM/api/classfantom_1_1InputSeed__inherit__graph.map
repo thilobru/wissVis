@@ -1,0 +1,7 @@
+<map id="fantom::InputSeed" name="fantom::InputSeed">
+<area shape="rect" id="node1" title="specialized input for representing seed values for random variables" alt="" coords="32,319,161,345"/>
+<area shape="rect" id="node2" href="$classfantom_1_1InputArithmeticImpl.html" title=" " alt="" coords="5,229,188,271"/>
+<area shape="rect" id="node3" href="$classfantom_1_1InputArithmetic.html" title="base class for all c++ primitive types (integral and floating point)" alt="" coords="17,155,176,181"/>
+<area shape="rect" id="node4" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="32,80,161,107"/>
+<area shape="rect" id="node5" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="47,5,147,32"/>
+</map>

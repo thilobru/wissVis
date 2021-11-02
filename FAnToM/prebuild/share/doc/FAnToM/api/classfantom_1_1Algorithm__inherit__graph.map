@@ -1,0 +1,6 @@
+<map id="fantom::Algorithm" name="fantom::Algorithm">
+<area shape="rect" id="node1" title="abstract base class of algorithms" alt="" coords="214,5,339,32"/>
+<area shape="rect" id="node2" href="$classfantom_1_1DataAlgorithm.html" title="base class of data algorithms" alt="" coords="5,80,159,107"/>
+<area shape="rect" id="node3" href="$classfantom_1_1InteractionAlgorithm.html" title="base class of algorithms for user interaction" alt="" coords="183,80,370,107"/>
+<area shape="rect" id="node4" href="$classfantom_1_1VisAlgorithm.html" title="base class of visualization algorithms" alt="" coords="394,80,538,107"/>
+</map>

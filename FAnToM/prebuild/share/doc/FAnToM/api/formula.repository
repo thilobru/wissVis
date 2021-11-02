@@ -1,0 +1,2 @@
+\_form#0:$ \| A\|_1 = \max_{0 \geq j < N} \sum_{i=0}^{M-1} |a_{ij}| $
+\_form#1:$ \| A\|_1 = \max_{0 \geq i < M} \sum_{j=0}^{N-1} |a_{ij}| $

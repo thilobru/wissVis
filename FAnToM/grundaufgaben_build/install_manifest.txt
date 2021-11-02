@@ -1,0 +1,6 @@
+/usr/local/../prebuild/lib/fantom-plugins/custom/libplugin1.so
+/usr/local/../prebuild/share/FAnToM/cmake/plugins/custom_plugin1Config.cmake
+/usr/local/../prebuild/share/FAnToM/cmake/plugins/custom_plugin1Config-debug.cmake
+/usr/local/../prebuild/lib/fantom-plugins/custom/libplugin2.so
+/usr/local/../prebuild/share/FAnToM/cmake/plugins/custom_plugin2Config.cmake
+/usr/local/../prebuild/share/FAnToM/cmake/plugins/custom_plugin2Config-debug.cmake

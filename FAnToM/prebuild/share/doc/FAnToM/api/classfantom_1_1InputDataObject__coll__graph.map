@@ -1,0 +1,7 @@
+<map id="fantom::InputDataObject" name="fantom::InputDataObject">
+<area shape="rect" id="node1" title="base class for DataObject input fields" alt="" coords="141,184,306,211"/>
+<area shape="rect" id="node2" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="75,95,204,121"/>
+<area shape="rect" id="node3" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="5,5,105,32"/>
+<area shape="rect" id="node4" href="$structfantom_1_1InputChangeNotifier.html" title="Interface for notifications about changed inputs." alt="" coords="130,5,317,32"/>
+<area shape="rect" id="node5" href="$classfantom_1_1RTTICollection.html" title="Class that represents a collection of different types." alt="" coords="228,95,387,121"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="fantom::Graph" name="fantom::Graph">
+<area shape="rect" id="node1" title="Graph domain." alt="" coords="129,249,234,276"/>
+<area shape="rect" id="node2" href="$classfantom_1_1Domain.html" title="Discrete domain." alt="" coords="72,172,187,199"/>
+<area shape="rect" id="node3" href="$classfantom_1_1DataObject.html" title="Representation of an object that carries data that can be passed between algorithms." alt="" coords="5,81,141,108"/>
+<area shape="rect" id="node4" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="23,5,123,32"/>
+<area shape="rect" id="node5" href="$classfantom_1_1DomainPart.html" title="Representation of a part of a domain, for example the points of a grid, the edges of a graph,..." alt="" coords="165,81,304,108"/>
+</map>
