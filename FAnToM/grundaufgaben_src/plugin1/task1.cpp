@@ -7,13 +7,19 @@ using namespace fantom;
 
 namespace
 {
-    class WindowTutorialAlgorithm : public VisAlgorithm
+
+    class TaskEins : public VisAlgorithm
     {
+
         class MyWindow : public DockWindow
         {
         public:
             MyWindow(MainWindow &mainWindow, const std::string &name)
-                : DockWindow(mainWindow, DockWindow::FFREE, name), mLayout(*this, false), mText(mLayout), mButton(mLayout, "Send", std::bind(&MyWindow::send, this))
+                : DockWindow(mainWindow, DockWindow::FLEFT, name)
+                , mLayout(*this, false)
+                , mLabel(mLayout, "Anzahl der Häuser eingeben")
+                , mText(mLayout)
+                , mButton(mLayout, "Send", std::bind(&MyWindow::send, this))
             {
             }
 
@@ -32,6 +38,7 @@ namespace
 
         private:
             BoxLayout mLayout;
+            Label mLabel;
             LineEdit mText;
             PushButton mButton;
 
@@ -57,14 +64,14 @@ namespace
             }
         };
 
-        WindowTutorialAlgorithm(InitData &init)
+        TaskEins(InitData &init)
             : VisAlgorithm(init)
         {
             getWindow<MyWindow>("Algorithm Window")
-                .setSendCallback(std::bind(&WindowTutorialAlgorithm::print, this, std::placeholders::_1));
+                .setSendCallback(std::bind(&TaskEins::print, this, std::placeholders::_1));
         }
 
-        ~WindowTutorialAlgorithm()
+        ~TaskEins()
         {
             getWindow<MyWindow>("Algorithm Window").setSendCallback(nullptr);
         }
@@ -74,5 +81,5 @@ namespace
         }
     };
 
-    AlgorithmRegister<WindowTutorialAlgorithm> dummy("Tutorial/Window", "Demonstrate algorithm windows.");
+    AlgorithmRegister<TaskEins> dummy("Tasks/TaskEins", "Demonstrate algorithm windows.");
 }
