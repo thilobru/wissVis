@@ -208,6 +208,33 @@ run/fast:
 	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
 .PHONY : run/fast
 
+plugin1/Shirin.o: plugin1/Shirin.cpp.o
+
+.PHONY : plugin1/Shirin.o
+
+# target to build an object file
+plugin1/Shirin.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Shirin.cpp.o
+.PHONY : plugin1/Shirin.cpp.o
+
+plugin1/Shirin.i: plugin1/Shirin.cpp.i
+
+.PHONY : plugin1/Shirin.i
+
+# target to preprocess a source file
+plugin1/Shirin.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Shirin.cpp.i
+.PHONY : plugin1/Shirin.cpp.i
+
+plugin1/Shirin.s: plugin1/Shirin.cpp.s
+
+.PHONY : plugin1/Shirin.s
+
+# target to generate assembly for a file
+plugin1/Shirin.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Shirin.cpp.s
+.PHONY : plugin1/Shirin.cpp.s
+
 plugin1/task1.o: plugin1/task1.cpp.o
 
 .PHONY : plugin1/task1.o
@@ -305,6 +332,9 @@ help:
 	@echo "... custom_plugin1"
 	@echo "... debug"
 	@echo "... run"
+	@echo "... plugin1/Shirin.o"
+	@echo "... plugin1/Shirin.i"
+	@echo "... plugin1/Shirin.s"
 	@echo "... plugin1/task1.o"
 	@echo "... plugin1/task1.i"
 	@echo "... plugin1/task1.s"

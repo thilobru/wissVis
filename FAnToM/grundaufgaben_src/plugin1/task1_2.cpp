@@ -4,6 +4,7 @@
 
 #include <random>
 #include <vector>
+#include <math.h>
 
 using namespace fantom;
  
@@ -18,7 +19,7 @@ namespace
             Options( fantom::Options::Control& control )
                 : DataAlgorithm::Options( control )
             {
-                add< int > ( "AnzahlHäuser", "", 4);
+                add< int > ( "nHouses", "", 4);
                 addSeparator();
                 add< int >( "durchschnittHöhe", "", 5 );
             }
@@ -41,13 +42,15 @@ namespace
  
         virtual void execute( const Algorithm::Options& options, const volatile bool& /*abortFlag*/ ) override
         {
-            int nHouses = options.get<int>("AnzahlHäuser");
+            int nHouses = options.get<int>("nHouses");
 
             std::random_device dev;
             std::mt19937 rng(dev());
-            std::uniform_int_distribution<std::mt19937::result_type> dist(-(nHouses/2),nHouses/2); // distribution in range [-anzahlHäuser/2, anzahlHäuser/2]
+            std::uniform_int_distribution<std::mt19937::result_type> dist(-(std::sqrt(nHouses)),std::sqrt(nHouses)); // distribution in range [-anzahlHäuser/2, anzahlHäuser/2]
             std::cout << dist(rng) << std::endl;
+
             std::vector<std::vector<short>> coords;
+            
             for(int i = 0; i < nHouses; i++) {
                 std::vector <short> v1;
                 for(short j = 0; j < 2; j++) {
@@ -55,7 +58,6 @@ namespace
                 }
                 coords.push_back(v1);
             }
-
 
             size_t extent[] = { (size_t)2,
                                 (size_t)10,

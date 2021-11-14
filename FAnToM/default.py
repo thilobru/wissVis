@@ -6,9 +6,9 @@
 ################################################################
 ###                  Reset GUI                               ###
 ################################################################
-fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-2.04054, 8.84605, 8.06228), fantom.math.Vector3(9.53674e-06, -3.8147e-05, -2.28882e-05), fantom.math.Vector3(-0.98232, -0.180135, -0.0509759), 1, 1.0472 ) )
+fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(0, 0, 12.1415), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 1, 0), 1, 1.0472 ) )
 fantom.ui.setCamera( 1, fantom.ui.Camera( fantom.math.Vector3(12.1415, 0, 0), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
-fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -12.1415, 0), fantom.math.Vector3(0, -9.53674e-07, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
+fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -12.1415, 0), fantom.math.Vector3(0, -1.90735e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
 fantom.ui.setCamera( 3, fantom.ui.Camera( fantom.math.Vector3(0, 0, 12.1415), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 1, 0), 0, 1.0472 ) )
 
 fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 0, fantom.math.Vector4( 1, 0, 0, 1 ), False ) )
@@ -31,7 +31,7 @@ Tasks_Task1_2.setName("Tasks/Task1_2")
 Tasks_Task1_2.setAutoSchedule(True)
 Tasks_Task1_2.setOption("AnzahlHäuser", 4)
 Tasks_Task1_2.setOption("durchschnittHöhe", 5)
-fantom.ui.setAlgorithmPosition(Tasks_Task1_2, fantom.math.Vector2(0, 35))
+fantom.ui.setAlgorithmPosition(Tasks_Task1_2, fantom.math.Vector2(0, 123.4))
 
 # Inbound connections of this algorithm:
 
@@ -45,11 +45,10 @@ Grid_ShowGrid.setOption("Line color", fantom.math.Color(0, 0, 1, 1))
 Grid_ShowGrid.setOption("Line width", 1)
 Grid_ShowGrid.setOption("Random jittering of color", True)
 Grid_ShowGrid.setOption("Random seed", 0)
-fantom.ui.setAlgorithmPosition(Grid_ShowGrid, fantom.math.Vector2(0, 123.4))
+fantom.ui.setAlgorithmPosition(Grid_ShowGrid, fantom.math.Vector2(0, 35))
 Grid_ShowGrid.setVisualOutputVisible('Grid', True)
 
 # Inbound connections of this algorithm:
-Tasks_Task1_2.connect("siedlung", Grid_ShowGrid, "Grid")
 
 # Run the algorithm
 Grid_ShowGrid.runBlocking()
