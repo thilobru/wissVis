@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/Shirin.cpp
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1_2.cpp
 fantom/algorithm.hpp
 -
 fantom/dataset.hpp
@@ -15,7 +15,9 @@ fantom/register.hpp
 -
 random
 -
-array
+vector
+-
+math.h
 -
 
 /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/algorithm.hpp

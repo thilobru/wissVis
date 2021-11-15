@@ -262,6 +262,33 @@ plugin1/task1.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1.cpp.s
 .PHONY : plugin1/task1.cpp.s
 
+plugin1/task1Miriam.o: plugin1/task1Miriam.cpp.o
+
+.PHONY : plugin1/task1Miriam.o
+
+# target to build an object file
+plugin1/task1Miriam.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Miriam.cpp.o
+.PHONY : plugin1/task1Miriam.cpp.o
+
+plugin1/task1Miriam.i: plugin1/task1Miriam.cpp.i
+
+.PHONY : plugin1/task1Miriam.i
+
+# target to preprocess a source file
+plugin1/task1Miriam.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Miriam.cpp.i
+.PHONY : plugin1/task1Miriam.cpp.i
+
+plugin1/task1Miriam.s: plugin1/task1Miriam.cpp.s
+
+.PHONY : plugin1/task1Miriam.s
+
+# target to generate assembly for a file
+plugin1/task1Miriam.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Miriam.cpp.s
+.PHONY : plugin1/task1Miriam.cpp.s
+
 plugin1/task1_2.o: plugin1/task1_2.cpp.o
 
 .PHONY : plugin1/task1_2.o
@@ -288,6 +315,33 @@ plugin1/task1_2.s: plugin1/task1_2.cpp.s
 plugin1/task1_2.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1_2.cpp.s
 .PHONY : plugin1/task1_2.cpp.s
+
+plugin1/task1_3.o: plugin1/task1_3.cpp.o
+
+.PHONY : plugin1/task1_3.o
+
+# target to build an object file
+plugin1/task1_3.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1_3.cpp.o
+.PHONY : plugin1/task1_3.cpp.o
+
+plugin1/task1_3.i: plugin1/task1_3.cpp.i
+
+.PHONY : plugin1/task1_3.i
+
+# target to preprocess a source file
+plugin1/task1_3.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1_3.cpp.i
+.PHONY : plugin1/task1_3.cpp.i
+
+plugin1/task1_3.s: plugin1/task1_3.cpp.s
+
+.PHONY : plugin1/task1_3.s
+
+# target to generate assembly for a file
+plugin1/task1_3.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1_3.cpp.s
+.PHONY : plugin1/task1_3.cpp.s
 
 plugin2/task2.o: plugin2/task2.cpp.o
 
@@ -338,9 +392,15 @@ help:
 	@echo "... plugin1/task1.o"
 	@echo "... plugin1/task1.i"
 	@echo "... plugin1/task1.s"
+	@echo "... plugin1/task1Miriam.o"
+	@echo "... plugin1/task1Miriam.i"
+	@echo "... plugin1/task1Miriam.s"
 	@echo "... plugin1/task1_2.o"
 	@echo "... plugin1/task1_2.i"
 	@echo "... plugin1/task1_2.s"
+	@echo "... plugin1/task1_3.o"
+	@echo "... plugin1/task1_3.i"
+	@echo "... plugin1/task1_3.s"
 	@echo "... plugin2/task2.o"
 	@echo "... plugin2/task2.i"
 	@echo "... plugin2/task2.s"

@@ -21,7 +21,7 @@ namespace
             {
                 add< int > ( "nHouses", "", 4);
                 addSeparator();
-                add< int >( "durchschnittHöhe", "", 5 );
+                add< int >( "durchschnittHeight", "", 5 );
             }
         };
  
@@ -39,7 +39,24 @@ namespace
             : DataAlgorithm( data )
         {
         }
- 
+        static void makeHouse(int nHouses,
+                                std::vector<std::vector<short>> coords){
+            int levels = 6;//rand(10);
+            std::vector<std::vector<std::vector<int>>> housesPoints;
+            for(int h; h < nHouses; h++){
+                std::vector<std::vector<int>> housePoints;
+                for(int i; i < levels; i++){
+                    std::vector<int> v1;
+                    for(int j; j < 3; j++){
+                        v1.push_back(coords[h][2] + j);
+                        v1.push_back(coords[h][1] + j);
+                        v1.push_back(coords[h][0] + j);
+                    }
+                    housePoints.push_back(v1);
+                }
+                housesPoints.push_back(housePoints);
+            }
+        }
         virtual void execute( const Algorithm::Options& options, const volatile bool& /*abortFlag*/ ) override
         {
             // bool duplicate ; //todo
@@ -53,9 +70,15 @@ namespace
             std::vector<std::vector<short>> coords;
             
             for(int i = 0; i < nHouses; i++) {
+                redo:;
                 std::vector <short> v1;
                 for(short j = 0; j < 2; j++) {
                     v1.push_back(dist(rng));
+                }
+                for(int j = 0; j < (int) coords.size()-1; j++) {
+                    if(v1[0] == coords[j][0] && v1[1] == coords[j][1]){
+                        goto redo;
+                    }
                 }
                 coords.push_back(v1);
             }
@@ -76,17 +99,17 @@ namespace
                                     origin[2] + coords[i][1]};
 
                 std::vector< Point < 3 >> pointset;
-                ValueArray<points> points;
-                points = {1,2,3};
-                pointset = DomainFactory::makePointSet(& points);
+                // ValueArray<points> points;
+                // points = {1,2,3};
+                // pointset = DomainFactory::makePointSet(& points);
                 
 
-                grid = DomainFactory::makeGrid( pointsVector, numCellTypes, cellCounts, indices);
+                // grid = DomainFactory::makeGrid( pointsVector, numCellTypes, cellCounts, indices);
                 bundle->addContent(grid);
             }
             setResult("settlement", bundle);
         }
     };
  
-    AlgorithmRegister< CommitTutorialAlgorithm > dummy( "Tasks/Task1_2", "Generate a simple settlement." );
+    AlgorithmRegister< CommitTutorialAlgorithm > dummy( "Tasks/Task1_3", "Generate a simple settlement." );
 }

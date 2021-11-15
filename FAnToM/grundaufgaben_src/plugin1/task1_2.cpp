@@ -21,7 +21,7 @@ namespace
             {
                 add< int > ( "nHouses", "", 4);
                 addSeparator();
-                add< int >( "durchschnittHöhe", "", 5 );
+                add< int >( "durchschnittHeight", "", 5 );
             }
         };
  
@@ -53,9 +53,15 @@ namespace
             std::vector<std::vector<short>> coords;
             
             for(int i = 0; i < nHouses; i++) {
+                redo:;
                 std::vector <short> v1;
                 for(short j = 0; j < 2; j++) {
                     v1.push_back(dist(rng));
+                }
+                for(int j = 0; j < (int) coords.size()-1; j++) {
+                    if(v1[0] == coords[j][0] && v1[1] == coords[j][1]){
+                        goto redo;
+                    }
                 }
                 coords.push_back(v1);
             }
