@@ -74,7 +74,14 @@ namespace
                 double pOrigin[] = {origin[0] + coords[i][0], 
                                     origin[1], 
                                     origin[2] + coords[i][1]};
-                grid = DomainFactory::makeUniformGrid( extent, pOrigin, spacing );
+
+                std::vector< Point < 3 >> pointset;
+                ValueArray<points> points;
+                points = {1,2,3};
+                pointset = DomainFactory::makePointSet(& points);
+                
+
+                grid = DomainFactory::makeGrid( pointsVector, numCellTypes, cellCounts, indices);
                 bundle->addContent(grid);
             }
             setResult("settlement", bundle);
