@@ -39,18 +39,19 @@ namespace
             : DataAlgorithm( data )
         {
         }
-        static void makeHouse(int nHouses,
-                                std::vector<std::vector<short>> coords){
+        static void makeHouses(int nHouses,
+                                std::vector<std::vector<short>>& coords,
+                                std::vector<std::vector<std::vector<int>>>& housesPoints){
             int levels = 6;//rand(10);
             std::vector<std::vector<std::vector<int>>> housesPoints;
             for(int h; h < nHouses; h++){
                 std::vector<std::vector<int>> housePoints;
-                for(int i; i < levels; i++){
+                for(int i; i > levels; i++){
                     std::vector<int> v1;
                     for(int j; j < 3; j++){
-                        v1.push_back(coords[h][2] + j);
-                        v1.push_back(coords[h][1] + j);
                         v1.push_back(coords[h][0] + j);
+                        v1.push_back(coords[h][1] + j);
+                        v1.push_back(coords[h][2] + j);
                     }
                     housePoints.push_back(v1);
                 }
@@ -83,13 +84,9 @@ namespace
                 coords.push_back(v1);
             }
 
-            size_t extent[] = { (size_t)2,
-                                (size_t)10,
-                                (size_t)2};
             double origin[] = { -0.5,
                                 -0.5,
                                 -0.5};
-            double spacing[]= {1,1,1};
 
             std::shared_ptr< const Grid< 3 > > grid;
             std::shared_ptr< DataObjectBundle > bundle = std::make_shared< DataObjectBundle >();
@@ -104,7 +101,7 @@ namespace
                 // pointset = DomainFactory::makePointSet(& points);
                 
 
-                // grid = DomainFactory::makeGrid( pointsVector, numCellTypes, cellCounts, indices);
+                grid = DomainFactory::makeGrid( housesPoints, numCellTypes, cellCounts, indices);
                 bundle->addContent(grid);
             }
             setResult("settlement", bundle);
