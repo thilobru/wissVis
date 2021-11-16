@@ -289,6 +289,33 @@ plugin1/task1Miriam.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Miriam.cpp.s
 .PHONY : plugin1/task1Miriam.cpp.s
 
+plugin1/task1Test.o: plugin1/task1Test.cpp.o
+
+.PHONY : plugin1/task1Test.o
+
+# target to build an object file
+plugin1/task1Test.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Test.cpp.o
+.PHONY : plugin1/task1Test.cpp.o
+
+plugin1/task1Test.i: plugin1/task1Test.cpp.i
+
+.PHONY : plugin1/task1Test.i
+
+# target to preprocess a source file
+plugin1/task1Test.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Test.cpp.i
+.PHONY : plugin1/task1Test.cpp.i
+
+plugin1/task1Test.s: plugin1/task1Test.cpp.s
+
+.PHONY : plugin1/task1Test.s
+
+# target to generate assembly for a file
+plugin1/task1Test.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Test.cpp.s
+.PHONY : plugin1/task1Test.cpp.s
+
 plugin1/task1_2.o: plugin1/task1_2.cpp.o
 
 .PHONY : plugin1/task1_2.o
@@ -395,6 +422,9 @@ help:
 	@echo "... plugin1/task1Miriam.o"
 	@echo "... plugin1/task1Miriam.i"
 	@echo "... plugin1/task1Miriam.s"
+	@echo "... plugin1/task1Test.o"
+	@echo "... plugin1/task1Test.i"
+	@echo "... plugin1/task1Test.s"
 	@echo "... plugin1/task1_2.o"
 	@echo "... plugin1/task1_2.i"
 	@echo "... plugin1/task1_2.s"

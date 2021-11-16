@@ -21,6 +21,11 @@
 },
 {
   "directory": "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build",
+  "command": "/usr/bin/c++  -Dcustom_plugin1_EXPORTS -I/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/include/custom/plugin1 -I/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/src -I/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/include -isystem /home/thilo/Documents/wissVis/FAnToM/prebuild/include -isystem /usr/include/python2.7 -isystem /usr/include/eigen3  -g -fPIC   -pedantic -Wall -Wextra -Wno-unknown-pragmas -Wnon-virtual-dtor -Wunused -Woverloaded-virtual -fopenmp -std=c++14 -o CMakeFiles/custom_plugin1.dir/plugin1/task1Test.cpp.o -c /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1Test.cpp",
+  "file": "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1Test.cpp"
+},
+{
+  "directory": "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build",
   "command": "/usr/bin/c++  -Dcustom_plugin1_EXPORTS -I/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/include/custom/plugin1 -I/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/src -I/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/include -isystem /home/thilo/Documents/wissVis/FAnToM/prebuild/include -isystem /usr/include/python2.7 -isystem /usr/include/eigen3  -g -fPIC   -pedantic -Wall -Wextra -Wno-unknown-pragmas -Wnon-virtual-dtor -Wunused -Woverloaded-virtual -fopenmp -std=c++14 -o CMakeFiles/custom_plugin1.dir/plugin1/task1_2.cpp.o -c /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1_2.cpp",
   "file": "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1_2.cpp"
 },

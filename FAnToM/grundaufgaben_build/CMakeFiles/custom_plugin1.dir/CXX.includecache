@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1_2.cpp
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1Test.cpp
 fantom/algorithm.hpp
 -
 fantom/dataset.hpp

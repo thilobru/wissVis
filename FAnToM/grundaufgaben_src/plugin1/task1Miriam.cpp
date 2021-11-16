@@ -134,7 +134,7 @@ namespace
             {
             infoLog() << i << std::endl;
             }
- 
+            
             //create grid with positions of points and their relation
             std::shared_ptr< const Grid< 3 > > grid = DomainFactory::makeGrid( points, numCellTypes, cellCounts, indices );
 
