@@ -42,8 +42,8 @@ namespace
         static void makeCoords(std::vector<std::vector<double>>& coords,
                                int& nHouses){
             std::random_device dev;
-            std::mt19937 rng(dev());
-            std::uniform_int_distribution<std::mt19937::result_type> dist(-(std::sqrt(nHouses) + nHouses),std::sqrt(nHouses) + nHouses); // distribution in range [-anzahlHäuser/2, anzahlHäuser/2]
+            std::default_random_engine rng(dev());
+            std::uniform_int_distribution<int> dist(-(std::sqrt(nHouses)*3),std::sqrt(nHouses) * 3); // distribution in range [-anzahlHäuser/2, anzahlHäuser/2]
             std::cout << dist(rng) << std::endl;
 
             for(int i = 0; i < nHouses; i++) {
@@ -60,10 +60,18 @@ namespace
                 coords.push_back(v1);
             }
         }
-        static void makeHouse(std::vector<Point<3>>& points,
-                              std::vector<size_t>& indexes,
+        static void makeHouse(std::shared_ptr< DataObjectBundle >& bundle,
                               int& levels,
                               std::vector<double>& coords){
+            std::vector < Point< 3 > > points = {};
+            const std::pair< Cell::Type, size_t > cellCounts[] 
+                        = {std::make_pair(Cell::Type::HEXAHEDRON, (size_t) levels), 
+                            std::make_pair(Cell::Type::PYRAMID, (size_t) 1),
+                            std::make_pair(Cell::Type::LINE, (size_t) 1)};
+            size_t numCellTypes = (size_t) 3;
+            std::vector< size_t > indexes = {};
+            std::shared_ptr< const Grid< 3 > > grid;
+            
             for(double i = 0; i < levels+1; i++) {
                 points.push_back({coords[0]    ,i,coords[1]});
                 points.push_back({coords[0] + 1,i,coords[1]});
@@ -89,34 +97,22 @@ namespace
             for(int i = points.size() - 2; i < (int) points.size(); i++){
                 indexes.push_back(i);
             }
+            grid = DomainFactory::makeGrid( points, numCellTypes, cellCounts, indexes);
+            bundle->addContent(grid);
         }
         virtual void execute( const Algorithm::Options& options, const volatile bool& /*abortFlag*/ ) override
         {
             int nHouses = options.get<int>("nHouses");
             int levels = options.get<int>("nlevels");
+            std::shared_ptr< DataObjectBundle > bundle = std::make_shared< DataObjectBundle >();
             std::vector<std::vector<double>> coords;
             makeCoords(coords, nHouses);
-
-            std::shared_ptr< const Grid< 3 > > grid;
-            std::shared_ptr< DataObjectBundle > bundle = std::make_shared< DataObjectBundle >();
             for(int i = 0; i < nHouses; i++) {
-                std::vector < Point< 3 > > points = {};
-                size_t numCellTypes = (size_t) 3;
-                const std::pair< Cell::Type, size_t > cellCounts[] 
-                            = {std::make_pair(Cell::Type::HEXAHEDRON, (size_t) levels), 
-                               std::make_pair(Cell::Type::PYRAMID, (size_t) 1),
-                               std::make_pair(Cell::Type::LINE, (size_t) 1)};
-                std::vector< size_t > indexes = {};
-                makeHouse(points, indexes, levels, coords[i]);
-                infoLog() << "Origin: " << coords[i][0] << coords[i][1] << std::endl;
-                infoLog() << "Number of Points: " << points.size() << std::endl;
-                infoLog() << "Number of Indices: " << indexes.size() << std::endl;
-                grid = DomainFactory::makeGrid( points, numCellTypes, cellCounts, indexes);
-                bundle->addContent(grid);
+                makeHouse(bundle, levels, coords[i]);
             }
             setResult("settlement", bundle);
         }
     };
  
-    AlgorithmRegister< CommitTutorialAlgorithm > dummy( "Tasks/TaskTest", "Generate a simple settlement." );
+    AlgorithmRegister< CommitTutorialAlgorithm > dummy( "Tasks/TaskFinal", "Generate a simple settlement." );
 }

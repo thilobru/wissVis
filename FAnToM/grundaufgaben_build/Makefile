@@ -235,6 +235,33 @@ plugin1/Shirin.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Shirin.cpp.s
 .PHONY : plugin1/Shirin.cpp.s
 
+plugin1/Task1Final.o: plugin1/Task1Final.cpp.o
+
+.PHONY : plugin1/Task1Final.o
+
+# target to build an object file
+plugin1/Task1Final.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Task1Final.cpp.o
+.PHONY : plugin1/Task1Final.cpp.o
+
+plugin1/Task1Final.i: plugin1/Task1Final.cpp.i
+
+.PHONY : plugin1/Task1Final.i
+
+# target to preprocess a source file
+plugin1/Task1Final.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Task1Final.cpp.i
+.PHONY : plugin1/Task1Final.cpp.i
+
+plugin1/Task1Final.s: plugin1/Task1Final.cpp.s
+
+.PHONY : plugin1/Task1Final.s
+
+# target to generate assembly for a file
+plugin1/Task1Final.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Task1Final.cpp.s
+.PHONY : plugin1/Task1Final.cpp.s
+
 plugin1/task1.o: plugin1/task1.cpp.o
 
 .PHONY : plugin1/task1.o
@@ -416,6 +443,9 @@ help:
 	@echo "... plugin1/Shirin.o"
 	@echo "... plugin1/Shirin.i"
 	@echo "... plugin1/Shirin.s"
+	@echo "... plugin1/Task1Final.o"
+	@echo "... plugin1/Task1Final.i"
+	@echo "... plugin1/Task1Final.s"
 	@echo "... plugin1/task1.o"
 	@echo "... plugin1/task1.i"
 	@echo "... plugin1/task1.s"
