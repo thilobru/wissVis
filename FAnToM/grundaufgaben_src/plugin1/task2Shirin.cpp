@@ -77,7 +77,8 @@ namespace
                 = PluginRegistrationService::getInstance().getResourcePath( "general/Tutorial" );
 
             //get house grid
-            std::shared_ptr< const Grid< 3 > > grid = options.get< Grid<3> >( "Grid" );
+            std::shared_ptr< const DataObjectBundle > bundle = options.get< DataObjectBundle >("Bundle");
+            std::shared_ptr< const Grid< 3 > > grid = bundle.getContent(0);
             debugLog() << "Grid Point Count: " << grid->numPoints() << std::endl;
             
             //get chosen color
