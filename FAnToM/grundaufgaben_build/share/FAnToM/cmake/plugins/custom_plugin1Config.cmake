@@ -46,7 +46,7 @@ add_library(custom_plugin1 SHARED IMPORTED)
 
 set_target_properties(custom_plugin1 PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/include/custom/plugin1/"
-  INTERFACE_LINK_LIBRARIES "fantom-lib"
+  INTERFACE_LINK_LIBRARIES "fantom-lib;utils_Graphics;general_Tutorial"
 )
 
 # Import target "custom_plugin1" for configuration "Debug"

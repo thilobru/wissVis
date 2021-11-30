@@ -1,6 +1,4 @@
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/../prebuild/../prebuild/lib/fantom-plugins/custom/libplugin1.dependency
 /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/../prebuild/../prebuild/lib/fantom-plugins/custom/libplugin1.so
 /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/../prebuild/../prebuild/share/FAnToM/cmake/plugins/custom_plugin1Config.cmake
 /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/../prebuild/../prebuild/share/FAnToM/cmake/plugins/custom_plugin1Config-debug.cmake
-/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/../prebuild/../prebuild/lib/fantom-plugins/custom/libplugin2.so
-/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/../prebuild/../prebuild/share/FAnToM/cmake/plugins/custom_plugin2Config.cmake
-/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/../prebuild/../prebuild/share/FAnToM/cmake/plugins/custom_plugin2Config-debug.cmake

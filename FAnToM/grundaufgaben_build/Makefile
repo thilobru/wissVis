@@ -157,19 +157,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named custom_plugin2
-
-# Build rule for target.
-custom_plugin2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 custom_plugin2
-.PHONY : custom_plugin2
-
-# fast build rule for target.
-custom_plugin2/fast:
-	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/build
-.PHONY : custom_plugin2/fast
-
-#=============================================================================
 # Target rules for targets named custom_plugin1
 
 # Build rule for target.
@@ -207,33 +194,6 @@ run: cmake_check_build_system
 run/fast:
 	$(MAKE) -f CMakeFiles/run.dir/build.make CMakeFiles/run.dir/build
 .PHONY : run/fast
-
-plugin1/Shirin.o: plugin1/Shirin.cpp.o
-
-.PHONY : plugin1/Shirin.o
-
-# target to build an object file
-plugin1/Shirin.cpp.o:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Shirin.cpp.o
-.PHONY : plugin1/Shirin.cpp.o
-
-plugin1/Shirin.i: plugin1/Shirin.cpp.i
-
-.PHONY : plugin1/Shirin.i
-
-# target to preprocess a source file
-plugin1/Shirin.cpp.i:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Shirin.cpp.i
-.PHONY : plugin1/Shirin.cpp.i
-
-plugin1/Shirin.s: plugin1/Shirin.cpp.s
-
-.PHONY : plugin1/Shirin.s
-
-# target to generate assembly for a file
-plugin1/Shirin.cpp.s:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Shirin.cpp.s
-.PHONY : plugin1/Shirin.cpp.s
 
 plugin1/Task1Final.o: plugin1/Task1Final.cpp.o
 
@@ -316,6 +276,33 @@ plugin1/task1Miriam.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Miriam.cpp.s
 .PHONY : plugin1/task1Miriam.cpp.s
 
+plugin1/task1Shirin.o: plugin1/task1Shirin.cpp.o
+
+.PHONY : plugin1/task1Shirin.o
+
+# target to build an object file
+plugin1/task1Shirin.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Shirin.cpp.o
+.PHONY : plugin1/task1Shirin.cpp.o
+
+plugin1/task1Shirin.i: plugin1/task1Shirin.cpp.i
+
+.PHONY : plugin1/task1Shirin.i
+
+# target to preprocess a source file
+plugin1/task1Shirin.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Shirin.cpp.i
+.PHONY : plugin1/task1Shirin.cpp.i
+
+plugin1/task1Shirin.s: plugin1/task1Shirin.cpp.s
+
+.PHONY : plugin1/task1Shirin.s
+
+# target to generate assembly for a file
+plugin1/task1Shirin.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Shirin.cpp.s
+.PHONY : plugin1/task1Shirin.cpp.s
+
 plugin1/task1Test.o: plugin1/task1Test.cpp.o
 
 .PHONY : plugin1/task1Test.o
@@ -397,32 +384,59 @@ plugin1/task1_3.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1_3.cpp.s
 .PHONY : plugin1/task1_3.cpp.s
 
-plugin2/task2.o: plugin2/task2.cpp.o
+plugin1/task2.o: plugin1/task2.cpp.o
 
-.PHONY : plugin2/task2.o
+.PHONY : plugin1/task2.o
 
 # target to build an object file
-plugin2/task2.cpp.o:
-	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.o
-.PHONY : plugin2/task2.cpp.o
+plugin1/task2.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task2.cpp.o
+.PHONY : plugin1/task2.cpp.o
 
-plugin2/task2.i: plugin2/task2.cpp.i
+plugin1/task2.i: plugin1/task2.cpp.i
 
-.PHONY : plugin2/task2.i
+.PHONY : plugin1/task2.i
 
 # target to preprocess a source file
-plugin2/task2.cpp.i:
-	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.i
-.PHONY : plugin2/task2.cpp.i
+plugin1/task2.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task2.cpp.i
+.PHONY : plugin1/task2.cpp.i
 
-plugin2/task2.s: plugin2/task2.cpp.s
+plugin1/task2.s: plugin1/task2.cpp.s
 
-.PHONY : plugin2/task2.s
+.PHONY : plugin1/task2.s
 
 # target to generate assembly for a file
-plugin2/task2.cpp.s:
-	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.s
-.PHONY : plugin2/task2.cpp.s
+plugin1/task2.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task2.cpp.s
+.PHONY : plugin1/task2.cpp.s
+
+plugin1/task2Shirin.o: plugin1/task2Shirin.cpp.o
+
+.PHONY : plugin1/task2Shirin.o
+
+# target to build an object file
+plugin1/task2Shirin.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task2Shirin.cpp.o
+.PHONY : plugin1/task2Shirin.cpp.o
+
+plugin1/task2Shirin.i: plugin1/task2Shirin.cpp.i
+
+.PHONY : plugin1/task2Shirin.i
+
+# target to preprocess a source file
+plugin1/task2Shirin.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task2Shirin.cpp.i
+.PHONY : plugin1/task2Shirin.cpp.i
+
+plugin1/task2Shirin.s: plugin1/task2Shirin.cpp.s
+
+.PHONY : plugin1/task2Shirin.s
+
+# target to generate assembly for a file
+plugin1/task2Shirin.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task2Shirin.cpp.s
+.PHONY : plugin1/task2Shirin.cpp.s
 
 # Help Target
 help:
@@ -436,13 +450,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... custom_plugin2"
 	@echo "... custom_plugin1"
 	@echo "... debug"
 	@echo "... run"
-	@echo "... plugin1/Shirin.o"
-	@echo "... plugin1/Shirin.i"
-	@echo "... plugin1/Shirin.s"
 	@echo "... plugin1/Task1Final.o"
 	@echo "... plugin1/Task1Final.i"
 	@echo "... plugin1/Task1Final.s"
@@ -452,6 +462,9 @@ help:
 	@echo "... plugin1/task1Miriam.o"
 	@echo "... plugin1/task1Miriam.i"
 	@echo "... plugin1/task1Miriam.s"
+	@echo "... plugin1/task1Shirin.o"
+	@echo "... plugin1/task1Shirin.i"
+	@echo "... plugin1/task1Shirin.s"
 	@echo "... plugin1/task1Test.o"
 	@echo "... plugin1/task1Test.i"
 	@echo "... plugin1/task1Test.s"
@@ -461,9 +474,12 @@ help:
 	@echo "... plugin1/task1_3.o"
 	@echo "... plugin1/task1_3.i"
 	@echo "... plugin1/task1_3.s"
-	@echo "... plugin2/task2.o"
-	@echo "... plugin2/task2.i"
-	@echo "... plugin2/task2.s"
+	@echo "... plugin1/task2.o"
+	@echo "... plugin1/task2.i"
+	@echo "... plugin1/task2.s"
+	@echo "... plugin1/task2Shirin.o"
+	@echo "... plugin1/task2Shirin.i"
+	@echo "... plugin1/task2Shirin.s"
 .PHONY : help
 
 

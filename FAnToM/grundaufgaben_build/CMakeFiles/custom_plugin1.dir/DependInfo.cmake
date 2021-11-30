@@ -4,13 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/Shirin.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/Shirin.cpp.o"
   "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/Task1Final.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/Task1Final.cpp.o"
   "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/task1.cpp.o"
   "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1Miriam.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/task1Miriam.cpp.o"
+  "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1Shirin.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/task1Shirin.cpp.o"
   "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1Test.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/task1Test.cpp.o"
   "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1_2.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/task1_2.cpp.o"
   "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task1_3.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/task1_3.cpp.o"
+  "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task2.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/task2.cpp.o"
+  "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task2Shirin.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/task2Shirin.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

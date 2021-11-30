@@ -110,6 +110,8 @@ namespace
             for(int i = 0; i < nHouses; i++) {
                 makeHouse(bundle, levels, coords[i]);
             }
+            size_t seis = bundle->getSize();
+            std::cout << seis << std::endl;
             setResult("settlement", bundle);
         }
     };

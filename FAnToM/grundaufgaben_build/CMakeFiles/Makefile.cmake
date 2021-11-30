@@ -11,10 +11,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
   "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/CMakeLists.txt"
+  "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/FAnToM-Dependencies.txt"
   "/home/thilo/Documents/wissVis/FAnToM/prebuild/share/FAnToM/cmake/FAnToMDefaultLibs.cmake"
   "/home/thilo/Documents/wissVis/FAnToM/prebuild/share/FAnToM/cmake/FAnToMMacros.cmake"
   "/home/thilo/Documents/wissVis/FAnToM/prebuild/share/FAnToM/cmake/fantom-libConfig-release.cmake"
   "/home/thilo/Documents/wissVis/FAnToM/prebuild/share/FAnToM/cmake/fantom-libConfig.cmake"
+  "/home/thilo/Documents/wissVis/FAnToM/prebuild/share/FAnToM/cmake/plugins/general_TutorialConfig-release.cmake"
+  "/home/thilo/Documents/wissVis/FAnToM/prebuild/share/FAnToM/cmake/plugins/general_TutorialConfig.cmake"
+  "/home/thilo/Documents/wissVis/FAnToM/prebuild/share/FAnToM/cmake/plugins/utils_GraphicsConfig-release.cmake"
+  "/home/thilo/Documents/wissVis/FAnToM/prebuild/share/FAnToM/cmake/plugins/utils_GraphicsConfig.cmake"
   "/usr/lib/cmake/eigen3/Eigen3Config.cmake"
   "/usr/lib/cmake/eigen3/Eigen3ConfigVersion.cmake"
   "/usr/lib/cmake/eigen3/Eigen3Targets.cmake"
@@ -65,12 +70,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "lib/fantom-plugins/custom/libplugin1.dependency"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/custom_plugin2.dir/DependInfo.cmake"
   "CMakeFiles/custom_plugin1.dir/DependInfo.cmake"
   "CMakeFiles/debug.dir/DependInfo.cmake"
   "CMakeFiles/run.dir/DependInfo.cmake"
