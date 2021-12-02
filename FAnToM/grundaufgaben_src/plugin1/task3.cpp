@@ -41,7 +41,7 @@ namespace {
             auto const& system = graphics::GraphicsSystem::instance();
             // This is the path to the general resources folder, where you can find the shaders.
             std::string resourcePath = PluginRegistrationService::getInstance().getResourcePath( "utils/Graphics" );
-            // object renderer will contain all the spheres
+            // obj renderer to handle Kugels
             auto performanceObjectRenderer = std::make_shared< graphics::ObjectRenderer >( system );
             //--------------------------------------------------------------------------------------------------------------------
 
@@ -59,15 +59,25 @@ namespace {
             
             // sanity check that interpolated fields really use the correct grid type. This should never fail
             std::shared_ptr< const Grid< 3 > > grid = std::dynamic_pointer_cast< const Grid< 3 > >( function->domain() );
-            
             if( !grid )
             {
                 throw std::logic_error( "Wrong type of grid!" );
             }
+            const ValueArray < Point3> & points = grid->points();
+            auto eval = field->makeEvaluator();
 
+            for(size_t i = 0; i < points.size(); i++) {
+                Point<3> point = points[i];
+                if (eval->reset(point)){
+                    auto v = eval->value();
+                    if (v[0] > threshold) {
+                        performanceObjectRenderer->addSphere(point, 0.1, color);
+                    }
+                }
+            }
+            setGraphics("Kugels", performanceObjectRenderer->commit());
         
         }
     };
-
     AlgorithmRegister< PosFeatureAlgorithm > dummy( "Tasks/Task3", "Show points of VTK above threshold");
 }

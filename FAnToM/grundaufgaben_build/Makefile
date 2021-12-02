@@ -222,6 +222,33 @@ plugin1/Task1Final.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Task1Final.cpp.s
 .PHONY : plugin1/Task1Final.cpp.s
 
+plugin1/Task1FinalFinal.o: plugin1/Task1FinalFinal.cpp.o
+
+.PHONY : plugin1/Task1FinalFinal.o
+
+# target to build an object file
+plugin1/Task1FinalFinal.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Task1FinalFinal.cpp.o
+.PHONY : plugin1/Task1FinalFinal.cpp.o
+
+plugin1/Task1FinalFinal.i: plugin1/Task1FinalFinal.cpp.i
+
+.PHONY : plugin1/Task1FinalFinal.i
+
+# target to preprocess a source file
+plugin1/Task1FinalFinal.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Task1FinalFinal.cpp.i
+.PHONY : plugin1/Task1FinalFinal.cpp.i
+
+plugin1/Task1FinalFinal.s: plugin1/Task1FinalFinal.cpp.s
+
+.PHONY : plugin1/Task1FinalFinal.s
+
+# target to generate assembly for a file
+plugin1/Task1FinalFinal.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/Task1FinalFinal.cpp.s
+.PHONY : plugin1/Task1FinalFinal.cpp.s
+
 plugin1/task1.o: plugin1/task1.cpp.o
 
 .PHONY : plugin1/task1.o
@@ -438,6 +465,60 @@ plugin1/task2Shirin.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task2Shirin.cpp.s
 .PHONY : plugin1/task2Shirin.cpp.s
 
+plugin1/task3.o: plugin1/task3.cpp.o
+
+.PHONY : plugin1/task3.o
+
+# target to build an object file
+plugin1/task3.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task3.cpp.o
+.PHONY : plugin1/task3.cpp.o
+
+plugin1/task3.i: plugin1/task3.cpp.i
+
+.PHONY : plugin1/task3.i
+
+# target to preprocess a source file
+plugin1/task3.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task3.cpp.i
+.PHONY : plugin1/task3.cpp.i
+
+plugin1/task3.s: plugin1/task3.cpp.s
+
+.PHONY : plugin1/task3.s
+
+# target to generate assembly for a file
+plugin1/task3.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task3.cpp.s
+.PHONY : plugin1/task3.cpp.s
+
+plugin1/task3Miriam.o: plugin1/task3Miriam.cpp.o
+
+.PHONY : plugin1/task3Miriam.o
+
+# target to build an object file
+plugin1/task3Miriam.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task3Miriam.cpp.o
+.PHONY : plugin1/task3Miriam.cpp.o
+
+plugin1/task3Miriam.i: plugin1/task3Miriam.cpp.i
+
+.PHONY : plugin1/task3Miriam.i
+
+# target to preprocess a source file
+plugin1/task3Miriam.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task3Miriam.cpp.i
+.PHONY : plugin1/task3Miriam.cpp.i
+
+plugin1/task3Miriam.s: plugin1/task3Miriam.cpp.s
+
+.PHONY : plugin1/task3Miriam.s
+
+# target to generate assembly for a file
+plugin1/task3Miriam.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task3Miriam.cpp.s
+.PHONY : plugin1/task3Miriam.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -456,6 +537,9 @@ help:
 	@echo "... plugin1/Task1Final.o"
 	@echo "... plugin1/Task1Final.i"
 	@echo "... plugin1/Task1Final.s"
+	@echo "... plugin1/Task1FinalFinal.o"
+	@echo "... plugin1/Task1FinalFinal.i"
+	@echo "... plugin1/Task1FinalFinal.s"
 	@echo "... plugin1/task1.o"
 	@echo "... plugin1/task1.i"
 	@echo "... plugin1/task1.s"
@@ -480,6 +564,12 @@ help:
 	@echo "... plugin1/task2Shirin.o"
 	@echo "... plugin1/task2Shirin.i"
 	@echo "... plugin1/task2Shirin.s"
+	@echo "... plugin1/task3.o"
+	@echo "... plugin1/task3.i"
+	@echo "... plugin1/task3.s"
+	@echo "... plugin1/task3Miriam.o"
+	@echo "... plugin1/task3Miriam.i"
+	@echo "... plugin1/task3Miriam.s"
 .PHONY : help
 
 
