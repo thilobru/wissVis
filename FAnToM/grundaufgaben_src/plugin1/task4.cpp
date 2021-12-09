@@ -18,7 +18,7 @@ using namespace fantom;
 namespace
 {
 
-    class Integrator : public VisAlgorithm
+    class IntegrateTask : public VisAlgorithm
     {
 
     public:
@@ -27,9 +27,9 @@ namespace
             Options(fantom::Options::Control &control)
                 : VisAlgorithm::Options(control)
             {
-                add< long >( "nx", "Number of lines in x-Direction", 10 );
-                add< long >( "ny", "Number of lines in y-Direction", 2 );
-                add< long >( "nz", "Number of lines in z-Direction", 10 );
+                add< long >( "nx", "number lines in x-dimension", 5 );
+                add< long >( "ny", "number lines in y-dimension", 1 );
+                add< long >( "nz", "number lines in z-dimension", 5 );
  
                 addSeparator();
 
@@ -62,7 +62,7 @@ namespace
             }
         };
 
-        Integrator(InitData &data)
+        IntegrateTask(InitData &data)
             : VisAlgorithm(data)
         {
         }
@@ -415,5 +415,5 @@ namespace
             setGraphics("Streamlines", streamlines);
         }
     };
-    AlgorithmRegister<Integrator> dummy("Tasks/Task4", "Show the streamlines for an input vector field");
+    AlgorithmRegister<IntegrateTask> dummy("Tasks/Task4", "Show the streamlines for an input vector field");
 }

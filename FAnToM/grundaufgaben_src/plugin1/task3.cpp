@@ -11,7 +11,7 @@ using namespace fantom;
 
 namespace {
 
-    class PosFeatureAlgorithm : public VisAlgorithm {
+    class PositionTask : public VisAlgorithm {
 
     public:
         struct Options : public VisAlgorithm::Options {
@@ -31,7 +31,7 @@ namespace {
         };
 
 
-        PosFeatureAlgorithm(InitData &data)
+        PositionTask(InitData &data)
                 : VisAlgorithm(data) {
         }
 
@@ -79,5 +79,5 @@ namespace {
         
         }
     };
-    AlgorithmRegister< PosFeatureAlgorithm > dummy( "Tasks/Task3", "Show points of VTK above threshold");
+    AlgorithmRegister< PositionTask > dummy( "Tasks/Task3", "Show points of VTK above threshold");
 }

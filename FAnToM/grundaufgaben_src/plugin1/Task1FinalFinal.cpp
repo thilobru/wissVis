@@ -10,7 +10,7 @@ using namespace fantom;
  
 namespace
 {
-    class CommitTutorialAlgorithm : public DataAlgorithm
+    class HousesTask : public DataAlgorithm
     {
  
     public:
@@ -35,7 +35,7 @@ namespace
         };
  
  
-        CommitTutorialAlgorithm( InitData& data )
+        HousesTask( InitData& data )
             : DataAlgorithm( data )
         {
         }
@@ -120,5 +120,5 @@ namespace
         }
     };
  
-    AlgorithmRegister< CommitTutorialAlgorithm > dummy( "Tasks/Task1", "Generate a simple settlement." );
+    AlgorithmRegister< HousesTask > dummy( "Tasks/Task1", "Generate a simple settlement." );
 }

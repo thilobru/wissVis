@@ -15,7 +15,7 @@ using namespace fantom;
  
 namespace
 {
-    class GraphicsTutorialAlgorithm : public VisAlgorithm
+    class GraphicsTask : public VisAlgorithm
     {
  
     public:
@@ -42,7 +42,7 @@ namespace
             }
         };
 
-        GraphicsTutorialAlgorithm( InitData& data )
+        GraphicsTask( InitData& data )
             : VisAlgorithm( data )
         {
         }
@@ -110,5 +110,5 @@ namespace
         }
     };
  
-    AlgorithmRegister< GraphicsTutorialAlgorithm > dummy( "Tasks/Task2", "Show some example graphics." );
+    AlgorithmRegister< GraphicsTask > dummy( "Tasks/Task2", "Show some example graphics." );
 } // namespace
