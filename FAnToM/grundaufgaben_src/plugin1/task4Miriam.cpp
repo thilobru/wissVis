@@ -415,5 +415,5 @@ namespace
             setGraphics("Streamlines", streamlines);
         }
     };
-    AlgorithmRegister<Integrator> dummy("Tasks/Task4", "Show the streamlines for an input vector field");
+    AlgorithmRegister<Integrator> dummy("Aufgaben/Streamlines", "Show the streamlines for an input vector field");
 }

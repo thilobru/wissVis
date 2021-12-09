@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task2Shirin.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/task2Shirin.cpp.o"
   "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task3.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/task3.cpp.o"
   "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task3Miriam.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/task3Miriam.cpp.o"
+  "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task4.cpp" "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/custom_plugin1.dir/plugin1/task4.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/custom_plugin1.dir/plugin1/task2Shirin.cpp.o"
   "CMakeFiles/custom_plugin1.dir/plugin1/task3.cpp.o"
   "CMakeFiles/custom_plugin1.dir/plugin1/task3Miriam.cpp.o"
+  "CMakeFiles/custom_plugin1.dir/plugin1/task4.cpp.o"
   "lib/fantom-plugins/custom/libplugin1.pdb"
   "lib/fantom-plugins/custom/libplugin1.so"
 )

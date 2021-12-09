@@ -519,6 +519,33 @@ plugin1/task3Miriam.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task3Miriam.cpp.s
 .PHONY : plugin1/task3Miriam.cpp.s
 
+plugin1/task4.o: plugin1/task4.cpp.o
+
+.PHONY : plugin1/task4.o
+
+# target to build an object file
+plugin1/task4.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task4.cpp.o
+.PHONY : plugin1/task4.cpp.o
+
+plugin1/task4.i: plugin1/task4.cpp.i
+
+.PHONY : plugin1/task4.i
+
+# target to preprocess a source file
+plugin1/task4.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task4.cpp.i
+.PHONY : plugin1/task4.cpp.i
+
+plugin1/task4.s: plugin1/task4.cpp.s
+
+.PHONY : plugin1/task4.s
+
+# target to generate assembly for a file
+plugin1/task4.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task4.cpp.s
+.PHONY : plugin1/task4.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -570,6 +597,9 @@ help:
 	@echo "... plugin1/task3Miriam.o"
 	@echo "... plugin1/task3Miriam.i"
 	@echo "... plugin1/task3Miriam.s"
+	@echo "... plugin1/task4.o"
+	@echo "... plugin1/task4.i"
+	@echo "... plugin1/task4.s"
 .PHONY : help
 
 
