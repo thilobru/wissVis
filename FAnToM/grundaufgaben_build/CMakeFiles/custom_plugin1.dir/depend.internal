@@ -240,16 +240,101 @@ CMakeFiles/custom_plugin1.dir/plugin1/task4.cpp.o
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom-plugins/utils/Graphics/ObjectRenderer.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/algorithm.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/cells.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/dataset.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/DataInterface.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/DataObject.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/DataObjectBundle.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/Domain.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/DomainFactory.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/Function.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/ValueArray.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/CellComplex.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/EmbeddedCellComplex.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/Grid.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/Interpolator.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/LineSet.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/List.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/PointSet.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/impl/CellDefinitions.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/impl/CellStrategies.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/impl/celltree.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/interfaces/Field.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/interfaces/impl/InterpolatorBasedField.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/interfaces/impl/SpatialFunctionField.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/types.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/events.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/exceptions.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/BoundingSphere.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/Buffer.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/Camera.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/Drawable.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/FrameBuffer.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/OptionInterface.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/PrimitiveConfig.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/RenderInfo.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/RenderState.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/RenderStateModifier.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/RenderTarget.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/ShaderProgram.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/System.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/Texture.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/Uniform.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/UniformFactory.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/common.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/drawables/BoundingSpheres.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/drawables/CallbackWrapper.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/drawables/DepthPeelingDrawable.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/drawables/DrawableCompound.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/drawables/FixedScreenSize.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/drawables/HUDAnchor.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/drawables/SceneSwitch.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics/drawables/Transform.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/graphics2D.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/impl/runtime.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/inputs/Base.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/inputs/DataObject.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/inputs/Events.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/inputs/Primitive.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/inputs/ui.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/math.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/math/Quaternion.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/math/Range.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/options.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/outputs.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/outputs/DataOutputs.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/outputs/VisOutputs.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/register.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/registry/algorithm.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/registry/common.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/registry/dataloader.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/registry/icon.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/registry/inputui.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/registry/plugins.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/rtti.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/utils.hpp
+CMakeFiles/custom_plugin1.dir/plugin1/task4Miriam.cpp.o
+ /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task4Miriam.cpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom-plugins/utils/Graphics/Font.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom-plugins/utils/Graphics/FontFile.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom-plugins/utils/Graphics/HelperFunctions.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom-plugins/utils/Graphics/Helpers.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom-plugins/utils/Graphics/ObjectRenderer.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/algorithm.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/cells.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/dataset.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/DataInterface.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/DataObject.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/DataObjectBundle.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/Domain.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/DomainFactory.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/Function.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/ValueArray.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/CellComplex.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/EmbeddedCellComplex.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/Grid.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/Interpolator.hpp
+ /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/LineSet.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/List.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/PointSet.hpp
  /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom/datastructures/domains/impl/CellDefinitions.hpp
