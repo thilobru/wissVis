@@ -5,7 +5,7 @@
 #include <math.h>
 #include <fantom/dataset.hpp>
 
-// needed for BoundinSphere-Calculation
+// for BoundingSphere calculation
 #include <fantom-plugins/utils/Graphics/HelperFunctions.hpp>
 #include <fantom-plugins/utils/Graphics/ObjectRenderer.hpp>
 
@@ -27,9 +27,13 @@ namespace
             Options(fantom::Options::Control &control)
                 : VisAlgorithm::Options(control)
             {
-                add< long >( "nx", "number lines in x-dimension", 5 );
-                add< long >( "ny", "number lines in y-dimension", 1 );
-                add< long >( "nz", "number lines in z-dimension", 5 );
+                add< double >( "ox", "origin of grid in x-dimension", -5.0 );
+                add< double >( "oy", "origin of grid in y-dimension", 1.0 );
+                add< double >( "oz", "origin of grid in z-dimension", 1.0 );
+                addSeparator();
+                add< size_t >( "nx", "number lines in x-dimension", 4 );
+                add< size_t >( "ny", "number lines in y-dimension", 4 );
+                add< size_t >( "nz", "number lines in z-dimension", 4 );
                 addSeparator();
                 add< double >( "dx", "block width in x-dimension", 1.0 );
                 add< double >( "dy", "block width in y-dimension", 2.0 );
@@ -40,8 +44,8 @@ namespace
                 add<double>("adaptive step size", "number for calculating the new step size.", 0.02);
                 add<InputChoices>("Method", "calculation method.", std::vector<std::string>{"Euler", "Runge-Kutta"}, "Euler");
                 addSeparator();
-                add<Color>("colorGrid", "The color of the grid.", Color(0.25, 0.0, 0.25));
-                add<Color>("colorStream", "The color of the streamlines.", Color(0.5, 0.0, 0.0));
+                add<Color>("colorGrid", "The color of the grid.", Color(1.0, 1.0, 1.0));
+                add<Color>("colorStream", "The color of the streamlines.", Color(1.0, 0.0, 0.0));
                 add<size_t>("Number of steps", "Define a maximum number of points in the streamline", 100);
             }
         };
@@ -62,42 +66,36 @@ namespace
         }
 
         // Euler function for the calculation for the points of the streamlines
-        static void euler(double &h, double &x, double &y, 
-                          double &z, double &e, 
+        static void euler(double &stepSize, double &e, 
+                          double &x, double &y, double &z, 
                           std::vector<Point<3>> &points, 
                           std::shared_ptr<const Field<3, Vector3>> &field,
                           size_t max_steps) {
-            while (points.size() < max_steps)
-            {
+            while (points.size() < max_steps) {
                 Point3 p = {x, y, z};
                 auto evaluator = field->makeEvaluator();
 
-                // if the point is inside the domain
-                if (evaluator->reset(p))
-                {
-
+                // if point is in domain
+                if (evaluator->reset(p)) {
                     //calculate value at this point
                     auto v = evaluator->value();
-
-                    //std::cout << "Velocity at this point: " << v << std::endl;
-
-                    //if there is no velocity at this point stop the loop
-                    if (v[0] == 0 and v[1] == 0 and v[2] == 0){
+                    //return if velocity is 0
+                    if (v[0] == 0 && v[1] == 0 && v[2] == 0){
                         return;
                     }
 
-                    // normal point with normal h
-                    double xN = x + h * v[0];
-                    double yN = y + h * v[1];
-                    double zN = z + h * v[2];
+                    // normal point with normal stepSize
+                    double xN = x + stepSize * v[0];
+                    double yN = y + stepSize * v[1];
+                    double zN = z + stepSize * v[2];
 
-                    // calculate the dimensions together
+                    // Manhattan dist of normals
                     double pN = abs(xN + yN + zN);
 
                     // helper point with half h
-                    double xH = x + h / 2 * v[0];
-                    double yH = y + h / 2 * v[1];
-                    double zH = z + h / 2 * v[2];
+                    double xH = x + stepSize / 2 * v[0];
+                    double yH = y + stepSize / 2 * v[1];
+                    double zH = z + stepSize / 2 * v[2];
 
                     Point3 helper = Point3(xH, yH, zH);
                     double pA;
@@ -110,42 +108,31 @@ namespace
                         auto hv = evaluator->value();
 
                         // alternative point with twice half h
-                        xA = xH + h / 2 * hv[0];
-                        yA = yH + h / 2 * hv[1];
-                        zA = zH + h / 2 * hv[2];
+                        xA = xH + stepSize / 2 * hv[0];
+                        yA = yH + stepSize / 2 * hv[1];
+                        zA = zH + stepSize / 2 * hv[2];
 
                         // calculate the dimensions together
                         pA = abs(xA + yA + zA);
-
-                        //std::cout << "zweimal halbes h: " << xA << " " << yA << " " << zA << std::endl;
                     }
-
-                    //std::cout << "normales h: " << xN << " " << yN << " " << zN << std::endl;
-
-                    //std::cout << "Dimensionen addiert: " << pN << ", " << pA << "->" << (pN - pA) << std::endl;
 
                     // check difference between normal and alternative point
-                    if (pN - pA > e)
-                    {
-                        h = h / 2;
+                    if (pN - pA > e) {
+                        stepSize = stepSize / 2;
                     }
-                    else if (pN - pA < e / 2)
-                    {
-                        h = 2 * h;
+                    else if (pN - pA < e / 2) {
+                        stepSize = 2 * stepSize;
                         points.push_back(p);
                         x = xN;
                         y = yN;
                         z = zN;
                     }
-                    else if (pN - pA < e)
-                    {
+                    else if (pN - pA < e) {
                         points.push_back(p);
                         x = xA;
                         y = yA;
                         z = zA;
                     }
-
-                    //std::cout << "Neuer Punkt: " << x << " " << y << " " << z << std::endl;
                 }
 
                 // if the point is outside of the domain, we will stop adding more points to the streamline
@@ -159,16 +146,13 @@ namespace
             return;
         }
 
-        static void rungeKutta(double &h, double &x, double &y, double &z, std::vector<Point<3>> &points, std::shared_ptr<const Field<3, Vector3>> &field, size_t max_steps)
+        static void rungeKutta(double &stepSize, 
+                               double &x, double &y, double &z, 
+                               std::vector<Point<3>> &points, 
+                               std::shared_ptr<const Field<3, Vector3>> &field, 
+                               size_t max_steps)
         {
-            while (true)
-            {
-                if (points.size() >= max_steps)
-                {
-                    //std::cout << "Maximum number of points reached" << std::endl;
-                    return;
-                }
-
+            while (points.size() < max_steps) {
                 auto evaluator = field->makeEvaluator();
                 Point3 p = {x, y, z};
 
@@ -196,11 +180,9 @@ namespace
                         return;
                     }
 
-                    q1x = h * v1[0];
-                    q1y = h * v1[1];
-                    q1z = h * v1[2];
-
-                    //std::cout << "Velocity at this point: " << v1[0] << std::endl;
+                    q1x = stepSize * v1[0];
+                    q1y = stepSize * v1[1];
+                    q1z = stepSize * v1[2];
                 }
                 // if point is not in the domain, exit the loop
                 else
@@ -214,30 +196,26 @@ namespace
                 {
                     //calculate value at this point
                     auto v2 = evaluator->value();
-                    q2x = h * v2[0];
-                    q2y = h * v2[1];
-                    q2z = h * v2[2];
+                    q2x = stepSize * v2[0];
+                    q2y = stepSize * v2[1];
+                    q2z = stepSize * v2[2];
                 }
                 if (evaluator->reset({x + 0.5 * q2x, y + 0.5 * q2y, z + 0.5 * q2z}))
                 {
                     //calculate value at this point
                     auto v3 = evaluator->value();
-                    q3x = h * v3[0];
-                    q3y = h * v3[1];
-                    q3z = h * v3[2];
+                    q3x = stepSize * v3[0];
+                    q3y = stepSize * v3[1];
+                    q3z = stepSize * v3[2];
                 }
                 if (evaluator->reset({x + 0.5 * q3x, y + 0.5 * q3y, z + 0.5 * q3z}))
                 {
                     //calculate value at this point
                     auto v4 = evaluator->value();
-                    q4x = h * v4[0];
-                    q4y = h * v4[1];
-                    q4z = h * v4[2];
+                    q4x = stepSize * v4[0];
+                    q4y = stepSize * v4[1];
+                    q4z = stepSize * v4[2];
                 }
-
-                // std::cout << "calculated q1: " << q1x << " " << q1y << " " << q1z << " " << q4x << std::endl;
-                // std::cout << "calculated q2: " << q2x << " " << q2y << " " << q2z << " " << q4y << std::endl;
-                // std::cout << "calculated q3: " << q3x << " " << q3y << " " << q3z << " " << q4z << std::endl;
 
                 //calculate right side of formula
                 double formula_x = (1.0/6.0) * (q1x + 2 * q2x + 2 * q3x + q4x);
@@ -254,6 +232,7 @@ namespace
 
                 //std::cout << "New coordinates: " << x << " " << y << " " << z << std::endl << std::endl;
             }
+            return;
         }
 
         static std::shared_ptr<graphics::Drawable> drawLines(std::vector<PointF<3>> pointsFList,std::vector<VectorF<3>> vertices, Color color)
@@ -281,13 +260,15 @@ namespace
         virtual void execute(const Algorithm::Options &options, const volatile bool & /*abortFlag*/) override
         {
             // create the grid where the streamlines will start
-            size_t extent[] = { (size_t)options.get< long >( "nx" ),
-                                (size_t)options.get< long >( "ny" ),
-                                (size_t)options.get< long >( "nz" ) };
-            double origin[] = { -0.5 * options.get< double >( "dx" ) * ( options.get< long >( "nx" ) - 1 ),
-                                -0.5 * options.get< double >( "dy" ) * ( options.get< long >( "ny" ) - 1 ),
-                                -0.5 * options.get< double >( "dz" ) * ( options.get< long >( "nz" ) - 1 ) };
-            double spacing[] = { options.get< double >( "dx" ), options.get< double >( "dy" ), options.get< double >( "dz" ) };
+            double origin[] = { options.get< double >("ox"),
+                                options.get< double >("oy"),
+                                options.get< double >("oz")};
+            size_t extent[] = { options.get< size_t >("nx"),
+                                options.get< size_t >("ny"),
+                                options.get< size_t >("nz")};
+            double spacing[] = {options.get< double >("dx"), 
+                                options.get< double >("dy"), 
+                                options.get< double >("dz")};
   
             std::shared_ptr< const Grid< 3 > > grid = DomainFactory::makeUniformGrid( extent, origin, spacing );
 
@@ -302,14 +283,12 @@ namespace
 
             
             // for each cell in grid: 
-            for (size_t i = 0; i < grid->numCells(); i++)
-            {
+            for (size_t i = 0; i < grid->numCells(); i++) {
                 Cell cell = grid->cell( i );
                 std::vector<size_t> connections = { 0,1,1,2,2,3,3,0,0,7,7,6,6,1,6,5,5,2,5,4,4,3,4,7 };
 
                 // transform normal points list to PointF list
-                for (size_t j = 0; j < 8; j++) 
-                {
+                for (size_t j = 0; j < 8; j++) {
                     Point3 p = pointsGrid[cell.index( j )];
                     pointsFListGrid.push_back(PointF<3>(p[0], p[1], p[2]));
 
@@ -317,8 +296,7 @@ namespace
                 }
 
                 // make vertices list with correct connections
-                for (size_t k = 0; k < connections.size(); k++)
-                {
+                for (size_t k = 0; k < connections.size(); k++) {
                     Point3 p = pointsGrid[cell.index( connections[k] )];
                     verticesGrid.push_back(VectorF<3>(p));
                 }
@@ -328,7 +306,7 @@ namespace
 
             // get all other options and check validity of them
 
-            double h = options.get<double>("Step size");
+            double stepSize = options.get<double>("Step size");
             double e = options.get<double>("adaptive step size");
             std::string method = options.get<std::string>("Method");
             Color colorStream = options.get<Color>("colorStream");
@@ -375,12 +353,12 @@ namespace
 
                 if (method == "Euler")
                 {
-                    euler(h, x, y, z, e, points, field, max_steps);
+                    euler(stepSize, e, x, y, z, points, field, max_steps);
                 }
 
                 if (method == "Runge-Kutta")
                 {
-                    rungeKutta(h, x, y, z, points, field, max_steps);
+                    rungeKutta(stepSize, x, y, z, points, field, max_steps);
                 }
 
                 // transform normal points list to PointF list and make vertices list
