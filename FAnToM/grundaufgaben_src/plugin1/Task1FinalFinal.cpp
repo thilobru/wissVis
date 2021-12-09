@@ -19,9 +19,12 @@ namespace
             Options( fantom::Options::Control& control )
                 : DataAlgorithm::Options( control )
             {
-                add< int > ( "nHouses", "", 4);
+                add< int > ( "nHouses", "", 4, &minNum);
                 addSeparator();
                 add< int >( "nlevels", "", 5 );
+            }
+            static int minNum(const int& n){
+                return std::max(n,4);
             }
         };
  
