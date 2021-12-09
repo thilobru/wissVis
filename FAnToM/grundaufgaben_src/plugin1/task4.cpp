@@ -30,24 +30,18 @@ namespace
                 add< long >( "nx", "number lines in x-dimension", 5 );
                 add< long >( "ny", "number lines in y-dimension", 1 );
                 add< long >( "nz", "number lines in z-dimension", 5 );
- 
                 addSeparator();
-
-                add< double >( "dx", "Width of each cell in x-Direction", 0.5 );
-                add< double >( "dy", "Width of each cell in y-Direction", 2.0 );
-                add< double >( "dz", "Width of each cell in z-Direction", 0.5 );
-
+                add< double >( "dx", "block width in x-dimension", 1.0 );
+                add< double >( "dy", "block width in y-dimension", 2.0 );
+                add< double >( "dz", "block width in z-dimension", 1.0 );
                 addSeparator();
-
-                add<Field<3, Vector3>>("Field", "A 3D vector field", definedOn<Grid<3>>(Grid<3>::Points));
-                add<double>("Step size", "The (initial) distance between each step.", 0.03);
-                add<double>("e for adaptive step size", "number for calculating the new step size.", 0.02);
-                add<InputChoices>("Method", "Choose calculation method.", std::vector<std::string>{"Euler", "Runge-Kutta"}, "Euler");
-                
+                add<Field<3, Vector3>>("Field", "3D vector field", definedOn<Grid<3>>(Grid<3>::Points));
+                add<double>("Step size", "distance between steps", 0.05);
+                add<double>("adaptive step size", "number for calculating the new step size.", 0.02);
+                add<InputChoices>("Method", "calculation method.", std::vector<std::string>{"Euler", "Runge-Kutta"}, "Euler");
                 addSeparator();
-
-                add<Color>("Color Grid", "The color of the grid.", Color(0.25, 0.0, 0.25));
-                add<Color>("Color Stream", "The color of the streamlines.", Color(0.5, 0.0, 0.0));
+                add<Color>("colorGrid", "The color of the grid.", Color(0.25, 0.0, 0.25));
+                add<Color>("colorStream", "The color of the streamlines.", Color(0.5, 0.0, 0.0));
                 add<size_t>("Number of steps", "Define a maximum number of points in the streamline", 100);
             }
         };
@@ -58,7 +52,7 @@ namespace
                 : VisAlgorithm::VisOutputs(control)
             {
                 addGraphics("Streamlines");
-                addGraphics( "Grid");
+                addGraphics("Grid");
             }
         };
 
@@ -68,17 +62,13 @@ namespace
         }
 
         // Euler function for the calculation for the points of the streamlines
-        static void euler(double &h, double &x, double &y, double &z, double &e, std::vector<Point<3>> &points, std::shared_ptr<const Field<3, Vector3>> &field, size_t max_steps)
-        {
-
-            while (true)
+        static void euler(double &h, double &x, double &y, 
+                          double &z, double &e, 
+                          std::vector<Point<3>> &points, 
+                          std::shared_ptr<const Field<3, Vector3>> &field,
+                          size_t max_steps) {
+            while (points.size() < max_steps)
             {
-                if (points.size() >= max_steps)
-                {
-                    //std::cout << "Maximum number of points reached" << std::endl;
-                    return;
-                }
-
                 Point3 p = {x, y, z};
                 auto evaluator = field->makeEvaluator();
 
@@ -165,6 +155,8 @@ namespace
                     return;
                 }
             }
+            std::cout << "Max steps reached" << std::endl;
+            return;
         }
 
         static void rungeKutta(double &h, double &x, double &y, double &z, std::vector<Point<3>> &points, std::shared_ptr<const Field<3, Vector3>> &field, size_t max_steps)
@@ -270,16 +262,17 @@ namespace
             auto bs = graphics::computeBoundingSphere(pointsFList);
             std::string resourcePath = PluginRegistrationService::getInstance().getResourcePath("utils/Graphics"); // path to the shaders
 
-            std::shared_ptr<graphics::Drawable> graphic = system.makePrimitive(graphics::PrimitiveConfig{graphics::RenderPrimitives::LINES}
-                                                                                       .vertexBuffer("position", system.makeBuffer(pointsFList))
-                                                                                       .vertexBuffer("in_vertex", system.makeBuffer(vertices))
-                                                                                       //.indexBuffer( system.makeIndexBuffer( vertices ) )
-                                                                                       .uniform("u_lineWidth", 1.0f)
-                                                                                       .uniform("u_color", color)
-                                                                                       .boundingSphere(bs),
-                                                                                   system.makeProgramFromFiles(resourcePath + "shader/line/noShading/singleColor/vertex.glsl",
-                                                                                                               resourcePath + "shader/line/noShading/singleColor/fragment.glsl",
-                                                                                                               resourcePath + "shader/line/noShading/singleColor/geometry.glsl"));
+            std::shared_ptr<graphics::Drawable> graphic = 
+                system.makePrimitive(graphics::PrimitiveConfig{graphics::RenderPrimitives::LINES}
+                        .vertexBuffer("position", system.makeBuffer(pointsFList))
+                        .vertexBuffer("in_vertex", system.makeBuffer(vertices))
+                        //.indexBuffer( system.makeIndexBuffer( vertices ) )
+                        .uniform("u_lineWidth", 1.0f)
+                        .uniform("u_color", color)
+                        .boundingSphere(bs),
+                    system.makeProgramFromFiles(resourcePath + "shader/line/noShading/singleColor/vertex.glsl",
+                                                resourcePath + "shader/line/noShading/singleColor/fragment.glsl",
+                                                resourcePath + "shader/line/noShading/singleColor/geometry.glsl"));
 
             return graphic;
         }
@@ -298,7 +291,7 @@ namespace
   
             std::shared_ptr< const Grid< 3 > > grid = DomainFactory::makeUniformGrid( extent, origin, spacing );
 
-            Color colorGrid = options.get<Color>("Color Grid");
+            Color colorGrid = options.get<Color>("colorGrid");
 
             //--------------------------------------------------------------------------------------------------------------------
 
@@ -336,9 +329,9 @@ namespace
             // get all other options and check validity of them
 
             double h = options.get<double>("Step size");
-            double e = options.get<double>("e for adaptive step size");
+            double e = options.get<double>("adaptive step size");
             std::string method = options.get<std::string>("Method");
-            Color colorStream = options.get<Color>("Color Stream");
+            Color colorStream = options.get<Color>("colorStream");
             size_t max_steps = options.get<size_t>("Number of steps");
 
             std::shared_ptr<const Field<3, Vector3>> field = options.get<Field<3, Vector3>>("Field");
