@@ -6,10 +6,10 @@
 ################################################################
 ###                  Reset GUI                               ###
 ################################################################
-fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(1.55206, 6.26915, 16.6976), fantom.math.Vector3(2.21345, 2.39083, 2.5198), fantom.math.Vector3(0.121325, 0.958863, -0.256636), 1, 1.0472 ) )
-fantom.ui.setCamera( 1, fantom.ui.Camera( fantom.math.Vector3(4.81755, 0, 0), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
-fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(5.84406, -14.8042, 1.51645), fantom.math.Vector3(5.84406, -6.19888e-05, 1.51645), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
-fantom.ui.setCamera( 3, fantom.ui.Camera( fantom.math.Vector3(-1.78644, 2.66836, 4.81755), fantom.math.Vector3(-1.78644, 2.66836, 0), fantom.math.Vector3(0, 1, 0), 0, 1.0472 ) )
+fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-7.01666, 4.76057, 12.6257), fantom.math.Vector3(2.05866, 1.55379, 1.19877), fantom.math.Vector3(0.129242, 0.97668, -0.171444), 1, 1.0472 ) )
+fantom.ui.setCamera( 1, fantom.ui.Camera( fantom.math.Vector3(2.08293, 0, 0), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
+fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -2.08293, 0), fantom.math.Vector3(0, -9.53674e-07, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
+fantom.ui.setCamera( 3, fantom.ui.Camera( fantom.math.Vector3(0.140779, 2.86971, 7.02662), fantom.math.Vector3(0.140779, 2.86971, 0), fantom.math.Vector3(0, 1, 0), 0, 1.0472 ) )
 
 fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 0, fantom.math.Vector4( 1, 0, 0, 1 ), False ) )
 fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 1, fantom.math.Vector4( -1, 0, 0, 1 ), False ) )
@@ -33,21 +33,49 @@ Load_VTK.setOption("Input File", "/home/thilo/Documents/wissVis/TestData/streamT
 Load_VTK.setOption("Big Endian", True)
 Load_VTK.setOption("Dimension", "3D")
 Load_VTK.setOption("Time List", "")
-fantom.ui.setAlgorithmPosition(Load_VTK, fantom.math.Vector2(0, 142))
+fantom.ui.setAlgorithmPosition(Load_VTK, fantom.math.Vector2(6.5625, -51.2))
 
 # Inbound connections of this algorithm:
 
 # Run the algorithm
 Load_VTK.runBlocking()
 
+Tasks_Task4 = fantom.makeAlgorithm("Tasks/Task4")
+Tasks_Task4.setName("Tasks/Task4")
+Tasks_Task4.setAutoSchedule(True)
+Tasks_Task4.setOption("ox", -4)
+Tasks_Task4.setOption("oy", 0.5)
+Tasks_Task4.setOption("oz", 1)
+Tasks_Task4.setOption("nx", 1)
+Tasks_Task4.setOption("ny", 7)
+Tasks_Task4.setOption("nz", 5)
+Tasks_Task4.setOption("dx", 1)
+Tasks_Task4.setOption("dy", 1)
+Tasks_Task4.setOption("dz", 1)
+Tasks_Task4.setOption("Method", "Euler")
+Tasks_Task4.setOption("dStep", 0.03)
+Tasks_Task4.setOption("adStep", 0.02)
+Tasks_Task4.setOption("nStep", 100)
+Tasks_Task4.setOption("colorGrid", fantom.math.Color(1, 1, 1, 1))
+Tasks_Task4.setOption("colorStream", fantom.math.Color(1, 0, 0, 1))
+fantom.ui.setAlgorithmPosition(Tasks_Task4, fantom.math.Vector2(0, 35))
+Tasks_Task4.setVisualOutputVisible('grid', True)
+Tasks_Task4.setVisualOutputVisible('streams', True)
+
+# Inbound connections of this algorithm:
+Load_VTK.connect("Fields", Tasks_Task4, "Field")
+
+# Run the algorithm
+Tasks_Task4.runBlocking()
+
 Grid_ShowGrid = fantom.makeAlgorithm("Grid/Show Grid")
 Grid_ShowGrid.setName("Grid/Show Grid")
 Grid_ShowGrid.setAutoSchedule(True)
 Grid_ShowGrid.setOption("Line color", fantom.math.Color(0, 0, 1, 1))
-Grid_ShowGrid.setOption("Line width", 0.5)
+Grid_ShowGrid.setOption("Line width", 1)
 Grid_ShowGrid.setOption("Random jittering of color", True)
 Grid_ShowGrid.setOption("Random seed", 0)
-fantom.ui.setAlgorithmPosition(Grid_ShowGrid, fantom.math.Vector2(157, 285))
+fantom.ui.setAlgorithmPosition(Grid_ShowGrid, fantom.math.Vector2(144.134, 35))
 Grid_ShowGrid.setVisualOutputVisible('Grid', True)
 
 # Inbound connections of this algorithm:
@@ -55,34 +83,6 @@ Load_VTK.connect("Grid", Grid_ShowGrid, "Grid")
 
 # Run the algorithm
 Grid_ShowGrid.runBlocking()
-
-Tasks_Task4 = fantom.makeAlgorithm("Tasks/Task4")
-Tasks_Task4.setName("Tasks/Task4")
-Tasks_Task4.setAutoSchedule(True)
-Tasks_Task4.setOption("ox", -5)
-Tasks_Task4.setOption("oy", 1)
-Tasks_Task4.setOption("oz", 1)
-Tasks_Task4.setOption("nx", 5)
-Tasks_Task4.setOption("ny", 2)
-Tasks_Task4.setOption("nz", 4)
-Tasks_Task4.setOption("dx", 1)
-Tasks_Task4.setOption("dy", 1)
-Tasks_Task4.setOption("dz", 1)
-Tasks_Task4.setOption("Step size", 0.05)
-Tasks_Task4.setOption("adaptive step size", 0.02)
-Tasks_Task4.setOption("Method", "Runge-Kutta")
-Tasks_Task4.setOption("colorGrid", fantom.math.Color(0.25, 0, 0.25, 1))
-Tasks_Task4.setOption("colorStream", fantom.math.Color(0.5, 0, 0, 1))
-Tasks_Task4.setOption("Number of steps", 100)
-fantom.ui.setAlgorithmPosition(Tasks_Task4, fantom.math.Vector2(0, 285))
-Tasks_Task4.setVisualOutputVisible('Grid', True)
-Tasks_Task4.setVisualOutputVisible('Streamlines', True)
-
-# Inbound connections of this algorithm:
-Load_VTK.connect("Fields", Tasks_Task4, "Field")
-
-# Run the algorithm
-Tasks_Task4.runBlocking()
 
 
 

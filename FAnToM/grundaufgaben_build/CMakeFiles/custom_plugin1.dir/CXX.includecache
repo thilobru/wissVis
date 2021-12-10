@@ -6,28 +6,20 @@
 
 #IncludeRegexTransform: 
 
-/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task4.cpp
-fantom/algorithm.hpp
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task2.cpp
+fantom/dataset.hpp
 -
-fantom/datastructures/interfaces/Field.hpp
+fantom/algorithm.hpp
 -
 fantom/graphics.hpp
 -
 fantom/register.hpp
 -
-math.h
--
-fantom/dataset.hpp
--
 fantom-plugins/utils/Graphics/HelperFunctions.hpp
 -
 fantom-plugins/utils/Graphics/ObjectRenderer.hpp
 -
-stdexcept
--
 vector
--
-cstdlib
 -
 
 /home/thilo/Documents/wissVis/FAnToM/prebuild/include/fantom-plugins/utils/Graphics/Font.hpp

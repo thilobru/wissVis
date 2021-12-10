@@ -18,8 +18,8 @@ namespace {
             Options(fantom::Options::Control &control)
                     : VisAlgorithm::Options(control) {
                 add< Field< 3, Scalar > >( "Field", "A 3D vector field");
-                add<Color>("Color", "COlor of Kugels", Color(0.75, 0.75, 0.0));
-                add<double>("Threshold", "The minimum value of each point.", 0.0008);
+                add<Color>("Color", "Color of Kugels", Color(1.0, 0.0, 0.0));
+                add<double>("Threshold", "min value of points", 0.0008);
             }
         };
 
@@ -43,13 +43,12 @@ namespace {
             std::string resourcePath = PluginRegistrationService::getInstance().getResourcePath( "utils/Graphics" );
             // obj renderer to handle Kugels
             auto performanceObjectRenderer = std::make_shared< graphics::ObjectRenderer >( system );
-            //--------------------------------------------------------------------------------------------------------------------
 
             std::shared_ptr< const Field< 3, Scalar > > field = options.get< Field< 3, Scalar > >( "Field" );
             std::shared_ptr< const ScalarFunction > function = options.get< ScalarFunction >( "Field" );
 
-            Color color = options.get< Color >( "Color" );
-            double threshold = options.get< double >( "Threshold" );
+            Color color = options.get< Color >("Color");
+            double threshold = options.get< double >("Threshold");
 
             // if there is no input, do nothing
             if (!field) {
@@ -69,8 +68,8 @@ namespace {
             for(size_t i = 0; i < points.size(); i++) {
                 Point<3> point = points[i];
                 if (eval->reset(point)){
-                    auto v = eval->value();
-                    if (v[0] > threshold) {
+                    auto value = eval->value();
+                    if (value[0] > threshold) {
                         performanceObjectRenderer->addSphere(point, 0.1, color);
                     }
                 }
