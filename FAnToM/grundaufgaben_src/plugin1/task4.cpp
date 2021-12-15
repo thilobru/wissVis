@@ -86,7 +86,7 @@ namespace
                     double zS = z + dStep * v[2];
 
                     // single step with half dStep size
-                    double pS = abs(xS) + abs(yS) + abs(zS);
+                    double pS = abs(xS + yS + zS);
 
                     // helper point with half dStep
                     double xT = x + dStep / 2 * v[0];
@@ -106,7 +106,7 @@ namespace
                         yD = yT + dStep / 2 * hv[1];
                         zD = zT + dStep / 2 * hv[2];
                         // double step with dStep size
-                        pD = abs(xD) + abs(yD) + abs(zD);
+                        pD = abs(xD + yD + zD);
                     }
 
                     // if difference between one step point and two step
@@ -172,24 +172,21 @@ namespace
                 }
 
 
-                if (evaluator->reset({x + 0.5 * q1x, y + 0.5 * q1y, z + 0.5 * q1z}))
-                {
+                if (evaluator->reset({x + 0.5 * q1x, y + 0.5 * q1y, z + 0.5 * q1z})) {
                     //calculate value at this point
                     auto v2 = evaluator->value();
                     q2x = dStep * v2[0];
                     q2y = dStep * v2[1];
                     q2z = dStep * v2[2];
                 }
-                if (evaluator->reset({x + 0.5 * q2x, y + 0.5 * q2y, z + 0.5 * q2z}))
-                {
+                if (evaluator->reset({x + 0.5 * q2x, y + 0.5 * q2y, z + 0.5 * q2z})) {
                     //calculate value at this point
                     auto v3 = evaluator->value();
                     q3x = dStep * v3[0];
                     q3y = dStep * v3[1];
                     q3z = dStep * v3[2];
                 }
-                if (evaluator->reset({x + 0.5 * q3x, y + 0.5 * q3y, z + 0.5 * q3z}))
-                {
+                if (evaluator->reset({x + 0.5 * q3x, y + 0.5 * q3y, z + 0.5 * q3z})) {
                     //calculate value at this point
                     auto v4 = evaluator->value();
                     q4x = dStep * v4[0];
@@ -197,7 +194,7 @@ namespace
                     q4z = dStep * v4[2];
                 }
 
-                //calculate right side of formula
+                //calculate other side 
                 double f_x = (q1x + 2 * q2x + 2 * q3x + q4x) / 6.0;
                 double f_y = (q1y + 2 * q2y + 2 * q3y + q4y) / 6.0;
                 double f_z = (q1z + 2 * q2z + 2 * q3z + q4z) / 6.0;
@@ -319,6 +316,9 @@ namespace
 
                 // fill vector with all stream points and make connections between them in vectorF vector
                 for (size_t i = 0; i < points.size(); i++) {
+                    if (points.size() < 2) {
+                        break;
+                    }
                     pointFStream.push_back(PointF<3>(points[i][0], points[i][1], points[i][2]));
                     if (i != 0 && i != points.size() - 1) {
                         connectStream.push_back(VectorF<3>(points[i]));

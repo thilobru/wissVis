@@ -57,32 +57,92 @@ include CMakeFiles/custom_plugin2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/custom_plugin2.dir/flags.make
 
-CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.o: CMakeFiles/custom_plugin2.dir/flags.make
-CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.o: /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.o -c /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task2.cpp
+CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.o: CMakeFiles/custom_plugin2.dir/flags.make
+CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.o: /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task1Miriam.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.o -c /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task1Miriam.cpp
 
-CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task2.cpp > CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.i
+CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task1Miriam.cpp > CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.i
 
-CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task2.cpp -o CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.s
+CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task1Miriam.cpp -o CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.s
+
+CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.o: CMakeFiles/custom_plugin2.dir/flags.make
+CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.o: /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task1Shirin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.o -c /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task1Shirin.cpp
+
+CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task1Shirin.cpp > CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.i
+
+CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task1Shirin.cpp -o CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.s
+
+CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.o: CMakeFiles/custom_plugin2.dir/flags.make
+CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.o: /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task2Shirin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.o -c /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task2Shirin.cpp
+
+CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task2Shirin.cpp > CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.i
+
+CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task2Shirin.cpp -o CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.s
+
+CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.o: CMakeFiles/custom_plugin2.dir/flags.make
+CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.o: /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task3Miriam.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.o -c /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task3Miriam.cpp
+
+CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task3Miriam.cpp > CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.i
+
+CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task3Miriam.cpp -o CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.s
+
+CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.o: CMakeFiles/custom_plugin2.dir/flags.make
+CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.o: /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task4Miriam.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.o -c /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task4Miriam.cpp
+
+CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task4Miriam.cpp > CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.i
+
+CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin2/task4Miriam.cpp -o CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.s
 
 # Object files for target custom_plugin2
 custom_plugin2_OBJECTS = \
-"CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.o"
+"CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.o" \
+"CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.o" \
+"CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.o" \
+"CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.o" \
+"CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.o"
 
 # External object files for target custom_plugin2
 custom_plugin2_EXTERNAL_OBJECTS =
 
-lib/fantom-plugins/custom/libplugin2.so: CMakeFiles/custom_plugin2.dir/plugin2/task2.cpp.o
+lib/fantom-plugins/custom/libplugin2.so: CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.o
+lib/fantom-plugins/custom/libplugin2.so: CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.o
+lib/fantom-plugins/custom/libplugin2.so: CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.o
+lib/fantom-plugins/custom/libplugin2.so: CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.o
+lib/fantom-plugins/custom/libplugin2.so: CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.o
 lib/fantom-plugins/custom/libplugin2.so: CMakeFiles/custom_plugin2.dir/build.make
 lib/fantom-plugins/custom/libplugin2.so: /home/thilo/Documents/wissVis/FAnToM/prebuild/lib/libfantom-lib.so
 lib/fantom-plugins/custom/libplugin2.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
 lib/fantom-plugins/custom/libplugin2.so: CMakeFiles/custom_plugin2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library lib/fantom-plugins/custom/libplugin2.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library lib/fantom-plugins/custom/libplugin2.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/custom_plugin2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

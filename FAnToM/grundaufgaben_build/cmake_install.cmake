@@ -83,6 +83,48 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   endif()
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/../prebuild/lib/fantom-plugins/custom/libplugin2.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/../prebuild/lib/fantom-plugins/custom/libplugin2.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/../prebuild/lib/fantom-plugins/custom/libplugin2.so"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/../prebuild/lib/fantom-plugins/custom" TYPE SHARED_LIBRARY FILES "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/lib/fantom-plugins/custom/libplugin2.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/../prebuild/lib/fantom-plugins/custom/libplugin2.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/../prebuild/lib/fantom-plugins/custom/libplugin2.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/../prebuild/lib/fantom-plugins/custom/libplugin2.so"
+         OLD_RPATH "/home/thilo/Documents/wissVis/FAnToM/prebuild/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/../prebuild/lib/fantom-plugins/custom/libplugin2.so")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/../prebuild/share/FAnToM/cmake/plugins/custom_plugin2Config.cmake")
+    file(DIFFERENT EXPORT_FILE_CHANGED FILES
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/../prebuild/share/FAnToM/cmake/plugins/custom_plugin2Config.cmake"
+         "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/Export/__/prebuild/share/FAnToM/cmake/plugins/custom_plugin2Config.cmake")
+    if(EXPORT_FILE_CHANGED)
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/../prebuild/share/FAnToM/cmake/plugins/custom_plugin2Config-*.cmake")
+      if(OLD_CONFIG_FILES)
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/../prebuild/share/FAnToM/cmake/plugins/custom_plugin2Config.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        file(REMOVE ${OLD_CONFIG_FILES})
+      endif()
+    endif()
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/../prebuild/share/FAnToM/cmake/plugins" TYPE FILE FILES "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/Export/__/prebuild/share/FAnToM/cmake/plugins/custom_plugin2Config.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/../prebuild/share/FAnToM/cmake/plugins" TYPE FILE FILES "/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_build/CMakeFiles/Export/__/prebuild/share/FAnToM/cmake/plugins/custom_plugin2Config-debug.cmake")
+  endif()
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()

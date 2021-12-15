@@ -157,6 +157,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named custom_plugin2
+
+# Build rule for target.
+custom_plugin2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 custom_plugin2
+.PHONY : custom_plugin2
+
+# fast build rule for target.
+custom_plugin2/fast:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/build
+.PHONY : custom_plugin2/fast
+
+#=============================================================================
 # Target rules for targets named custom_plugin1
 
 # Build rule for target.
@@ -276,60 +289,6 @@ plugin1/task1.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1.cpp.s
 .PHONY : plugin1/task1.cpp.s
 
-plugin1/task1Miriam.o: plugin1/task1Miriam.cpp.o
-
-.PHONY : plugin1/task1Miriam.o
-
-# target to build an object file
-plugin1/task1Miriam.cpp.o:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Miriam.cpp.o
-.PHONY : plugin1/task1Miriam.cpp.o
-
-plugin1/task1Miriam.i: plugin1/task1Miriam.cpp.i
-
-.PHONY : plugin1/task1Miriam.i
-
-# target to preprocess a source file
-plugin1/task1Miriam.cpp.i:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Miriam.cpp.i
-.PHONY : plugin1/task1Miriam.cpp.i
-
-plugin1/task1Miriam.s: plugin1/task1Miriam.cpp.s
-
-.PHONY : plugin1/task1Miriam.s
-
-# target to generate assembly for a file
-plugin1/task1Miriam.cpp.s:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Miriam.cpp.s
-.PHONY : plugin1/task1Miriam.cpp.s
-
-plugin1/task1Shirin.o: plugin1/task1Shirin.cpp.o
-
-.PHONY : plugin1/task1Shirin.o
-
-# target to build an object file
-plugin1/task1Shirin.cpp.o:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Shirin.cpp.o
-.PHONY : plugin1/task1Shirin.cpp.o
-
-plugin1/task1Shirin.i: plugin1/task1Shirin.cpp.i
-
-.PHONY : plugin1/task1Shirin.i
-
-# target to preprocess a source file
-plugin1/task1Shirin.cpp.i:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Shirin.cpp.i
-.PHONY : plugin1/task1Shirin.cpp.i
-
-plugin1/task1Shirin.s: plugin1/task1Shirin.cpp.s
-
-.PHONY : plugin1/task1Shirin.s
-
-# target to generate assembly for a file
-plugin1/task1Shirin.cpp.s:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task1Shirin.cpp.s
-.PHONY : plugin1/task1Shirin.cpp.s
-
 plugin1/task1Test.o: plugin1/task1Test.cpp.o
 
 .PHONY : plugin1/task1Test.o
@@ -438,33 +397,6 @@ plugin1/task2.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task2.cpp.s
 .PHONY : plugin1/task2.cpp.s
 
-plugin1/task2Shirin.o: plugin1/task2Shirin.cpp.o
-
-.PHONY : plugin1/task2Shirin.o
-
-# target to build an object file
-plugin1/task2Shirin.cpp.o:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task2Shirin.cpp.o
-.PHONY : plugin1/task2Shirin.cpp.o
-
-plugin1/task2Shirin.i: plugin1/task2Shirin.cpp.i
-
-.PHONY : plugin1/task2Shirin.i
-
-# target to preprocess a source file
-plugin1/task2Shirin.cpp.i:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task2Shirin.cpp.i
-.PHONY : plugin1/task2Shirin.cpp.i
-
-plugin1/task2Shirin.s: plugin1/task2Shirin.cpp.s
-
-.PHONY : plugin1/task2Shirin.s
-
-# target to generate assembly for a file
-plugin1/task2Shirin.cpp.s:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task2Shirin.cpp.s
-.PHONY : plugin1/task2Shirin.cpp.s
-
 plugin1/task3.o: plugin1/task3.cpp.o
 
 .PHONY : plugin1/task3.o
@@ -491,33 +423,6 @@ plugin1/task3.s: plugin1/task3.cpp.s
 plugin1/task3.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task3.cpp.s
 .PHONY : plugin1/task3.cpp.s
-
-plugin1/task3Miriam.o: plugin1/task3Miriam.cpp.o
-
-.PHONY : plugin1/task3Miriam.o
-
-# target to build an object file
-plugin1/task3Miriam.cpp.o:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task3Miriam.cpp.o
-.PHONY : plugin1/task3Miriam.cpp.o
-
-plugin1/task3Miriam.i: plugin1/task3Miriam.cpp.i
-
-.PHONY : plugin1/task3Miriam.i
-
-# target to preprocess a source file
-plugin1/task3Miriam.cpp.i:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task3Miriam.cpp.i
-.PHONY : plugin1/task3Miriam.cpp.i
-
-plugin1/task3Miriam.s: plugin1/task3Miriam.cpp.s
-
-.PHONY : plugin1/task3Miriam.s
-
-# target to generate assembly for a file
-plugin1/task3Miriam.cpp.s:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task3Miriam.cpp.s
-.PHONY : plugin1/task3Miriam.cpp.s
 
 plugin1/task4.o: plugin1/task4.cpp.o
 
@@ -546,32 +451,140 @@ plugin1/task4.cpp.s:
 	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task4.cpp.s
 .PHONY : plugin1/task4.cpp.s
 
-plugin1/task4Miriam.o: plugin1/task4Miriam.cpp.o
+plugin2/task1Miriam.o: plugin2/task1Miriam.cpp.o
 
-.PHONY : plugin1/task4Miriam.o
+.PHONY : plugin2/task1Miriam.o
 
 # target to build an object file
-plugin1/task4Miriam.cpp.o:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task4Miriam.cpp.o
-.PHONY : plugin1/task4Miriam.cpp.o
+plugin2/task1Miriam.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.o
+.PHONY : plugin2/task1Miriam.cpp.o
 
-plugin1/task4Miriam.i: plugin1/task4Miriam.cpp.i
+plugin2/task1Miriam.i: plugin2/task1Miriam.cpp.i
 
-.PHONY : plugin1/task4Miriam.i
+.PHONY : plugin2/task1Miriam.i
 
 # target to preprocess a source file
-plugin1/task4Miriam.cpp.i:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task4Miriam.cpp.i
-.PHONY : plugin1/task4Miriam.cpp.i
+plugin2/task1Miriam.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.i
+.PHONY : plugin2/task1Miriam.cpp.i
 
-plugin1/task4Miriam.s: plugin1/task4Miriam.cpp.s
+plugin2/task1Miriam.s: plugin2/task1Miriam.cpp.s
 
-.PHONY : plugin1/task4Miriam.s
+.PHONY : plugin2/task1Miriam.s
 
 # target to generate assembly for a file
-plugin1/task4Miriam.cpp.s:
-	$(MAKE) -f CMakeFiles/custom_plugin1.dir/build.make CMakeFiles/custom_plugin1.dir/plugin1/task4Miriam.cpp.s
-.PHONY : plugin1/task4Miriam.cpp.s
+plugin2/task1Miriam.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task1Miriam.cpp.s
+.PHONY : plugin2/task1Miriam.cpp.s
+
+plugin2/task1Shirin.o: plugin2/task1Shirin.cpp.o
+
+.PHONY : plugin2/task1Shirin.o
+
+# target to build an object file
+plugin2/task1Shirin.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.o
+.PHONY : plugin2/task1Shirin.cpp.o
+
+plugin2/task1Shirin.i: plugin2/task1Shirin.cpp.i
+
+.PHONY : plugin2/task1Shirin.i
+
+# target to preprocess a source file
+plugin2/task1Shirin.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.i
+.PHONY : plugin2/task1Shirin.cpp.i
+
+plugin2/task1Shirin.s: plugin2/task1Shirin.cpp.s
+
+.PHONY : plugin2/task1Shirin.s
+
+# target to generate assembly for a file
+plugin2/task1Shirin.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task1Shirin.cpp.s
+.PHONY : plugin2/task1Shirin.cpp.s
+
+plugin2/task2Shirin.o: plugin2/task2Shirin.cpp.o
+
+.PHONY : plugin2/task2Shirin.o
+
+# target to build an object file
+plugin2/task2Shirin.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.o
+.PHONY : plugin2/task2Shirin.cpp.o
+
+plugin2/task2Shirin.i: plugin2/task2Shirin.cpp.i
+
+.PHONY : plugin2/task2Shirin.i
+
+# target to preprocess a source file
+plugin2/task2Shirin.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.i
+.PHONY : plugin2/task2Shirin.cpp.i
+
+plugin2/task2Shirin.s: plugin2/task2Shirin.cpp.s
+
+.PHONY : plugin2/task2Shirin.s
+
+# target to generate assembly for a file
+plugin2/task2Shirin.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task2Shirin.cpp.s
+.PHONY : plugin2/task2Shirin.cpp.s
+
+plugin2/task3Miriam.o: plugin2/task3Miriam.cpp.o
+
+.PHONY : plugin2/task3Miriam.o
+
+# target to build an object file
+plugin2/task3Miriam.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.o
+.PHONY : plugin2/task3Miriam.cpp.o
+
+plugin2/task3Miriam.i: plugin2/task3Miriam.cpp.i
+
+.PHONY : plugin2/task3Miriam.i
+
+# target to preprocess a source file
+plugin2/task3Miriam.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.i
+.PHONY : plugin2/task3Miriam.cpp.i
+
+plugin2/task3Miriam.s: plugin2/task3Miriam.cpp.s
+
+.PHONY : plugin2/task3Miriam.s
+
+# target to generate assembly for a file
+plugin2/task3Miriam.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task3Miriam.cpp.s
+.PHONY : plugin2/task3Miriam.cpp.s
+
+plugin2/task4Miriam.o: plugin2/task4Miriam.cpp.o
+
+.PHONY : plugin2/task4Miriam.o
+
+# target to build an object file
+plugin2/task4Miriam.cpp.o:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.o
+.PHONY : plugin2/task4Miriam.cpp.o
+
+plugin2/task4Miriam.i: plugin2/task4Miriam.cpp.i
+
+.PHONY : plugin2/task4Miriam.i
+
+# target to preprocess a source file
+plugin2/task4Miriam.cpp.i:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.i
+.PHONY : plugin2/task4Miriam.cpp.i
+
+plugin2/task4Miriam.s: plugin2/task4Miriam.cpp.s
+
+.PHONY : plugin2/task4Miriam.s
+
+# target to generate assembly for a file
+plugin2/task4Miriam.cpp.s:
+	$(MAKE) -f CMakeFiles/custom_plugin2.dir/build.make CMakeFiles/custom_plugin2.dir/plugin2/task4Miriam.cpp.s
+.PHONY : plugin2/task4Miriam.cpp.s
 
 # Help Target
 help:
@@ -585,6 +598,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... custom_plugin2"
 	@echo "... custom_plugin1"
 	@echo "... debug"
 	@echo "... run"
@@ -597,12 +611,6 @@ help:
 	@echo "... plugin1/task1.o"
 	@echo "... plugin1/task1.i"
 	@echo "... plugin1/task1.s"
-	@echo "... plugin1/task1Miriam.o"
-	@echo "... plugin1/task1Miriam.i"
-	@echo "... plugin1/task1Miriam.s"
-	@echo "... plugin1/task1Shirin.o"
-	@echo "... plugin1/task1Shirin.i"
-	@echo "... plugin1/task1Shirin.s"
 	@echo "... plugin1/task1Test.o"
 	@echo "... plugin1/task1Test.i"
 	@echo "... plugin1/task1Test.s"
@@ -615,21 +623,27 @@ help:
 	@echo "... plugin1/task2.o"
 	@echo "... plugin1/task2.i"
 	@echo "... plugin1/task2.s"
-	@echo "... plugin1/task2Shirin.o"
-	@echo "... plugin1/task2Shirin.i"
-	@echo "... plugin1/task2Shirin.s"
 	@echo "... plugin1/task3.o"
 	@echo "... plugin1/task3.i"
 	@echo "... plugin1/task3.s"
-	@echo "... plugin1/task3Miriam.o"
-	@echo "... plugin1/task3Miriam.i"
-	@echo "... plugin1/task3Miriam.s"
 	@echo "... plugin1/task4.o"
 	@echo "... plugin1/task4.i"
 	@echo "... plugin1/task4.s"
-	@echo "... plugin1/task4Miriam.o"
-	@echo "... plugin1/task4Miriam.i"
-	@echo "... plugin1/task4Miriam.s"
+	@echo "... plugin2/task1Miriam.o"
+	@echo "... plugin2/task1Miriam.i"
+	@echo "... plugin2/task1Miriam.s"
+	@echo "... plugin2/task1Shirin.o"
+	@echo "... plugin2/task1Shirin.i"
+	@echo "... plugin2/task1Shirin.s"
+	@echo "... plugin2/task2Shirin.o"
+	@echo "... plugin2/task2Shirin.i"
+	@echo "... plugin2/task2Shirin.s"
+	@echo "... plugin2/task3Miriam.o"
+	@echo "... plugin2/task3Miriam.i"
+	@echo "... plugin2/task3Miriam.s"
+	@echo "... plugin2/task4Miriam.o"
+	@echo "... plugin2/task4Miriam.i"
+	@echo "... plugin2/task4Miriam.s"
 .PHONY : help
 
 
