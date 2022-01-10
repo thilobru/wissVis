@@ -11,7 +11,7 @@ using namespace fantom;
  
 namespace
 {
- 
+
     class Graphics : public VisAlgorithm
     {
  
