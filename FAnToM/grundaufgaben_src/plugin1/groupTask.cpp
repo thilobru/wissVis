@@ -1,3 +1,4 @@
+// Heeenlo
 #include <fantom/algorithm.hpp>
 #include <fantom/graphics.hpp>
 #include <fantom/register.hpp>
@@ -211,6 +212,10 @@ namespace
             return;
         }
 
+        static void makeSurface(){
+            return;
+        }
+
         static std::shared_ptr<graphics::Drawable> drawLines(std::vector<PointF<3>> pointsFList,std::vector<VectorF<3>> vertices, Color color)
         {
             auto const &system = graphics::GraphicsSystem::instance(); // The GraphicsSystem is needed to create Drawables, which represent the to be rendererd objects.
@@ -296,6 +301,9 @@ namespace
                 throw std::logic_error("Wrong type of grid!");
             }
 
+            // prepare for surface
+            std::vector<std::vector<Point<3>>> streamList;
+            
             // prepare for the streams
             std::vector<VectorF<3>> connectStream;
             std::vector<PointF<3>> pointFStream;
@@ -329,9 +337,10 @@ namespace
                     connectStream.push_back(VectorF<3>(points[i]));
                 }
                 if (surface == "Yes") {
-                    
+                    streamList.push_back(points);
                 }
             }
+            
 
             // making the visualization
             std::shared_ptr<graphics::Drawable> gridLines = drawLines(pointFGrid, connectGrid, colorGrid);
