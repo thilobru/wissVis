@@ -1,7 +1,0 @@
-<map id="fantom::InputLoadPath" name="fantom::InputLoadPath">
-<area shape="rect" id="node1" title="specialized input for representing load paths" alt="" coords="5,319,160,345"/>
-<area shape="rect" id="node2" href="$classfantom_1_1Input.html" title=" " alt="" coords="18,229,147,271"/>
-<area shape="rect" id="node3" href="$classfantom_1_1InputObject.html" title="base class for input fields of complex classes with value semantics" alt="" coords="14,155,151,181"/>
-<area shape="rect" id="node4" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="18,80,147,107"/>
-<area shape="rect" id="node5" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="33,5,133,32"/>
-</map>

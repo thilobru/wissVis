@@ -1,6 +1,0 @@
-<map id="fantom::InputArithmeticImpl&lt; T &gt;" name="fantom::InputArithmeticImpl&lt; T &gt;">
-<area shape="rect" id="node1" title="base class for primitive c++ type inputs" alt="" coords="5,229,220,256"/>
-<area shape="rect" id="node2" href="$classfantom_1_1InputArithmetic.html" title="base class for all c++ primitive types (integral and floating point)" alt="" coords="33,155,192,181"/>
-<area shape="rect" id="node3" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="48,80,177,107"/>
-<area shape="rect" id="node4" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="63,5,163,32"/>
-</map>

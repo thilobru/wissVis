@@ -1,6 +1,0 @@
-<map id="fantom::Table" name="fantom::Table">
-<area shape="rect" id="node1" title="Representation of a table." alt="" coords="23,229,124,256"/>
-<area shape="rect" id="node2" href="$classfantom_1_1Domain.html" title="Discrete domain." alt="" coords="16,155,131,181"/>
-<area shape="rect" id="node3" href="$classfantom_1_1DataObject.html" title="Representation of an object that carries data that can be passed between algorithms." alt="" coords="5,80,141,107"/>
-<area shape="rect" id="node4" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="23,5,123,32"/>
-</map>

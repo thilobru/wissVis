@@ -1,5 +1,0 @@
-<map id="fantom::Shell" name="fantom::Shell">
-<area shape="rect" id="node1" title="Basic class for implementing Shells." alt="" coords="5,95,104,121"/>
-<area shape="rect" id="node2" href="$classfantom_1_1Widget.html" title="base class for all widgets" alt="" coords="43,5,154,32"/>
-<area shape="rect" id="node3" href="$classfantom_1_1Menu.html" title="Menu bar or context menu." alt="" coords="130,95,233,121"/>
-</map>

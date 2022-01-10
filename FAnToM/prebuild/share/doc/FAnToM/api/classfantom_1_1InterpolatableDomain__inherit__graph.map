@@ -1,6 +1,0 @@
-<map id="fantom::InterpolatableDomain&lt; D &gt;" name="fantom::InterpolatableDomain&lt; D &gt;">
-<area shape="rect" id="node1" title="Base class for domains that allow for interpolation in the Euclidean space that they are embedded in." alt="" coords="135,5,361,32"/>
-<area shape="rect" id="node2" href="$classfantom_1_1Grid.html" title="Representation of grids." alt="" coords="184,80,312,107"/>
-<area shape="rect" id="node3" href="$classfantom_1_1detail_1_1GridStructured.html" title=" " alt="" coords="5,155,232,181"/>
-<area shape="rect" id="node4" href="$classfantom_1_1detail_1_1GridUnstructured.html" title=" " alt="" coords="256,155,499,181"/>
-</map>

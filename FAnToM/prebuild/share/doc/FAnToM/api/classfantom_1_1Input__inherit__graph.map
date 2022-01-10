@@ -1,6 +1,0 @@
-<map id="fantom::Input&lt; DataType &gt;" name="fantom::Input&lt; DataType &gt;">
-<area shape="rect" id="node1" title="implementation of input fields of class type" alt="" coords="5,229,184,256"/>
-<area shape="rect" id="node2" href="$classfantom_1_1InputObject.html" title="base class for input fields of complex classes with value semantics" alt="" coords="26,155,163,181"/>
-<area shape="rect" id="node3" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="30,80,159,107"/>
-<area shape="rect" id="node4" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="45,5,145,32"/>
-</map>

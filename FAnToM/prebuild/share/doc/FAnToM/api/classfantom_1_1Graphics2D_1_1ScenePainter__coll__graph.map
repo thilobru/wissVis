@@ -1,6 +1,0 @@
-<map id="fantom::Graphics2D::ScenePainter" name="fantom::Graphics2D::ScenePainter">
-<area shape="rect" id="node1" title=" " alt="" coords="13,109,152,151"/>
-<area shape="rect" id="node2" href="$classfantom_1_1EventHandler.html" title="interface for a generic event handler for use in graphic views" alt="" coords="5,13,155,39"/>
-<area shape="rect" id="node3" href="$classfantom_1_1Graphics2D_1_1Group.html" title="Group of Items." alt="" coords="179,5,317,47"/>
-<area shape="rect" id="node4" href="$classfantom_1_1Graphics2D_1_1Item.html" title="base class for 2D graphics items" alt="" coords="177,109,316,151"/>
-</map>

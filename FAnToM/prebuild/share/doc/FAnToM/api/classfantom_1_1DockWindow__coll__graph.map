@@ -1,5 +1,0 @@
-<map id="fantom::DockWindow" name="fantom::DockWindow">
-<area shape="rect" id="node1" title="sub&#45;level window" alt="" coords="5,95,153,121"/>
-<area shape="rect" id="node2" href="$classfantom_1_1Widget.html" title="base class for all widgets" alt="" coords="89,5,200,32"/>
-<area shape="rect" id="node3" href="$classfantom_1_1Menu.html" title="Menu bar or context menu." alt="" coords="177,95,280,121"/>
-</map>

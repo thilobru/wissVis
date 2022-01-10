@@ -1,7 +1,0 @@
-<map id="fantom::ToolBarItem" name="fantom::ToolBarItem">
-<area shape="rect" id="node1" title="tool bar item" alt="" coords="8,273,148,300"/>
-<area shape="rect" id="node2" href="$classfantom_1_1ToolBar.html" title="tool bar" alt="" coords="21,184,135,211"/>
-<area shape="rect" id="node3" href="$classfantom_1_1MainWindow.html" title="top&#45;level window" alt="" coords="5,95,151,121"/>
-<area shape="rect" id="node4" href="$classfantom_1_1Widget.html" title="base class for all widgets" alt="" coords="87,5,197,32"/>
-<area shape="rect" id="node5" href="$classfantom_1_1Menu.html" title="Menu bar or context menu." alt="" coords="175,95,277,121"/>
-</map>

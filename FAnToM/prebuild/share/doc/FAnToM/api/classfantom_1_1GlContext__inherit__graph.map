@@ -1,5 +1,0 @@
-<map id="fantom::GlContext" name="fantom::GlContext">
-<area shape="rect" id="node1" title="OpenGL context for OpenGl operations." alt="" coords="83,5,212,32"/>
-<area shape="rect" id="node2" href="$classfantom_1_1GlArea.html" title="OpenGL drawing area." alt="" coords="5,80,116,107"/>
-<area shape="rect" id="node3" href="$classfantom_1_1OffscreenGlContext.html" title="OpenGL context for offscreen operations." alt="" coords="141,80,327,107"/>
-</map>

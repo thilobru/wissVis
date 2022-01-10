@@ -1,8 +1,0 @@
-<map id="fantom::InputLabel" name="fantom::InputLabel">
-<area shape="rect" id="node1" title="specialized input for representing labels" alt="" coords="74,337,205,364"/>
-<area shape="rect" id="node2" href="$classfantom_1_1Input.html" title=" " alt="" coords="75,247,204,288"/>
-<area shape="rect" id="node3" href="$classfantom_1_1InputObject.html" title="base class for input fields of complex classes with value semantics" alt="" coords="71,171,208,197"/>
-<area shape="rect" id="node4" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="75,95,204,121"/>
-<area shape="rect" id="node5" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="5,5,105,32"/>
-<area shape="rect" id="node6" href="$structfantom_1_1InputChangeNotifier.html" title="Interface for notifications about changed inputs." alt="" coords="130,5,317,32"/>
-</map>

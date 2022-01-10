@@ -1,5 +1,0 @@
-<map id="fantom::TreeView" name="fantom::TreeView">
-<area shape="rect" id="node1" title="widget for a file explorer&#45;like tree view" alt="" coords="5,95,131,121"/>
-<area shape="rect" id="node2" href="$classfantom_1_1Widget.html" title="base class for all widgets" alt="" coords="67,5,178,32"/>
-<area shape="rect" id="node3" href="$classfantom_1_1Menu.html" title="Menu bar or context menu." alt="" coords="155,95,258,121"/>
-</map>

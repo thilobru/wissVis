@@ -1,8 +1,0 @@
-<map id="fantom::CellComplex" name="fantom::CellComplex">
-<area shape="rect" id="node1" title="Cell complex." alt="" coords="257,5,402,32"/>
-<area shape="rect" id="node2" href="$classfantom_1_1EmbeddedCellComplex.html" title="Cell complex that is embedded into Euclidean space." alt="" coords="209,80,450,107"/>
-<area shape="rect" id="node3" href="$classfantom_1_1Grid.html" title="Representation of grids." alt="" coords="184,155,312,181"/>
-<area shape="rect" id="node6" href="$classfantom_1_1LineSet.html" title="Collection of lines." alt="" coords="337,155,485,181"/>
-<area shape="rect" id="node4" href="$classfantom_1_1detail_1_1GridStructured.html" title=" " alt="" coords="5,229,232,256"/>
-<area shape="rect" id="node5" href="$classfantom_1_1detail_1_1GridUnstructured.html" title=" " alt="" coords="256,229,499,256"/>
-</map>

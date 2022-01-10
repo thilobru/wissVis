@@ -1,5 +1,0 @@
-<map id="fantom::ValueArray&lt; T &gt;" name="fantom::ValueArray&lt; T &gt;">
-<area shape="rect" id="node1" title="an array which stores data" alt="" coords="26,80,191,107"/>
-<area shape="rect" id="node3" href="$classfantom_1_1DefaultValueArray.html" title="Default realization of the ValueArray using std::vector for its data backend." alt="" coords="5,155,212,181"/>
-<area shape="rect" id="node2" href="$classfantom_1_1ValueArrayBase.html" title="base of an array which stores data" alt="" coords="27,5,190,32"/>
-</map>

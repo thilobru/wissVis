@@ -1,5 +1,0 @@
-<map id="fantom::invalid_argument" name="fantom::invalid_argument">
-<area shape="rect" id="node1" title="A fantom&#45;created equivalent to std::invalid_argument." alt="" coords="8,184,176,211"/>
-<area shape="rect" id="node2" href="$classfantom_1_1detail_1_1fantom__exception__type.html" title=" " alt="" coords="15,80,169,136"/>
-<area shape="rect" id="node3" href="$classfantom_1_1fantom__exception.html" title="A base class for all fantom&#45;created exceptions." alt="" coords="5,5,179,32"/>
-</map>

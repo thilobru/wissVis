@@ -1,6 +1,0 @@
-<map id="fantom::InputDataObjectBundle" name="fantom::InputDataObjectBundle">
-<area shape="rect" id="node1" title="base class for DataObjectBundle input fields" alt="" coords="5,229,211,256"/>
-<area shape="rect" id="node2" href="$classfantom_1_1InputDataObject.html" title="base class for DataObject input fields" alt="" coords="25,155,191,181"/>
-<area shape="rect" id="node3" href="$classfantom_1_1InputBase.html" title="base class of all input objects." alt="" coords="43,80,173,107"/>
-<area shape="rect" id="node4" href="$classfantom_1_1RTTI.html" title="Base class of all typed objects." alt="" coords="58,5,158,32"/>
-</map>

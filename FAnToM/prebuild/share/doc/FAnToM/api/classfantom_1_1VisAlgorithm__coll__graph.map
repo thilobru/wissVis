@@ -1,8 +1,0 @@
-<map id="fantom::VisAlgorithm" name="fantom::VisAlgorithm">
-<area shape="rect" id="node1" title="base class of visualization algorithms" alt="" coords="91,351,235,377"/>
-<area shape="rect" id="node2" href="$classfantom_1_1Algorithm.html" title="abstract base class of algorithms" alt="" coords="100,275,225,301"/>
-<area shape="rect" id="node3" href="$classfantom_1_1AlgorithmImpl.html" title=" " alt="" coords="87,185,238,212"/>
-<area shape="rect" id="node4" href="$classfantom_1_1DataOutputs_1_1Control.html" title="Abstract interface to the private implementation of Outputs." alt="" coords="5,81,149,123"/>
-<area shape="rect" id="node5" href="$classfantom_1_1Options_1_1Control.html" title="Private implementation of Options." alt="" coords="173,89,339,115"/>
-<area shape="rect" id="node6" href="$structfantom_1_1InputChangeNotifier.html" title="Interface for notifications about changed inputs." alt="" coords="163,5,349,32"/>
-</map>

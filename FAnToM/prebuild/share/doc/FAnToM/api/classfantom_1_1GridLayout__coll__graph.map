@@ -1,5 +1,0 @@
-<map id="fantom::GridLayout" name="fantom::GridLayout">
-<area shape="rect" id="node1" title="layout which arranges its widgets in a grid" alt="" coords="5,95,139,121"/>
-<area shape="rect" id="node2" href="$classfantom_1_1Widget.html" title="base class for all widgets" alt="" coords="75,5,186,32"/>
-<area shape="rect" id="node3" href="$classfantom_1_1Menu.html" title="Menu bar or context menu." alt="" coords="163,95,266,121"/>
-</map>

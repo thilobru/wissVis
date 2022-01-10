@@ -1,5 +1,0 @@
-<map id="fantom::Options" name="fantom::Options">
-<area shape="rect" id="node1" title="base class of options" alt="" coords="41,171,156,197"/>
-<area shape="rect" id="node2" href="$classfantom_1_1Options_1_1Control.html" title="Private implementation of Options." alt="" coords="16,81,181,108"/>
-<area shape="rect" id="node3" href="$structfantom_1_1InputChangeNotifier.html" title="Interface for notifications about changed inputs." alt="" coords="5,5,192,32"/>
-</map>
