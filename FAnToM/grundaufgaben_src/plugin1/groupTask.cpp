@@ -24,6 +24,8 @@ namespace
             Options(fantom::Options::Control &control)
                 : VisAlgorithm::Options(control)
             {
+                add<InputChoices>("Surface", "surface?", std::vector<std::string>{"Yes", "No"}, "Yes");
+                addSeparator();
                 add< double >( "ox", "origin grid in x-dimension", -4.0 );
                 add< double >( "oy", "origin grid in y-dimension", 0.5 );
                 add< double >( "oz", "origin grid in z-dimension", 1.0 );
@@ -270,6 +272,7 @@ namespace
                 }
             }
 
+            std::string surface = options.get<std::string>("Surface");
             std::string method = options.get<std::string>("Method");
             double dStep = options.get<double>("dStep");
             double adStep = options.get<double>("adStep");
@@ -324,6 +327,9 @@ namespace
                         connectStream.push_back(VectorF<3>(points[i]));
                     }
                     connectStream.push_back(VectorF<3>(points[i]));
+                }
+                if (surface == "Yes") {
+                    
                 }
             }
 
