@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task2.cpp
+fantom/dataset.hpp
+-
+fantom/algorithm.hpp
+-
+fantom/graphics.hpp
+-
+fantom/register.hpp
+-
+fantom-plugins/utils/Graphics/HelperFunctions.hpp
+-
+fantom-plugins/utils/Graphics/ObjectRenderer.hpp
+-
+vector
+-
+
 /home/thilo/Documents/wissVis/FAnToM/grundaufgaben_src/plugin1/task4.cpp
 fantom/algorithm.hpp
 -
