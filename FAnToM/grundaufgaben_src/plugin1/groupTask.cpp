@@ -299,7 +299,7 @@ namespace
                 }
             }
 
-            std::string surface = options.get<std::string>("Surface");
+            std::string oSurface = options.get<std::string>("Surface");
             std::string method = options.get<std::string>("Method");
             double dStep = options.get<double>("dStep");
             double adStep = options.get<double>("adStep");
@@ -358,19 +358,27 @@ namespace
                     }
                     connectStream.push_back(VectorF<3>(points[i]));
                 }
-                if (surface == "Yes") {
+                if (oSurface == "Yes") {
                     streamList.push_back(points);
                 }
             }
             std::vector<PointF<3>> surfacePoints;
             std::vector<unsigned int> surfaceIndexes;
-            for(size_t i; i < 6; i++) {
+            for(size_t i = 0; i < 6; i++) {
                 surfacePoints.push_back(PointF<3> (streamList[0][i]));
+                surfacePoints.push_back(PointF<3> (streamList[1][i]));
                 if (i <= 4) {
                     surfaceIndexes.push_back(0+i);
                     surfaceIndexes.push_back(1+i);
                     surfaceIndexes.push_back(2+i);
                 }
+            }
+
+            for(size_t i = 0; i < surfaceIndexes.size(); i++) {
+                debugLog() << surfacePoints[i];
+                debugLog() << (surfaceIndexes[i*3]);
+                debugLog() << (surfaceIndexes[i*3+1]);
+                debugLog() << (surfaceIndexes[i*3+2]) << std::endl;
             }
 
             // making the visualization
@@ -379,8 +387,29 @@ namespace
             std::shared_ptr<graphics::Drawable> surface = drawSurface(surfacePoints, surfaceIndexes, colorStream);
             setGraphics("grid", gridLines);   
             setGraphics("streams", streamlines);
-            setGraphics("surface", surface);
+
+            auto const &system = graphics::GraphicsSystem::instance(); // The GraphicsSystem is needed to create Drawables, which represent the to be rendererd objects.
+            std::string resourcePath = PluginRegistrationService::getInstance().getResourcePath("utils/Graphics"); // path to the shaders
+            // The BoundingSphere should contain all elements of the drawable and is needed for its creation.
+            auto bs = graphics::computeBoundingSphere(surfacePoints);
+            // For the used Phong-Shading, the calculation of surface normals is necessary.
+            auto norm = graphics::computeNormals(surfacePoints, surfaceIndexes);
+            // The Drawable object defines the input streams for the shaders.
+            // Vertex- and IndexBuffers as well as Uniforms can be defined as seen below.
+            std::shared_ptr< graphics::Drawable> graphic = 
+                system.makePrimitive(graphics::PrimitiveConfig{ graphics::RenderPrimitives::TRIANGLES }
+                    .vertexBuffer( "position", system.makeBuffer(surfacePoints ) )
+                    .vertexBuffer( "normal", system.makeBuffer( norm ) )
+                    .indexBuffer( system.makeIndexBuffer(surfaceIndexes))
+                    .uniform( "color", colorStream)
+                    //.renderOption( graphics::RenderOption::LineSmooth, true )
+                    .boundingSphere( bs ),
+                system.makeProgramFromFiles(resourcePath + "shader/surface/phong/singleColor/vertex.glsl",
+                                            resourcePath + "shader/surface/phong/singleColor/fragment.glsl" ) );
+
+
+            setGraphics("surface", graphic);
         }
     };
-    AlgorithmRegister<IntegrateTask> dummy("Tasks/Task4", "Show the streamlines for an input vector field");
+    AlgorithmRegister<IntegrateTask> dummy("Tasks/GroupTask", "Show the streamlines for an input vector field");
 }
