@@ -10,6 +10,7 @@
 
 #include <vector>
 #include <math.h>
+#include <cmath>
 
 using namespace fantom;
 
@@ -213,7 +214,35 @@ namespace
             return;
         }
 
-        static void makeSurface(){
+        static float euclidDist(Point<3> p, Point<3> q) {
+            return sqrt(pow(p[0] - q[0], 2) 
+                      + pow(p[1] - q[1], 2)
+                      + pow(p[2] - q[2], 2));
+        }
+
+        static void advanceRibbon(std::vector<std::vector<Point<3>>> &streamList, 
+                                size_t posL,
+                                size_t posR,
+                                size_t nL) {
+            float prevDiag = INFINITY;
+            bool caughtUp = false;
+            while(true) {
+                // define quad to determine shortest diagonal 
+                Point<3> l0 = streamList[nL][posL];
+                Point<3> l1 = streamList[nL][posL + 1];
+                Point<3> r0 = streamList[nL + 1][posR];
+                Point<3> r1 = streamList[nL + 1][posR + 1];
+
+                float leftDiag = euclidDist(l1, r0);
+                float rightDiag = euclidDist(l0, r1);
+                float minDiag = std::min(leftDiag, rightDiag);
+                bool advanceOnLeft = (leftDiag == minDiag);
+
+                if(caughtUp && (advanceOnLeft) || (rightDiag > prevDiag)) return;
+
+
+                prevDiag = minDiag;
+            }
             return;
         }
 
