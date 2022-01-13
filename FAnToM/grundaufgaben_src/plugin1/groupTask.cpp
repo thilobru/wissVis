@@ -292,29 +292,32 @@ namespace
         }
 
         static void advanceRibbon(std::vector<std::vector<Point<3>>> &streamList, 
-                                std::vector<size_t> &posFront,
+                                std::vector<std::vector<size_t>> &posFront,
                                 size_t nL, 
                                 std::vector<PointF<3>> &surfacePoints, 
                                 std::vector<unsigned int> &surfaceIndexes) {
             float prevDiag = INFINITY;
             bool caughtUp = false;
-            if (nL == streamList.size() - 1) {return;}
+            if (nL >= streamList.size() - 1) {return;}
             while(true) {
                 // define quad to determine shortest diagonal 
-                Point<3> l0 = streamList[nL]    [posFront[nL]];
-                Point<3> l1 = streamList[nL]    [posFront[nL] + 1];
-                Point<3> r0 = streamList[nL + 1][posFront[nL + 1]];
-                Point<3> r1 = streamList[nL + 1][posFront[nL + 1] + 1];
+                Point<3> l0 = streamList[nL]    [posFront[nL][0]];
+                Point<3> l1 = streamList[nL]    [posFront[nL][0] + 1];
+                Point<3> r0 = streamList[nL + 1][posFront[nL + 1][1]];
+                Point<3> r1 = streamList[nL + 1][posFront[nL + 1][1] + 1];
 
                 float lDiag = euclidDist(l1, r0);
                 float rDiag = euclidDist(l0, r1);
                 float minDiag = std::min(lDiag, rDiag);
                 bool advanceOnLeft = (lDiag == minDiag);
 
-                if(posFront[nL] >= streamList[nL].size()) return;
+                if(posFront[nL][0] >= streamList[nL].size()-1) {
+                    std::cout << "Finished" << nL << std::endl;
+                    return;
+                }
 
                 if(caughtUp && (advanceOnLeft || rDiag > prevDiag)) {    
-                    std::cout << "Finished" << std::endl;
+                    std::cout << "Caught Up" << std::endl;
                     return;
                 }
                 if (advanceOnLeft) {
@@ -322,15 +325,18 @@ namespace
                                  surfaceIndexes, 
                                  l0, r0, l1);
                     std::cout << "Added Triangle L" << std::endl;
-                    posFront[nL]++;
+                    posFront[nL][0]++;
                     caughtUp = true;
                 } else {
                     makeTriangle(surfacePoints, 
                                  surfaceIndexes, 
                                  l0, r0, r1);
-                    std::cout << "Added Triangle R" << nL << std::endl;
-                    posFront[nL + 1]++;
-                    if (nL > 2) {nL = 0;}
+                    std::cout << "Added Triangle R" << nL << "immernoch < " << streamList.size() << std::endl;
+                    posFront[nL + 1][1]++;
+                    if (nL > streamList.size() - 2) {
+                        std::cout << "exiting" << std::endl;
+                        return;
+                    }
                     advanceRibbon(streamList, 
                                   posFront, 
                                   nL + 1,
@@ -456,7 +462,8 @@ namespace
             std::vector<PointF<3>> pointFStream;
 
             // all points of the grid make a stream
-            for (size_t i = 0; i < functionDomainGrid->numPoints(); i++) {
+            for (size_t i = 0; i < grid->numPoints(); i++) {
+                std::cout << i << std::endl;
                 // get starting coords
                 Point3 p = grid->points()[i];
                 double x = p[0], y = p[1], z = p[2];
@@ -473,31 +480,36 @@ namespace
                 }
 
                 // fill vector with all stream points and make connections between them in vectorF vector
-                for (size_t i = 0; i < points.size(); i++) {
+                for (size_t j = 0; j < points.size(); j++) {
                     if (points.size() < 2) {
                         break;
                     }
-                    pointFStream.push_back(PointF<3>(points[i][0], points[i][1], points[i][2]));
-                    if (i != 0 && i != points.size() - 1) {
-                        connectStream.push_back(VectorF<3>(points[i]));
+                    pointFStream.push_back(PointF<3>(points[j][0], points[j][1], points[j][2]));
+                    if (j != 0 && j != points.size() - 1) {
+                        connectStream.push_back(VectorF<3>(points[j]));
                     }
-                    connectStream.push_back(VectorF<3>(points[i]));
+                    connectStream.push_back(VectorF<3>(points[j]));
                 }
                 if (oSurface == "Yes") {
                     streamList.push_back(points);
+                    std::cout << streamList.size() << std::endl;
+                    std::cout << points.size() << std::endl;
                 }
             }
             //std::set<PointF<3>> surfacePointsSet;
             std::vector<PointF<3>> surfacePoints;
             std::vector<unsigned int> surfaceIndexes;
-            std::vector<size_t> posFront(streamList.size(),0);
-
-            std::cout << posFront[0] << std::endl;
+            std::vector<std::vector<size_t>> posFront(streamList.size(),{0,0});
 
             //advanceRibbonSimp(streamList, posFront, 0, surfacePoints, surfaceIndexes);
-
-            while(posFront[0] < 1){//streamList[0].size()) {
-                advanceRibbon(streamList, posFront, 0, surfacePoints, surfaceIndexes);
+            //position marker for finished streamline
+            size_t nL = 0;
+            while((posFront[0][0] < streamList[0].size()-1 || posFront[streamList.size()-1][1] < streamList[streamList.size()-1].size()-1) && nL < streamList.size() - 3) {
+                if(posFront[nL][0] == streamList[nL].size()-1) {
+                    nL++;
+                    std::cout << nL << std::endl;
+                }
+                advanceRibbon(streamList, posFront, nL, surfacePoints, surfaceIndexes);
             }
 
             // convert set to vector
