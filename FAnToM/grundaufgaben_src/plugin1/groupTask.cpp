@@ -248,49 +248,6 @@ namespace
         //     return;
         // }
 
-        static void advanceRibbonSimp(std::vector<std::vector<Point<3>>> &streamList, 
-                                std::vector<size_t> &posFront,
-                                size_t nL, 
-                                std::vector<PointF<3>> &surfacePoints, 
-                                std::vector<unsigned int> &surfaceIndexes) {
-            float prevDiag = INFINITY;
-            bool caughtUp = false;
-            while(true) {
-                // define quad to determine shortest diagonal 
-                Point<3> l0 = streamList[nL]    [posFront[nL]];
-                Point<3> l1 = streamList[nL]    [posFront[nL] + 1];
-                Point<3> r0 = streamList[nL + 1][posFront[nL + 1]];
-                Point<3> r1 = streamList[nL + 1][posFront[nL + 1] + 1];
-
-                float lDiag = euclidDist(l1, r0);
-                float rDiag = euclidDist(l0, r1);
-                float minDiag = std::min(lDiag, rDiag);
-                bool advanceOnLeft = (lDiag == minDiag);
-                
-                if(posFront[nL] == streamList[nL].size()-1) return;
-
-                if(caughtUp && (advanceOnLeft || rDiag > prevDiag)) {    
-                    std::cout << "Finished" << std::endl;
-                    return;
-                }
-                if (advanceOnLeft) {
-                    makeTriangle(surfacePoints, 
-                                 surfaceIndexes, 
-                                 l0, r0, l1);
-                    std::cout << "Added Triangle L" << std::endl;
-                    posFront[nL]++;
-                } else {
-                    makeTriangle(surfacePoints, 
-                                 surfaceIndexes, 
-                                 l0, r0, r1);
-                    std::cout << "Added Triangle R" << nL << std::endl;
-                    posFront[nL + 1]++;
-                }
-                prevDiag = minDiag;
-            }
-            return;
-        }
-
         static void advanceRibbon(std::vector<std::vector<Point<3>>> &streamList, 
                                 std::vector<std::vector<size_t>> &posFront,
                                 size_t nL, 
@@ -315,7 +272,6 @@ namespace
                     std::cout << "Finished" << nL << std::endl;
                     return;
                 }
-
                 if(caughtUp && (advanceOnLeft || rDiag > prevDiag)) {    
                     std::cout << "Caught Up" << std::endl;
                     return;
@@ -449,14 +405,12 @@ namespace
 
             // sanity check that interpolated fields really use the correct grid type. This should never fail
             std::shared_ptr<const Grid<3>> functionDomainGrid = std::dynamic_pointer_cast<const Grid<3>>(function->domain());
-
             if (!functionDomainGrid) {
                 throw std::logic_error("Wrong type of grid!");
             }
 
             // prepare for surface
             std::vector<std::vector<Point<3>>> streamList;
-            
             // prepare for the streams
             std::vector<VectorF<3>> connectStream;
             std::vector<PointF<3>> pointFStream;
@@ -468,6 +422,9 @@ namespace
                 Point3 p = grid->points()[i];
                 double x = p[0], y = p[1], z = p[2];
                 std::vector<Point<3>> points;
+
+                auto evaluator = field->makeEvaluator();
+                if (!evaluator->reset(p)) continue;
 
                 if (method == "Euler") {
                     makeEuler(dStep, adStep, nStep, x, y, z, points, field);
@@ -490,7 +447,7 @@ namespace
                     }
                     connectStream.push_back(VectorF<3>(points[j]));
                 }
-                if (oSurface == "Yes") {
+                if (oSurface == "Yes" && points.size() > 1) {
                     streamList.push_back(points);
                     std::cout << streamList.size() << std::endl;
                     std::cout << points.size() << std::endl;
@@ -504,8 +461,10 @@ namespace
             //advanceRibbonSimp(streamList, posFront, 0, surfacePoints, surfaceIndexes);
             //position marker for finished streamline
             size_t nL = 0;
-            while((posFront[0][0] < streamList[0].size()-1 || posFront[streamList.size()-1][1] < streamList[streamList.size()-1].size()-1) && nL < streamList.size() - 3) {
-                if(posFront[nL][0] == streamList[nL].size()-1) {
+            while((posFront[0][0] < streamList[0].size()-1 
+                   || posFront[streamList.size()-1][1] < streamList[streamList.size()-1].size()-1) 
+                   && nL < streamList.size() - 3) {
+                if(posFront[nL][0] >= streamList[nL].size()-1) {
                     nL++;
                     std::cout << nL << std::endl;
                 }
@@ -514,11 +473,6 @@ namespace
 
             // convert set to vector
             // std::vector<PointF<3>> surfacePoints(surfacePointsSet.begin(), surfacePointsSet.end());
-
-            for(size_t i = 0; i < surfacePoints.size(); i++) {
-                debugLog() << surfacePoints[i];
-                debugLog() << surfaceIndexes[i] << std::endl;
-            }
 
             // making the visualization
             std::shared_ptr<graphics::Drawable> gridLines = drawLines(pointFGrid, connectGrid, colorGrid);
