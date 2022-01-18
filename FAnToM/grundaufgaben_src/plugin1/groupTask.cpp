@@ -248,6 +248,20 @@ namespace
         //     return;
         // }
 
+        static void addParticle(std::vector<std::vector<Point<3>>> &streamList, 
+                                std::vector<std::vector<size_t>> &posFront,
+                                size_t nL) {
+
+        }
+
+        static void remParticle(){
+            
+        }
+
+        static void ripRibbon(){
+            
+        }
+
         static void advanceRibbon(std::vector<std::vector<Point<3>>> &streamList, 
                                 std::vector<std::vector<size_t>> &posFront,
                                 size_t nL, 
@@ -262,6 +276,10 @@ namespace
                 Point<3> l1 = streamList[nL]    [posFront[nL][0] + 1];
                 Point<3> r0 = streamList[nL + 1][posFront[nL + 1][1]];
                 Point<3> r1 = streamList[nL + 1][posFront[nL + 1][1] + 1];
+
+                addParticle(streamList, posFront, nL, l1, r1);
+                remParticle();
+                ripRibbon();
 
                 float lDiag = euclidDist(l1, r0);
                 float rDiag = euclidDist(l0, r1);
