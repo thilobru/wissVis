@@ -6,9 +6,9 @@
 ################################################################
 ###                  Reset GUI                               ###
 ################################################################
-fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-8.33171, 5.50842, 6.38222), fantom.math.Vector3(0.94167, 1.2867, 0.565463), fantom.math.Vector3(0.332871, 0.931677, -0.145518), 1, 1.0472 ) )
+fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-7.52652, 4.8392, 10.9608), fantom.math.Vector3(1.21861, 3.24672, 0.525773), fantom.math.Vector3(0.100446, 0.992663, -0.06731), 1, 1.0472 ) )
 fantom.ui.setCamera( 1, fantom.ui.Camera( fantom.math.Vector3(5.7253, 0, 0), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
-fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -5.72205e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
+fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -1.43051e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
 fantom.ui.setCamera( 3, fantom.ui.Camera( fantom.math.Vector3(0, 0, 5.7253), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 1, 0), 0, 1.0472 ) )
 
 fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 0, fantom.math.Vector4( 1, 0, 0, 1 ), False ) )
@@ -40,19 +40,35 @@ fantom.ui.setAlgorithmPosition(Load_VTK, fantom.math.Vector2(0, 35))
 # Run the algorithm
 Load_VTK.runBlocking()
 
+Grid_ShowGrid = fantom.makeAlgorithm("Grid/Show Grid")
+Grid_ShowGrid.setName("Grid/Show Grid")
+Grid_ShowGrid.setAutoSchedule(True)
+Grid_ShowGrid.setOption("Line color", fantom.math.Color(0, 0, 1, 1))
+Grid_ShowGrid.setOption("Line width", 1)
+Grid_ShowGrid.setOption("Random jittering of color", True)
+Grid_ShowGrid.setOption("Random seed", 0)
+fantom.ui.setAlgorithmPosition(Grid_ShowGrid, fantom.math.Vector2(0, 274.8))
+Grid_ShowGrid.setVisualOutputVisible('Grid', True)
+
+# Inbound connections of this algorithm:
+Load_VTK.connect("Grid", Grid_ShowGrid, "Grid")
+
+# Run the algorithm
+Grid_ShowGrid.runBlocking()
+
 Tasks_GroupTaskNewNew = fantom.makeAlgorithm("Tasks/GroupTaskNewNew")
 Tasks_GroupTaskNewNew.setName("Tasks/GroupTaskNewNew")
-Tasks_GroupTaskNewNew.setAutoSchedule(True)
+Tasks_GroupTaskNewNew.setAutoSchedule(False)
 Tasks_GroupTaskNewNew.setOption("sx", -4)
 Tasks_GroupTaskNewNew.setOption("sy", 1)
-Tasks_GroupTaskNewNew.setOption("sz", 1)
+Tasks_GroupTaskNewNew.setOption("sz", 1e-05)
 Tasks_GroupTaskNewNew.setOption("ex", -4)
 Tasks_GroupTaskNewNew.setOption("ey", 1)
 Tasks_GroupTaskNewNew.setOption("ez", 7)
 Tasks_GroupTaskNewNew.setOption("Method", "Runge-Kutta")
 Tasks_GroupTaskNewNew.setOption("dStep", 0.05)
 Tasks_GroupTaskNewNew.setOption("adStep", 0.02)
-Tasks_GroupTaskNewNew.setOption("nStep", 100)
+Tasks_GroupTaskNewNew.setOption("nStep", 1000)
 Tasks_GroupTaskNewNew.setOption("colorStartLine", fantom.math.Color(1, 1, 0, 1))
 Tasks_GroupTaskNewNew.setOption("colorStream", fantom.math.Color(1, 0, 0, 1))
 Tasks_GroupTaskNewNew.setOption("colorSurface", fantom.math.Color(0, 1, 0, 1))
