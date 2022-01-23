@@ -35,7 +35,7 @@ namespace
                 add< double >( "ez", "end point in z-dimension", 7.0 );
                 addSeparator();
                 add<Field<3, Vector3>>("Field", "3D vector field", definedOn<Grid<3>>(Grid<3>::Points));
-                add<InputChoices>("Method", "calculation method.", std::vector<std::string>{"Euler", "Runge-Kutta"}, "Euler");
+                add<InputChoices>("Method", "calculation method.", std::vector<std::string>{"Euler", "Runge-Kutta"}, "Runge-Kutta");
                 add<double>("dStep", "distance between steps", 0.05);
                 add<double>("adStep", "for calculating new step size", 0.02);
                 add<size_t>("nStep", "max number of steps", 100);
@@ -62,19 +62,17 @@ namespace
         {
         }
 
-        static void makeStep(std::vector<Point<3>>& vec,
-                             Point<3> p,
+        static Point<3> makeStep(Point<3> p,
                              std::string method,
                                 double& dStep,
                                 double& adStep,
                                 unsigned int& nStep,
                              std::unique_ptr<FieldEvaluator<3UL, Vector3>>& evaluator) {
-            if (method == "Euler") stepEuler(vec, p, dStep, adStep, nStep, evaluator);
-            else stepRungeKutta(vec, p, dStep, adStep, nStep, evaluator);
+            if (method == "Euler") return stepEuler(p, dStep, adStep, nStep, evaluator);
+            else return stepRungeKutta(p, dStep, nStep, evaluator);
         }
 
-        static void stepEuler(std::vector<Point<3>>& vec,
-                              Point<3> p,
+        static Point<3> stepEuler(Point<3> p,
                               double& dStep,
                               double& adStep,
                               unsigned int& nStep,
@@ -84,7 +82,7 @@ namespace
                 //if there is no velocity at this point stop the loop
                 if (v[0] == 0 and v[1] == 0 and v[2] == 0) {
                     std::cout << "1error" << std::endl;
-                    return;
+                    return p;
                 }
                 Point<3> s = p + dStep * v;
                 double pS = abs(s[0] + s[1] + s[2]);
@@ -103,19 +101,17 @@ namespace
                     dStep = dStep / 2;
                 } else if (pS - pD < adStep / 2) {
                     dStep = dStep * 2;
-                    vec.push_back(s);
+                    return s;
                 } else if (pS - pD < adStep) {
-                    vec.push_back(d);
+                    return d;
                 }
             } else {
-                return;
+                return p;
             }
         }
 
-        static void stepRungeKutta(std::vector<Point<3>>& vec,
-                                   Point<3> p,
+        static Point<3> stepRungeKutta(Point<3> p,
                                 double& dStep,
-                                double& adStep,
                                 unsigned int& nStep,
                                    std::unique_ptr<FieldEvaluator<3UL, Vector3>>& evaluator) {
             Point<3> n = {0, 0, 0};
@@ -125,12 +121,12 @@ namespace
                 // if there is no velocity at this point stop the loop
                 if (v[0] == 0 and v[1] == 0 and v[2] == 0) {
                     std::cout << "1error" << std::endl;
-                    return;
+                    return p;
                 }
                 q[0] = (dStep * v);
             } else {
                 std::cout << "2error" << std::endl;
-                return;
+                return p;
             }
 
             for(int i = 0; i < 3; i++) {
@@ -143,8 +139,9 @@ namespace
             n = p + (q[0] + 2 * q[1] + 2 * q[2] + q[3]) / 6;
             // std::cout << "added " << n << " by way of " << p << (q[0] + 2 * q[1] + 2 * q[2] + q[3]) / 6 << std::endl;
             if (evaluator->reset(n)) {
-                vec.push_back(n);
+                return n;
             }
+            return p;
         }
 
         static float euclidDist(Point<3> p, Point<3> q) {
@@ -182,28 +179,32 @@ namespace
 
         static void advanceRibbon(std::vector<std::vector<Point<3>>> &streamList, 
                                 std::vector<std::vector<size_t>> &posFront,
+                                std::string method,
                                 double& dStep,
                                 double& adStep,
                                 unsigned int& nStep,
+                                std::unique_ptr<FieldEvaluator<3UL, Vector3>>& evaluator,
                                 size_t nL, 
                                 std::vector<PointF<3>> &surfacePoints, 
                                 std::vector<unsigned int> &surfaceIndexes) {
+            size_t lPos = posFront[nL][0];
+            size_t rPos = posFront[nL + 1][1];
             float prevDiag = INFINITY;
             bool caughtUp = false;
             if (nL >= streamList.size() - 1) {return;}
             while(true) {
                 // define quad to determine shortest diagonal 
-                Point<3> l0 = streamList[nL]    [posFront[nL][0]];
-                Point<3> l1 = streamList[nL]    [posFront[nL][0] + 1];
-                Point<3> r0 = streamList[nL + 1][posFront[nL + 1][1]];
-                Point<3> r1 = streamList[nL + 1][posFront[nL + 1][1] + 1];
+                Point<3> l0 = streamList[nL]    [lPos];
+                Point<3> l1 = streamList[nL]    [lPos + 1];
+                Point<3> r0 = streamList[nL + 1][rPos];
+                Point<3> r1 = streamList[nL + 1][rPos + 1];
 
                 float lDiag = euclidDist(l1, r0);
                 float rDiag = euclidDist(l0, r1);
                 float minDiag = std::min(lDiag, rDiag);
                 bool advanceOnLeft = (lDiag == minDiag);
 
-                if(posFront[nL][0] >= streamList[nL].size()-1) {
+                if(lPos > streamList[nL].size() - 2 || l0 == l1 || r0 == r1) {
                     std::cout << "Finished" << nL << std::endl;
                     return;
                 }
@@ -216,25 +217,25 @@ namespace
                                  surfaceIndexes, 
                                  l0, r0, l1);
                     std::cout << "Added Triangle L" << std::endl;
-                    if (posFront[nL][0] < streamList[nL].size() - 1) {
-                        posFront[nL][0]++;
+                    if (streamList[nL].size() < nStep || 
+                        streamList[nL].size() < posFront[nL][0] - 1) {
+                        streamList[nL].push_back(makeStep(l1, method, dStep, adStep, nStep, evaluator));
                     }
+                    posFront[nL][0]++;
                     caughtUp = true;
                 } else {
                     makeTriangle(surfacePoints, 
                                  surfaceIndexes, 
                                  l0, r0, r1);
                     std::cout << "Added Triangle R" << nL << "immernoch < " << streamList.size() << std::endl;
-                    if (posFront[nL + 1][1] < streamList[nL + 1].size() - 1) {
-                        posFront[nL + 1][1]++;
+                    if (streamList[nL + 1].size() < nStep || 
+                        streamList[nL + 1].size() < posFront[nL+1][1] - 1) {
+                        streamList[nL + 1].push_back(makeStep(r1, method, dStep, adStep, nStep, evaluator));
                     }
-                    if (nL > streamList.size() - 2 || 
-                        posFront[nL+1][1] >= streamList[nL+1].size() -1) {
-                        std::cout << "exiting" << std::endl;
-                        return;
-                    }
+                    posFront[nL + 1][1]++;
                     advanceRibbon(streamList, 
-                                  posFront, dStep, adStep, nStep, 
+                                  posFront, method, dStep, adStep, nStep, 
+                                  evaluator,
                                   nL + 1,
                                   surfacePoints,
                                   surfaceIndexes);
@@ -329,37 +330,34 @@ namespace
             size_t nTracer = euclidDist(startcoord, endcoord) / dStep + 1;
             std::vector<std::vector<Point<3>>> streamList;
 
-            for(size_t i = 0; i < nTracer; i++) {
+            for(size_t i = 0; i <= nTracer; i++) {
                 Point<3> p = startcoord + i * ((endcoord - startcoord) / nTracer);
                 if (!(evaluator->reset(p))) continue;
                 std::vector<Point<3>> oneTracerPoints;
                 oneTracerPoints.push_back(p);
-                makeStep(oneTracerPoints, p, method, dStep, adStep, nStep, evaluator);
-                for(int i = 1; i< nStep; i++) {
-                    makeStep(oneTracerPoints, oneTracerPoints[i], method, dStep, adStep, nStep, evaluator);
-                }
+                // for ( size_t j = 0; j < 1; j++) {
+                //     oneTracerPoints.push_back(makeStep(oneTracerPoints[j], method, dStep, adStep, nStep, evaluator));
+                // }
                 streamList.push_back(oneTracerPoints);
             }
-
-
-
 
             //std::set<PointF<3>> surfacePointsSet;
             std::vector<PointF<3>> surfacePoints;
             std::vector<unsigned int> surfaceIndexes;
-            std::vector<std::vector<size_t>> posFront(streamList.size(),{0,0});
+            std::vector<std::vector<size_t>> posFront(streamList.size(),{0,0,1});
 
             //advanceRibbonSimp(streamList, posFront, 0, surfacePoints, surfaceIndexes);
             //position marker for finished streamline
             size_t nL = 0;
-            while((posFront[0][0] < streamList[0].size()-1 
-                   || posFront[streamList.size()-1][1] < streamList[streamList.size()-1].size()-1) 
+            while((posFront[0][0] < nStep - 1
+                   || posFront[streamList.size()-1][1] < nStep - 1)
                    && nL < streamList.size() - 3) {
-                if(posFront[nL][0] >= streamList[nL].size()-1) {
+                if(posFront[nL][0] >= nStep || 
+                   streamList[nL][streamList[nL].size() - 2] == streamList[nL][streamList[nL].size() - 1]) {
                     nL++;
                     std::cout << nL << std::endl;
                 }
-                advanceRibbon(streamList, posFront, dStep, adStep, nStep, nL, surfacePoints, surfaceIndexes);
+                advanceRibbon(streamList, posFront, method, dStep, adStep, nStep, evaluator, nL, surfacePoints, surfaceIndexes);
             }
 
             // convert set to vector
@@ -388,5 +386,5 @@ namespace
             setGraphics("surface", surface);
         }
     };
-    AlgorithmRegister<IntegrateTask> dummy("Tasks/GroupTaskWithStartline", "Show the streamlines for an input vector field");
+    AlgorithmRegister<IntegrateTask> dummy("Tasks/GTStartlineGradual", "Show the streamlines for an input vector field");
 }
