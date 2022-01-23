@@ -184,24 +184,22 @@ namespace
                                 size_t nL, 
                                 std::vector<PointF<3>> &surfacePoints, 
                                 std::vector<unsigned int> &surfaceIndexes) {
-            size_t lPos = posFront[nL][0];
-            size_t rPos = posFront[nL + 1][1];
             float prevDiag = INFINITY;
             bool caughtUp = false;
             if (nL >= streamList.size() - 1) {return;}
             while(true) {
                 // define quad to determine shortest diagonal 
-                Point<3> l0 = streamList[nL]    [lPos];
-                Point<3> l1 = streamList[nL]    [lPos + 1];
-                Point<3> r0 = streamList[nL + 1][rPos];
-                Point<3> r1 = streamList[nL + 1][rPos + 1];
+                Point<3> l0 = streamList[nL]    [posFront[nL][0]];
+                Point<3> l1 = streamList[nL]    [posFront[nL][0] + 1];
+                Point<3> r0 = streamList[nL + 1][posFront[nL + 1][1]];
+                Point<3> r1 = streamList[nL + 1][posFront[nL + 1][1] +1];
 
                 float lDiag = euclidDist(l1, r0);
                 float rDiag = euclidDist(l0, r1);
                 float minDiag = std::min(lDiag, rDiag);
                 bool advanceOnLeft = (lDiag == minDiag);
 
-                if(lPos > streamList[nL].size() - 2 || l0 == l1 || r0 == r1) {
+                if(posFront[nL][0] > streamList[nL].size() - 2 || l0 == l1 || r0 == r1) {
                     std::cout << "Finished" << nL << std::endl;
                     return;
                 }
@@ -306,6 +304,7 @@ namespace
             std::shared_ptr<const Field<3, Vector3>> field = options.get<Field<3, Vector3>>("Field");
             std::shared_ptr<const Function<Vector3>> function = options.get<Function<Vector3>>("Field");
             auto evaluator = field->makeEvaluator();
+            std::cout << "bis hier" << std::endl;
 
             // if there is no input, do nothing
             if (!field) {
@@ -332,12 +331,11 @@ namespace
                 if (!(evaluator->reset(p))) continue;
                 std::vector<Point<3>> oneTracerPoints;
                 oneTracerPoints.push_back(p);
-                // for ( size_t j = 0; j < 1; j++) {
-                //     oneTracerPoints.push_back(makeStep(oneTracerPoints[j], method, dStep, adStep, nStep, evaluator));
-                // }
+                for ( size_t j = 0; j < 1; j++) {
+                    oneTracerPoints.push_back(makeStep(oneTracerPoints[j], method, dStep, adStep, nStep, evaluator));
+                }
                 streamList.push_back(oneTracerPoints);
             }
-
             //std::set<PointF<3>> surfacePointsSet;
             std::vector<PointF<3>> surfacePoints;
             std::vector<unsigned int> surfaceIndexes;
@@ -346,11 +344,10 @@ namespace
             //advanceRibbonSimp(streamList, posFront, 0, surfacePoints, surfaceIndexes);
             //position marker for finished streamline
             size_t nL = 0;
-            while((posFront[0][0] < nStep - 1
-                   || posFront[streamList.size()-1][1] < nStep - 1)
+            while((posFront[0][0] < streamList[0].size()-2 
+                   || posFront[streamList.size()-1][1] < streamList[streamList.size()-1].size()-2) 
                    && nL < streamList.size() - 3) {
-                if(posFront[nL][0] >= nStep || 
-                   streamList[nL][streamList[nL].size() - 2] == streamList[nL][streamList[nL].size() - 1]) {
+                if(posFront[nL][0] >= streamList[nL].size()-2) {
                     nL++;
                     std::cout << nL << std::endl;
                 }

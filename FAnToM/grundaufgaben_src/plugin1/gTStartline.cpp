@@ -136,6 +136,9 @@ namespace
                 if (evaluator->reset(p + 0.5 * q[i])){
                     auto v = evaluator->value();
                     q[i + 1] = (dStep * v);
+                    if (evaluator->reset(q[i + 1])) {
+                        q[i+1] = {0,0,0};
+                    }
                 }
             }
 
@@ -351,10 +354,10 @@ namespace
             //advanceRibbonSimp(streamList, posFront, 0, surfacePoints, surfaceIndexes);
             //position marker for finished streamline
             size_t nL = 0;
-            while((posFront[0][0] < streamList[0].size()-1 
-                   || posFront[streamList.size()-1][1] < streamList[streamList.size()-1].size()-1) 
+            while((posFront[0][0] < streamList[0].size()-2 
+                   || posFront[streamList.size()-1][1] < streamList[streamList.size()-1].size()-2) 
                    && nL < streamList.size() - 3) {
-                if(posFront[nL][0] >= streamList[nL].size()-1) {
+                if(posFront[nL][0] >= streamList[nL].size()-2) {
                     nL++;
                     std::cout << nL << std::endl;
                 }

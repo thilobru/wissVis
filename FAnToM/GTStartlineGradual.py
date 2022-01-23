@@ -6,9 +6,9 @@
 ################################################################
 ###                  Reset GUI                               ###
 ################################################################
-fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-5.9632, 4.19517, 8.30911), fantom.math.Vector3(1.20761, 1.0499, 0.704463), fantom.math.Vector3(0.106931, 0.95035, -0.292233), 1, 1.0472 ) )
+fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(0, 0, 5.7253), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 1, 0), 1, 1.0472 ) )
 fantom.ui.setCamera( 1, fantom.ui.Camera( fantom.math.Vector3(5.7253, 0, 0), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
-fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -1.90735e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
+fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -4.76837e-07, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
 fantom.ui.setCamera( 3, fantom.ui.Camera( fantom.math.Vector3(0, 0, 5.7253), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 1, 0), 0, 1.0472 ) )
 
 fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 0, fantom.math.Vector4( 1, 0, 0, 1 ), False ) )
@@ -33,39 +33,38 @@ Load_VTK.setOption("Input File", "/home/thilo/Documents/wissVis/TestData/streamT
 Load_VTK.setOption("Big Endian", True)
 Load_VTK.setOption("Dimension", "2D if third component is zero")
 Load_VTK.setOption("Time List", "")
-fantom.ui.setAlgorithmPosition(Load_VTK, fantom.math.Vector2(0, 35))
+fantom.ui.setAlgorithmPosition(Load_VTK, fantom.math.Vector2(21, 29.4))
 
 # Inbound connections of this algorithm:
 
 # Run the algorithm
 Load_VTK.runBlocking()
 
-Tasks_GTStartline = fantom.makeAlgorithm("Tasks/GTStartline")
-Tasks_GTStartline.setName("Tasks/GTStartline")
-Tasks_GTStartline.setAutoSchedule(False)
-Tasks_GTStartline.setOption("sx", -4)
-Tasks_GTStartline.setOption("sy", 1)
-Tasks_GTStartline.setOption("sz", 1)
-Tasks_GTStartline.setOption("ex", -4)
-Tasks_GTStartline.setOption("ey", 1)
-Tasks_GTStartline.setOption("ez", 7)
-Tasks_GTStartline.setOption("Method", "Runge-Kutta")
-Tasks_GTStartline.setOption("dStep", 0.05)
-Tasks_GTStartline.setOption("adStep", 0.02)
-Tasks_GTStartline.setOption("nStep", 200)
-Tasks_GTStartline.setOption("colorStartLine", fantom.math.Color(1, 1, 0, 1))
-Tasks_GTStartline.setOption("colorStream", fantom.math.Color(1, 0, 0, 1))
-Tasks_GTStartline.setOption("colorSurface", fantom.math.Color(0, 1, 0, 1))
-fantom.ui.setAlgorithmPosition(Tasks_GTStartline, fantom.math.Vector2(0, 144.4))
-Tasks_GTStartline.setVisualOutputVisible('surface', True)
-Tasks_GTStartline.setVisualOutputVisible('streamlines', True)
-Tasks_GTStartline.setVisualOutputVisible('startline', True)
+Tasks_GTStartlineGradual = fantom.makeAlgorithm("Tasks/GTStartlineGradual")
+Tasks_GTStartlineGradual.setName("Tasks/GTStartlineGradual")
+Tasks_GTStartlineGradual.setAutoSchedule(True)
+Tasks_GTStartlineGradual.setOption("sx", -4)
+Tasks_GTStartlineGradual.setOption("sy", 1)
+Tasks_GTStartlineGradual.setOption("sz", 1)
+Tasks_GTStartlineGradual.setOption("ex", -4)
+Tasks_GTStartlineGradual.setOption("ey", 1)
+Tasks_GTStartlineGradual.setOption("ez", 7)
+Tasks_GTStartlineGradual.setOption("Method", "Runge-Kutta")
+Tasks_GTStartlineGradual.setOption("dStep", 0.05)
+Tasks_GTStartlineGradual.setOption("adStep", 0.02)
+Tasks_GTStartlineGradual.setOption("nStep", 100)
+Tasks_GTStartlineGradual.setOption("colorStartLine", fantom.math.Color(1, 1, 0, 1))
+Tasks_GTStartlineGradual.setOption("colorStream", fantom.math.Color(1, 0, 0, 1))
+Tasks_GTStartlineGradual.setOption("colorSurface", fantom.math.Color(0, 1, 0, 1))
+fantom.ui.setAlgorithmPosition(Tasks_GTStartlineGradual, fantom.math.Vector2(112, 185))
+Tasks_GTStartlineGradual.setVisualOutputVisible('surface', True)
+Tasks_GTStartlineGradual.setVisualOutputVisible('streamlines', True)
+Tasks_GTStartlineGradual.setVisualOutputVisible('startline', True)
 
 # Inbound connections of this algorithm:
-Load_VTK.connect("Fields", Tasks_GTStartline, "Field")
 
 # Run the algorithm
-Tasks_GTStartline.runBlocking()
+Tasks_GTStartlineGradual.runBlocking()
 
 
 
