@@ -249,19 +249,19 @@ namespace
         //     return;
         // }
 
-        static void addParticle(std::vector<std::vector<Point<3>>> &streamList, 
-                                std::vector<std::vector<size_t>> &posFront,
-                                size_t nL) {
+        // static void addParticle(std::vector<std::vector<Point<3>>> &streamList, 
+        //                         std::vector<std::vector<size_t>> &posFront,
+        //                         size_t nL) {
 
-        }
+        // }
 
-        static void remParticle(){
+        // static void remParticle(){
             
-        }
+        // }
 
-        static void ripRibbon(){
+        // static void ripRibbon(){
             
-        }
+        // }
 
         static void advanceRibbon(std::vector<std::vector<Point<3>>> &streamList, 
                                 std::vector<std::vector<size_t>> &posFront,

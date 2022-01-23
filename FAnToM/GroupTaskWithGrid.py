@@ -6,9 +6,9 @@
 ################################################################
 ###                  Reset GUI                               ###
 ################################################################
-fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-2.24102, 5.62649, 10.5823), fantom.math.Vector3(1.4213, 0.782032, 0.135861), fantom.math.Vector3(0.0680488, 0.913987, -0.399996), 1, 1.0472 ) )
+fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-2.24102, 5.62649, 10.5823), fantom.math.Vector3(1.4213, 0.782032, 0.13586), fantom.math.Vector3(0.0680493, 0.913987, -0.399998), 1, 1.0472 ) )
 fantom.ui.setCamera( 1, fantom.ui.Camera( fantom.math.Vector3(5.7253, 0, 0), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
-fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -9.53674e-07, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
+fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -1.43051e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
 fantom.ui.setCamera( 3, fantom.ui.Camera( fantom.math.Vector3(0, 0, 5.7253), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 1, 0), 0, 1.0472 ) )
 
 fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 0, fantom.math.Vector4( 1, 0, 0, 1 ), False ) )
@@ -40,35 +40,35 @@ fantom.ui.setAlgorithmPosition(Load_VTK, fantom.math.Vector2(0, 35))
 # Run the algorithm
 Load_VTK.runBlocking()
 
-Tasks_GroupTaskWithGrid = fantom.makeAlgorithm("Tasks/GroupTaskWithGrid")
-Tasks_GroupTaskWithGrid.setName("Tasks/GroupTaskWithGrid")
-Tasks_GroupTaskWithGrid.setAutoSchedule(True)
-Tasks_GroupTaskWithGrid.setOption("Surface", "Yes")
-Tasks_GroupTaskWithGrid.setOption("ox", -4)
-Tasks_GroupTaskWithGrid.setOption("oy", 1)
-Tasks_GroupTaskWithGrid.setOption("oz", 1)
-Tasks_GroupTaskWithGrid.setOption("nx", 1)
-Tasks_GroupTaskWithGrid.setOption("ny", 1)
-Tasks_GroupTaskWithGrid.setOption("nz", 5)
-Tasks_GroupTaskWithGrid.setOption("dx", 1)
-Tasks_GroupTaskWithGrid.setOption("dy", 1)
-Tasks_GroupTaskWithGrid.setOption("dz", 1)
-Tasks_GroupTaskWithGrid.setOption("Method", "Runge-Kutta")
-Tasks_GroupTaskWithGrid.setOption("dStep", 0.05)
-Tasks_GroupTaskWithGrid.setOption("adStep", 0.02)
-Tasks_GroupTaskWithGrid.setOption("nStep", 100)
-Tasks_GroupTaskWithGrid.setOption("colorGrid", fantom.math.Color(1, 1, 1, 1))
-Tasks_GroupTaskWithGrid.setOption("colorStream", fantom.math.Color(1, 0, 0, 1))
-fantom.ui.setAlgorithmPosition(Tasks_GroupTaskWithGrid, fantom.math.Vector2(0, 144.4))
-Tasks_GroupTaskWithGrid.setVisualOutputVisible('surface', True)
-Tasks_GroupTaskWithGrid.setVisualOutputVisible('grid', True)
-Tasks_GroupTaskWithGrid.setVisualOutputVisible('streams', True)
+Tasks_GTGrid = fantom.makeAlgorithm("Tasks/GTGrid")
+Tasks_GTGrid.setName("Tasks/GTGrid")
+Tasks_GTGrid.setAutoSchedule(True)
+Tasks_GTGrid.setOption("Surface", "Yes")
+Tasks_GTGrid.setOption("ox", -4)
+Tasks_GTGrid.setOption("oy", 1)
+Tasks_GTGrid.setOption("oz", 1)
+Tasks_GTGrid.setOption("nx", 1)
+Tasks_GTGrid.setOption("ny", 1)
+Tasks_GTGrid.setOption("nz", 5)
+Tasks_GTGrid.setOption("dx", 1)
+Tasks_GTGrid.setOption("dy", 1)
+Tasks_GTGrid.setOption("dz", 1)
+Tasks_GTGrid.setOption("Method", "Runge-Kutta")
+Tasks_GTGrid.setOption("dStep", 0.05)
+Tasks_GTGrid.setOption("adStep", 0.02)
+Tasks_GTGrid.setOption("nStep", 100)
+Tasks_GTGrid.setOption("colorGrid", fantom.math.Color(1, 1, 1, 1))
+Tasks_GTGrid.setOption("colorStream", fantom.math.Color(1, 0, 0, 1))
+fantom.ui.setAlgorithmPosition(Tasks_GTGrid, fantom.math.Vector2(0, 144.4))
+Tasks_GTGrid.setVisualOutputVisible('surface', True)
+Tasks_GTGrid.setVisualOutputVisible('grid', True)
+Tasks_GTGrid.setVisualOutputVisible('streams', True)
 
 # Inbound connections of this algorithm:
-Load_VTK.connect("Fields", Tasks_GroupTaskWithGrid, "Field")
+Load_VTK.connect("Fields", Tasks_GTGrid, "Field")
 
 # Run the algorithm
-Tasks_GroupTaskWithGrid.runBlocking()
+Tasks_GTGrid.runBlocking()
 
 
 

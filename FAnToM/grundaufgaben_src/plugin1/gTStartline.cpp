@@ -35,7 +35,7 @@ namespace
                 add< double >( "ez", "end point in z-dimension", 7.0 );
                 addSeparator();
                 add<Field<3, Vector3>>("Field", "3D vector field", definedOn<Grid<3>>(Grid<3>::Points));
-                add<InputChoices>("Method", "calculation method.", std::vector<std::string>{"Euler", "Runge-Kutta"}, "Euler");
+                add<InputChoices>("Method", "calculation method.", std::vector<std::string>{"Euler", "Runge-Kutta"}, "Runge-Kutta");
                 add<double>("dStep", "distance between steps", 0.05);
                 add<double>("adStep", "for calculating new step size", 0.02);
                 add<size_t>("nStep", "max number of steps", 100);
@@ -69,15 +69,16 @@ namespace
                                 double& adStep,
                                 unsigned int& nStep,
                              std::unique_ptr<FieldEvaluator<3UL, Vector3>>& evaluator) {
-            if (method == "Euler") stepEuler(vec, p, dStep, adStep, nStep, evaluator);
-            else stepRungeKutta(vec, p, dStep, adStep, nStep, evaluator);
+            nStep++; 
+            nStep--;
+            if (method == "Euler") stepEuler(vec, p, dStep, adStep, evaluator);
+            else stepRungeKutta(vec, p, dStep, evaluator);
         }
 
         static void stepEuler(std::vector<Point<3>>& vec,
                               Point<3> p,
                               double& dStep,
                               double& adStep,
-                              unsigned int& nStep,
                               std::unique_ptr<FieldEvaluator<3UL, Vector3>>& evaluator) {
             if (evaluator->reset(p)) {
                 auto v = evaluator->value();
@@ -115,8 +116,6 @@ namespace
         static void stepRungeKutta(std::vector<Point<3>>& vec,
                                    Point<3> p,
                                 double& dStep,
-                                double& adStep,
-                                unsigned int& nStep,
                                    std::unique_ptr<FieldEvaluator<3UL, Vector3>>& evaluator) {
             Point<3> n = {0, 0, 0};
             std::vector<Point<3>> q = {n, n, n, n};
@@ -166,19 +165,19 @@ namespace
             return;
         }
 
-        static void addParticle(std::vector<std::vector<Point<3>>> &streamList, 
-                                std::vector<std::vector<size_t>> &posFront,
-                                size_t nL) {
+        // static void addParticle(std::vector<std::vector<Point<3>>> &streamList, 
+        //                         std::vector<std::vector<size_t>> &posFront,
+        //                         size_t nL) {
 
-        }
+        // }
 
-        static void remParticle(){
+        // static void remParticle(){
             
-        }
+        // }
 
-        static void ripRibbon(){
+        // static void ripRibbon(){
             
-        }
+        // }
 
         static void advanceRibbon(std::vector<std::vector<Point<3>>> &streamList, 
                                 std::vector<std::vector<size_t>> &posFront,
@@ -335,7 +334,7 @@ namespace
                 std::vector<Point<3>> oneTracerPoints;
                 oneTracerPoints.push_back(p);
                 makeStep(oneTracerPoints, p, method, dStep, adStep, nStep, evaluator);
-                for(int i = 1; i< nStep; i++) {
+                for(size_t i = 1; i< nStep; i++) {
                     makeStep(oneTracerPoints, oneTracerPoints[i], method, dStep, adStep, nStep, evaluator);
                 }
                 streamList.push_back(oneTracerPoints);

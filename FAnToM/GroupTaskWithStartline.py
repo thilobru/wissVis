@@ -6,9 +6,9 @@
 ################################################################
 ###                  Reset GUI                               ###
 ################################################################
-fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-5.34432, 5.48547, 9.48751), fantom.math.Vector3(1.29174, 0.843658, 0.519371), fantom.math.Vector3(0.137075, 0.91747, -0.373442), 1, 1.0472 ) )
+fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-5.97244, 5.59112, 9.04071), fantom.math.Vector3(1.23205, 0.916648, 0.540318), fantom.math.Vector3(0.115015, 0.908369, -0.402042), 1, 1.0472 ) )
 fantom.ui.setCamera( 1, fantom.ui.Camera( fantom.math.Vector3(5.7253, 0, 0), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
-fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -1.43051e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
+fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -1.90735e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
 fantom.ui.setCamera( 3, fantom.ui.Camera( fantom.math.Vector3(0, 0, 5.7253), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 1, 0), 0, 1.0472 ) )
 
 fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 0, fantom.math.Vector4( 1, 0, 0, 1 ), False ) )
@@ -28,7 +28,7 @@ fantom.ui.setRotationCenter( fantom.ui.RotationCenter( fantom.math.Vector3(0, 0,
 ################################################################
 Load_VTK = fantom.makeAlgorithm("Load/VTK")
 Load_VTK.setName("Load/VTK")
-Load_VTK.setAutoSchedule(True)
+Load_VTK.setAutoSchedule(False)
 Load_VTK.setOption("Input File", "/home/thilo/Documents/wissVis/TestData/streamTest2.vtk")
 Load_VTK.setOption("Big Endian", True)
 Load_VTK.setOption("Dimension", "2D if third component is zero")
@@ -40,32 +40,32 @@ fantom.ui.setAlgorithmPosition(Load_VTK, fantom.math.Vector2(0, 35))
 # Run the algorithm
 Load_VTK.runBlocking()
 
-Tasks_GroupTaskWithStartline = fantom.makeAlgorithm("Tasks/GroupTaskWithStartline")
-Tasks_GroupTaskWithStartline.setName("Tasks/GroupTaskWithStartline")
-Tasks_GroupTaskWithStartline.setAutoSchedule(True)
-Tasks_GroupTaskWithStartline.setOption("sx", -4)
-Tasks_GroupTaskWithStartline.setOption("sy", 1)
-Tasks_GroupTaskWithStartline.setOption("sz", 1)
-Tasks_GroupTaskWithStartline.setOption("ex", -4)
-Tasks_GroupTaskWithStartline.setOption("ey", 1)
-Tasks_GroupTaskWithStartline.setOption("ez", 7)
-Tasks_GroupTaskWithStartline.setOption("Method", "Runge-Kutta")
-Tasks_GroupTaskWithStartline.setOption("dStep", 0.05)
-Tasks_GroupTaskWithStartline.setOption("adStep", 0.02)
-Tasks_GroupTaskWithStartline.setOption("nStep", 100)
-Tasks_GroupTaskWithStartline.setOption("colorStartLine", fantom.math.Color(1, 1, 0, 1))
-Tasks_GroupTaskWithStartline.setOption("colorStream", fantom.math.Color(1, 0, 0, 1))
-Tasks_GroupTaskWithStartline.setOption("colorSurface", fantom.math.Color(0, 1, 0, 1))
-fantom.ui.setAlgorithmPosition(Tasks_GroupTaskWithStartline, fantom.math.Vector2(0, 144.4))
-Tasks_GroupTaskWithStartline.setVisualOutputVisible('surface', True)
-Tasks_GroupTaskWithStartline.setVisualOutputVisible('streamlines', True)
-Tasks_GroupTaskWithStartline.setVisualOutputVisible('startline', True)
+Tasks_GTStartline = fantom.makeAlgorithm("Tasks/GTStartline")
+Tasks_GTStartline.setName("Tasks/GTStartline")
+Tasks_GTStartline.setAutoSchedule(True)
+Tasks_GTStartline.setOption("sx", -1)
+Tasks_GTStartline.setOption("sy", 1)
+Tasks_GTStartline.setOption("sz", 1)
+Tasks_GTStartline.setOption("ex", -1)
+Tasks_GTStartline.setOption("ey", 1)
+Tasks_GTStartline.setOption("ez", 7)
+Tasks_GTStartline.setOption("Method", "Runge-Kutta")
+Tasks_GTStartline.setOption("dStep", 0.05)
+Tasks_GTStartline.setOption("adStep", 0.02)
+Tasks_GTStartline.setOption("nStep", 100)
+Tasks_GTStartline.setOption("colorStartLine", fantom.math.Color(1, 1, 0, 1))
+Tasks_GTStartline.setOption("colorStream", fantom.math.Color(1, 0, 0, 1))
+Tasks_GTStartline.setOption("colorSurface", fantom.math.Color(0, 1, 0, 1))
+fantom.ui.setAlgorithmPosition(Tasks_GTStartline, fantom.math.Vector2(0, 144.4))
+Tasks_GTStartline.setVisualOutputVisible('surface', True)
+Tasks_GTStartline.setVisualOutputVisible('streamlines', True)
+Tasks_GTStartline.setVisualOutputVisible('startline', True)
 
 # Inbound connections of this algorithm:
-Load_VTK.connect("Fields", Tasks_GroupTaskWithStartline, "Field")
+Load_VTK.connect("Fields", Tasks_GTStartline, "Field")
 
 # Run the algorithm
-Tasks_GroupTaskWithStartline.runBlocking()
+Tasks_GTStartline.runBlocking()
 
 
 

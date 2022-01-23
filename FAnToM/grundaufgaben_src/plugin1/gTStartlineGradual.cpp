@@ -68,14 +68,13 @@ namespace
                                 double& adStep,
                                 unsigned int& nStep,
                              std::unique_ptr<FieldEvaluator<3UL, Vector3>>& evaluator) {
-            if (method == "Euler") return stepEuler(p, dStep, adStep, nStep, evaluator);
-            else return stepRungeKutta(p, dStep, nStep, evaluator);
+            if (method == "Euler") return stepEuler(p, dStep, adStep, evaluator);
+            else return stepRungeKutta(p, dStep, evaluator);
         }
 
         static Point<3> stepEuler(Point<3> p,
                               double& dStep,
                               double& adStep,
-                              unsigned int& nStep,
                               std::unique_ptr<FieldEvaluator<3UL, Vector3>>& evaluator) {
             if (evaluator->reset(p)) {
                 auto v = evaluator->value();
@@ -105,15 +104,13 @@ namespace
                 } else if (pS - pD < adStep) {
                     return d;
                 }
-            } else {
-                return p;
             }
+            return p;
         }
 
         static Point<3> stepRungeKutta(Point<3> p,
-                                double& dStep,
-                                unsigned int& nStep,
-                                   std::unique_ptr<FieldEvaluator<3UL, Vector3>>& evaluator) {
+                                       double& dStep,
+                                       std::unique_ptr<FieldEvaluator<3UL, Vector3>>& evaluator) {
             Point<3> n = {0, 0, 0};
             std::vector<Point<3>> q = {n, n, n, n};
             if (evaluator->reset(p)) {
@@ -163,19 +160,19 @@ namespace
             return;
         }
 
-        static void addParticle(std::vector<std::vector<Point<3>>> &streamList, 
-                                std::vector<std::vector<size_t>> &posFront,
-                                size_t nL) {
+        // static void addParticle(std::vector<std::vector<Point<3>>> &streamList, 
+        //                         std::vector<std::vector<size_t>> &posFront,
+        //                         size_t nL) {
 
-        }
+        // }
 
-        static void remParticle(){
+        // static void remParticle(){
             
-        }
+        // }
 
-        static void ripRibbon(){
+        // static void ripRibbon(){
             
-        }
+        // }
 
         static void advanceRibbon(std::vector<std::vector<Point<3>>> &streamList, 
                                 std::vector<std::vector<size_t>> &posFront,
