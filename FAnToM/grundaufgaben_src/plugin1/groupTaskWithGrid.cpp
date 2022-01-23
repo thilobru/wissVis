@@ -499,5 +499,5 @@ namespace
             setGraphics("surface", surface);
         }
     };
-    AlgorithmRegister<IntegrateTask> dummy("Tasks/GroupTaskInit", "Show the streamlines for an input vector field");
+    AlgorithmRegister<IntegrateTask> dummy("Tasks/GroupTaskWithGrid", "Show the streamlines for an input vector field");
 }

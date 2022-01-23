@@ -35,7 +35,7 @@ namespace
                 add< double >( "ez", "end point in z-dimension", 7.0 );
                 addSeparator();
                 add<Field<3, Vector3>>("Field", "3D vector field", definedOn<Grid<3>>(Grid<3>::Points));
-                add<InputChoices>("Method", "calculation method.", std::vector<std::string>{"Euler", "Runge-Kutta"}, "Euler");
+                add<InputChoices>("Method", "calculation method.", std::vector<std::string>{"Euler", "Runge-Kutta"}, "Runge-Kutta");
                 add<double>("dStep", "distance between steps", 0.05);
                 add<double>("adStep", "for calculating new step size", 0.02);
                 add<size_t>("nStep", "max number of steps", 100);
@@ -204,7 +204,7 @@ namespace
                 float minDiag = std::min(lDiag, rDiag);
                 bool advanceOnLeft = (lDiag == minDiag);
 
-                if(lPos > streamList[nL].size() - 2) {
+                if(lPos > streamList[nL].size() - 2 || l0 == l1 || r0 == r1) {
                     std::cout << "Finished" << nL << std::endl;
                     return;
                 }
@@ -350,9 +350,10 @@ namespace
             //position marker for finished streamline
             size_t nL = 0;
             while((posFront[0][0] < nStep - 1
-                   || posFront[streamList.size()-1][1] < streamList[streamList.size()-1].size()-1) 
+                   || posFront[streamList.size()-1][1] < nStep - 1)
                    && nL < streamList.size() - 3) {
-                if(posFront[nL][0] >= nStep) {
+                if(posFront[nL][0] >= nStep || 
+                   streamList[nL][streamList[nL].size() - 2] == streamList[nL][streamList[nL].size() - 1]) {
                     nL++;
                     std::cout << nL << std::endl;
                 }
