@@ -188,19 +188,21 @@ namespace
             bool caughtUp = false;
             if (nL >= streamList.size() - 1) {return;}
             while(true) {
-                // define quad to determine shortest diagonal 
-                Point<3> l0 = streamList[nL]    [posFront[nL][0]];
-                Point<3> l1 = streamList[nL]    [posFront[nL][0] + 1];
-                Point<3> r0 = streamList[nL + 1][posFront[nL + 1][1]];
-                Point<3> r1 = streamList[nL + 1][posFront[nL + 1][1] +1];
+                size_t posL0 = posFront[nL][0];
+                size_t posR0 = posFront[nL][1];
+                // define quad to determine shortest diagonal
+                Point<3> l0 = streamList[nL][posL0];
+                Point<3> l1 = streamList[nL][posL0 + 1];
+                Point<3> r0 = streamList[nL][posR0];
+                Point<3> r1 = streamList[nL][posR0 + 1];
 
                 float lDiag = euclidDist(l1, r0);
                 float rDiag = euclidDist(l0, r1);
                 float minDiag = std::min(lDiag, rDiag);
                 bool advanceOnLeft = (lDiag == minDiag);
 
-                if(posFront[nL][0] > streamList[nL].size() - 2 || l0 == l1 || r0 == r1) {
-                    std::cout << "Finished" << nL << std::endl;
+                if(posL0 > nStep - 2 || l0 == l1 || r0 == r1) {
+                    std::cout << "Finished" << nL << posFront[nL][0] << (l0 == l1) << (r0 == r1) << std::endl;
                     return;
                 }
                 if(caughtUp && (advanceOnLeft || rDiag > prevDiag)) {    
@@ -213,7 +215,7 @@ namespace
                                  l0, r0, l1);
                     std::cout << "Added Triangle L" << std::endl;
                     if (streamList[nL].size() < nStep || 
-                        streamList[nL].size() < posFront[nL][0] - 1) {
+                        streamList[nL].size() < posL0 - 1) {
                         streamList[nL].push_back(makeStep(l1, method, dStep, adStep, nStep, evaluator));
                     }
                     posFront[nL][0]++;
@@ -224,10 +226,10 @@ namespace
                                  l0, r0, r1);
                     std::cout << "Added Triangle R" << nL << "immernoch < " << streamList.size() << std::endl;
                     if (streamList[nL + 1].size() < nStep || 
-                        streamList[nL + 1].size() < posFront[nL+1][1] - 1) {
+                        streamList[nL + 1].size() < posR0 - 1) {
                         streamList[nL + 1].push_back(makeStep(r1, method, dStep, adStep, nStep, evaluator));
                     }
-                    posFront[nL + 1][1]++;
+                    posFront[nL][1]++;
                     advanceRibbon(streamList, 
                                   posFront, method, dStep, adStep, nStep, 
                                   evaluator,
@@ -345,10 +347,10 @@ namespace
             //advanceRibbonSimp(streamList, posFront, 0, surfacePoints, surfaceIndexes);
             //position marker for finished streamline
             size_t nL = 0;
-            while((posFront[0][0] < streamList[0].size()-2 
-                   || posFront[streamList.size()-1][1] < streamList[streamList.size()-1].size()-2) 
+            while((posFront[0][0] < nStep - 3
+                   )//|| posFront[streamList.size()-1][1] < nStep - 2) 
                    && nL < streamList.size() - 3) {
-                if(posFront[nL][0] >= streamList[nL].size()-2) {
+                if(posFront[nL][0] >= nStep - 2) {
                     nL++;
                     std::cout << nL << std::endl;
                 }
