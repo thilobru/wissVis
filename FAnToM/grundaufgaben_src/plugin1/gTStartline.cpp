@@ -309,13 +309,13 @@ namespace
             
             std::shared_ptr<const Field<3, Vector3>> field = options.get<Field<3, Vector3>>("Field");
             std::shared_ptr<const Function<Vector3>> function = options.get<Function<Vector3>>("Field");
-            auto evaluator = field->makeEvaluator();
 
             // if there is no input, do nothing
             if (!field) {
                 debugLog() << "Input Field not set." << std::endl;
                 return;
             }
+            auto evaluator = field->makeEvaluator();
 
             // sanity check that interpolated fields really use the correct grid type. This should never fail
             std::shared_ptr<const Grid<3>> functionDomainGrid = std::dynamic_pointer_cast<const Grid<3>>(function->domain());

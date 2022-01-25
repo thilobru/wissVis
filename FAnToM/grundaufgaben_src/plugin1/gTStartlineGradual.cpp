@@ -303,8 +303,6 @@ namespace
             
             std::shared_ptr<const Field<3, Vector3>> field = options.get<Field<3, Vector3>>("Field");
             std::shared_ptr<const Function<Vector3>> function = options.get<Function<Vector3>>("Field");
-            auto evaluator = field->makeEvaluator();
-            std::cout << "bis hier" << std::endl;
 
             // if there is no input, do nothing
             if (!field) {
@@ -317,6 +315,9 @@ namespace
             if (!functionDomainGrid) {
                 throw std::logic_error("Wrong type of grid!");
             }
+
+            auto evaluator = field->makeEvaluator();
+            
             //make vectors for startline
             std::vector<PointF<3>> startPoints = {(PointF<3>)startcoord, (PointF<3>)endcoord};
             std::vector<VectorF<3>> startVectors = {(VectorF<3>)startcoord, (VectorF<3>)endcoord};
