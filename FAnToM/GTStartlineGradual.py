@@ -6,9 +6,9 @@
 ################################################################
 ###                  Reset GUI                               ###
 ################################################################
-fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-6.79331, 3.85003, 8.99812), fantom.math.Vector3(0.146486, -0.574724, 0.414874), fantom.math.Vector3(0.110885, 0.917033, -0.383087), 1, 1.0472 ) )
+fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-5.41106, 7.55919, 7.45097), fantom.math.Vector3(-0.0122399, -0.476329, 0.544849), fantom.math.Vector3(0.353429, 0.734904, -0.578796), 1, 1.0472 ) )
 fantom.ui.setCamera( 1, fantom.ui.Camera( fantom.math.Vector3(5.7253, 0, 0), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
-fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -9.53674e-07, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
+fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -1.43051e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
 fantom.ui.setCamera( 3, fantom.ui.Camera( fantom.math.Vector3(0, 0, 5.7253), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 1, 0), 0, 1.0472 ) )
 
 fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 0, fantom.math.Vector4( 1, 0, 0, 1 ), False ) )
@@ -45,7 +45,7 @@ Tasks_GTStartlineGradual.setName("Tasks/GTStartlineGradual")
 Tasks_GTStartlineGradual.setAutoSchedule(True)
 Tasks_GTStartlineGradual.setOption("sx", -4)
 Tasks_GTStartlineGradual.setOption("sy", 1)
-Tasks_GTStartlineGradual.setOption("sz", 1)
+Tasks_GTStartlineGradual.setOption("sz", 0.1)
 Tasks_GTStartlineGradual.setOption("ex", -4)
 Tasks_GTStartlineGradual.setOption("ey", 1)
 Tasks_GTStartlineGradual.setOption("ez", 7)
