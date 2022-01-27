@@ -6,9 +6,9 @@
 ################################################################
 ###                  Reset GUI                               ###
 ################################################################
-fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-4.18172, 4.84295, 8.78842), fantom.math.Vector3(2.56006, 0.0632586, 0.648003), fantom.math.Vector3(0.153124, 0.902308, -0.40298), 1, 1.0472 ) )
+fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-2.62253, 5.47775, 6.17694), fantom.math.Vector3(2.45934, 0.116759, 1.37063), fantom.math.Vector3(0.358828, 0.788282, -0.499854), 1, 1.0472 ) )
 fantom.ui.setCamera( 1, fantom.ui.Camera( fantom.math.Vector3(5.7253, 0, 0), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
-fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -5.72205e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
+fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -6.67572e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
 fantom.ui.setCamera( 3, fantom.ui.Camera( fantom.math.Vector3(0, 0, 5.7253), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 1, 0), 0, 1.0472 ) )
 
 fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 0, fantom.math.Vector4( 1, 0, 0, 1 ), False ) )
@@ -66,9 +66,9 @@ Tasks_GTStartlineGradual.setOption("ex", -4)
 Tasks_GTStartlineGradual.setOption("ey", 1)
 Tasks_GTStartlineGradual.setOption("ez", 7)
 Tasks_GTStartlineGradual.setOption("Method", "Runge-Kutta")
-Tasks_GTStartlineGradual.setOption("dStep", 0.05)
+Tasks_GTStartlineGradual.setOption("dStep", 0.025)
 Tasks_GTStartlineGradual.setOption("adStep", 0.02)
-Tasks_GTStartlineGradual.setOption("nStep", 10000)
+Tasks_GTStartlineGradual.setOption("nStep", 1000)
 Tasks_GTStartlineGradual.setOption("colorStartLine", fantom.math.Color(1, 1, 0, 1))
 Tasks_GTStartlineGradual.setOption("colorStream", fantom.math.Color(1, 0, 0, 1))
 Tasks_GTStartlineGradual.setOption("colorSurface", fantom.math.Color(0, 1, 0, 1))

@@ -171,7 +171,7 @@ namespace
                                 double& adStep,
                                 unsigned int& nStep,
                                 std::unique_ptr<FieldEvaluator<3UL, Vector3>>& evaluator) {
-            if (posFront[nL][0] > posFront[nL][2] - 10 || streamList.size() > 10000) {
+            if (posFront[nL][0] > posFront[nL][2] - 10 || streamList.size() > 1000) {
                 return false;
             }
             if (euclidDist(l1, r1) > 2 * euclidDist(l0, l1)) {
@@ -255,7 +255,9 @@ namespace
                 // }
                 if (addParticle(streamList, posFront, nL, posL0, posR0, l0, l1, r0, r1, method, dStep, adStep, nStep, evaluator)) {
                     makeTriangle(surfacePoints, surfaceIndexes, l0, r0, streamList[nL + 1][0]);
-                    continue;
+                    r0 = streamList[nL + 1][0];
+                    r1 = streamList[nL + 1][1];
+                    //continue;
                 }
 
                 float lDiag = euclidDist(l1, r0);
@@ -263,7 +265,7 @@ namespace
                 float minDiag = std::min(lDiag, rDiag);
                 bool advanceOnLeft = (lDiag == minDiag);
 
-                if(posL0 > nStep - 1 || l0 == l1 || r0 == r1) {
+                if(posL0 > nStep - 1 || l0 == l1 || r0 == r1 || streamList.size() > 1000) {
                     // std::cout << "Finished" << nL << posFront[nL][0] << (l0 == l1) << (r0 == r1) << std::endl;
                     posFront[nL][0] = nStep - 2;
                     posFront[nL][1] = nStep - 2;
