@@ -436,6 +436,7 @@ namespace
                 }
             }
             std::cout << streamList.size() << std::endl;
+            std::cout << nTracer << std::endl;
 
 
             // convert set to vector
