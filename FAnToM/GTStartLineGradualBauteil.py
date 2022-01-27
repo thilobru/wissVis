@@ -6,9 +6,9 @@
 ################################################################
 ###                  Reset GUI                               ###
 ################################################################
-fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-4.18172, 4.84295, 8.78842), fantom.math.Vector3(2.56006, 0.0632586, 0.648003), fantom.math.Vector3(0.153124, 0.902308, -0.40298), 1, 1.0472 ) )
+fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(33.8511, 10.6707, -30.8564), fantom.math.Vector3(27.3405, -2.66044, 5.8143), fantom.math.Vector3(-0.0305964, 0.941115, 0.336699), 1, 1.0472 ) )
 fantom.ui.setCamera( 1, fantom.ui.Camera( fantom.math.Vector3(5.7253, 0, 0), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
-fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -5.72205e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
+fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -5.24521e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
 fantom.ui.setCamera( 3, fantom.ui.Camera( fantom.math.Vector3(0, 0, 5.7253), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 1, 0), 0, 1.0472 ) )
 
 fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 0, fantom.math.Vector4( 1, 0, 0, 1 ), False ) )
@@ -20,7 +20,7 @@ fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 5, fantom.math.Vector4( -0,
 
 fantom.ui.setBackgroundColor( fantom.math.Color(1, 1, 1, 1) )
 
-fantom.ui.setRotationCenter( fantom.ui.RotationCenter( fantom.math.Vector3(3.14921, 2.00515, -0.00340366), True, True, True ) )
+fantom.ui.setRotationCenter( fantom.ui.RotationCenter( fantom.math.Vector3(5.63619, 1.64615, 3.53261), True, True, True ) )
 
 
 ################################################################
@@ -29,7 +29,7 @@ fantom.ui.setRotationCenter( fantom.ui.RotationCenter( fantom.math.Vector3(3.149
 Load_VTK = fantom.makeAlgorithm("Load/VTK")
 Load_VTK.setName("Load/VTK")
 Load_VTK.setAutoSchedule(True)
-Load_VTK.setOption("Input File", "/home/thilo/Documents/wissVis/TestData/streamTest2.vtk")
+Load_VTK.setOption("Input File", "/home/thilo/Documents/wissVis/TestData/gbk_velocity.vtk")
 Load_VTK.setOption("Big Endian", True)
 Load_VTK.setOption("Dimension", "2D if third component is zero")
 Load_VTK.setOption("Time List", "")
@@ -47,8 +47,8 @@ Grid_ShowGrid.setOption("Line color", fantom.math.Color(0, 0, 1, 1))
 Grid_ShowGrid.setOption("Line width", 1)
 Grid_ShowGrid.setOption("Random jittering of color", True)
 Grid_ShowGrid.setOption("Random seed", 0)
-fantom.ui.setAlgorithmPosition(Grid_ShowGrid, fantom.math.Vector2(21, 147.4))
-Grid_ShowGrid.setVisualOutputVisible('Grid', False)
+fantom.ui.setAlgorithmPosition(Grid_ShowGrid, fantom.math.Vector2(273, 114.4))
+Grid_ShowGrid.setVisualOutputVisible('Grid', True)
 
 # Inbound connections of this algorithm:
 Load_VTK.connect("Grid", Grid_ShowGrid, "Grid")
@@ -59,20 +59,20 @@ Grid_ShowGrid.runBlocking()
 Tasks_GTStartlineGradual = fantom.makeAlgorithm("Tasks/GTStartlineGradual")
 Tasks_GTStartlineGradual.setName("Tasks/GTStartlineGradual")
 Tasks_GTStartlineGradual.setAutoSchedule(False)
-Tasks_GTStartlineGradual.setOption("sx", -4)
+Tasks_GTStartlineGradual.setOption("sx", 50)
 Tasks_GTStartlineGradual.setOption("sy", 1)
-Tasks_GTStartlineGradual.setOption("sz", 0.1)
-Tasks_GTStartlineGradual.setOption("ex", -4)
+Tasks_GTStartlineGradual.setOption("sz", 20)
+Tasks_GTStartlineGradual.setOption("ex", 50)
 Tasks_GTStartlineGradual.setOption("ey", 1)
-Tasks_GTStartlineGradual.setOption("ez", 7)
+Tasks_GTStartlineGradual.setOption("ez", 30)
 Tasks_GTStartlineGradual.setOption("Method", "Runge-Kutta")
 Tasks_GTStartlineGradual.setOption("dStep", 0.05)
 Tasks_GTStartlineGradual.setOption("adStep", 0.02)
-Tasks_GTStartlineGradual.setOption("nStep", 10000)
+Tasks_GTStartlineGradual.setOption("nStep", 100)
 Tasks_GTStartlineGradual.setOption("colorStartLine", fantom.math.Color(1, 1, 0, 1))
 Tasks_GTStartlineGradual.setOption("colorStream", fantom.math.Color(1, 0, 0, 1))
 Tasks_GTStartlineGradual.setOption("colorSurface", fantom.math.Color(0, 1, 0, 1))
-fantom.ui.setAlgorithmPosition(Tasks_GTStartlineGradual, fantom.math.Vector2(21, 228))
+fantom.ui.setAlgorithmPosition(Tasks_GTStartlineGradual, fantom.math.Vector2(21, 178))
 Tasks_GTStartlineGradual.setVisualOutputVisible('surface', True)
 Tasks_GTStartlineGradual.setVisualOutputVisible('streamlines', True)
 Tasks_GTStartlineGradual.setVisualOutputVisible('startline', True)
