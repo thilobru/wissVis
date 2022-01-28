@@ -183,7 +183,7 @@ namespace
                 }
                 posFront[nL][1] = 0;
                 streamList.insert(streamList.begin() + nL + 1, oneTracerPoints);
-                posFront.insert(posFront.begin() + nL + 1, {0,posR0,nStep - posL0});
+                posFront.insert(posFront.begin() + nL + 1, {0,posR0,nStep - posL0, 1});
                 // std::cout << "added" << std::endl;
                 return true;
             } else {
@@ -193,25 +193,29 @@ namespace
 
         static bool remParticle(std::vector<std::vector<Point<3>>> &streamList, 
                                 std::vector<std::vector<size_t>> &posFront,
-                                size_t nL,
-                                size_t posL0, size_t posR0,
+                                std::vector<PointF<3>> &surfacePoints, 
+                                std::vector<unsigned int> &surfaceIndexes, 
+                                size_t& nL,
                                 Point<3> l0, Point<3> l1,
-                                Point<3> r0, Point<3> r1,
-                                std::string method,
-                                double& dStep,
-                                double& adStep,
-                                unsigned int& nStep,
-                                std::unique_ptr<FieldEvaluator<3UL, Vector3>>& evaluator){
-            if (nL < 1 ) return false;
+                                Point<3> r0, Point<3> r1){
+            if (nL < 1) return false;
             Point<3> m0 = l0;
             Point<3> m1 = l1;
-            l0 = streamList[nL-1][posFront[nL-1][0] - 1];
-            l1 = streamList[nL-1][posFront[nL-1][0]];
-            double height = euclidDist(streamList[nL-1][posFront[nL-1][0]],
-                                          streamList[nL-1][posFront[nL-1][1]]);
-            double width = euclidDist(streamList[nL+1][posFront[nL+1][0]],
-                                          streamList[nL+1][posFront[nL+1][1]]);
-            double own = euclidDist(l0, r0);
+            l0 = streamList[nL - 1][posFront[nL-1][0] - 1];
+            l1 = streamList[nL - 1][posFront[nL-1][0]];
+            double height = (euclidDist(l0,l1) + euclidDist(r0,r1)) / 2;
+            double width  = euclidDist(l1,r1);
+            if (height > width) {
+                posFront[nL - 1][1] = posFront[nL][1] + 1;
+                streamList.erase(streamList.begin() + nL);
+                posFront.erase(posFront.begin() + nL);
+                nL--;
+                makeTriangle(surfacePoints, surfaceIndexes, m0,r1,l1);
+                makeTriangle(surfacePoints, surfaceIndexes, m0,r0,r1);
+                std::cout << "dood" << std::endl;
+                return true;
+            }
+            return false;
         }
 
         static bool ripRibbon(std::vector<std::vector<size_t>> &posFront,
@@ -253,12 +257,16 @@ namespace
                 // if (ripRibbon(posFront, nL, l0, l1, r0, r1) && posFront[nL][3] != 0) {
                 //     continue;
                 // }
-                if (addParticle(streamList, posFront, nL, posL0, posR0, l0, l1, r0, r1, method, dStep, adStep, nStep, evaluator)) {
-                    makeTriangle(surfacePoints, surfaceIndexes, l0, r0, streamList[nL + 1][0]);
-                    r0 = streamList[nL + 1][0];
-                    r1 = streamList[nL + 1][1];
-                    //continue;
+                if (remParticle(streamList, posFront, surfacePoints, surfaceIndexes, nL, l0, l1, r0, r1)) {
+                    std::cout << "removed " << nL << std::endl; 
                 }
+                // if (addParticle(streamList, posFront, nL, posL0, posR0, l0, l1, r0, r1, method, dStep, adStep, nStep, evaluator)) {
+                //     makeTriangle(surfacePoints, surfaceIndexes, l0, r0, streamList[nL + 1][0]);
+                //     r0 = streamList[nL + 1][0];
+                //     r1 = streamList[nL + 1][1];
+                //     std::cout << "added r of " << nL << std::endl;
+                //     //continue;
+                // }
 
                 float lDiag = euclidDist(l1, r0);
                 float rDiag = euclidDist(l0, r1);
@@ -432,7 +440,7 @@ namespace
                     && streamList.size() < 10000) {
                     advanceRibbon(streamList, posFront, method, dStep, adStep, nStep, evaluator, nL, surfacePoints, surfaceIndexes);
                     if(posFront[nL][0] >= nStep - 2) {
-                        nL++;
+                        //nL++;
                         std::cout << nL << std::endl;
                     }
                 }
