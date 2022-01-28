@@ -201,15 +201,16 @@ namespace
                                 Point<3> l0, Point<3> l1,
                                 Point<3> r0, Point<3> r1){
             if (nL < 1) return false;
+            size_t strL = posFront[nL - 1][2];
             Point<3> m0 = l0;
             Point<3> m1 = l1;
-            l0 = streamList[nL - 1][posFront[nL-1][0] - 1];
-            l1 = streamList[nL - 1][posFront[nL-1][0]];
+            l0 = streamList[strL][posFront[nL-1][0] - 1];
+            l1 = streamList[strL][posFront[nL-1][0]];
             double height = (euclidDist(l0,l1) + euclidDist(r0,r1)) / 2;
             double width  = euclidDist(l1,r1);
             if (height > width) {
                 posFront[nL - 1][1] = posFront[nL][1] + 1;
-                streamList.erase(streamList.begin() + nL);
+                // streamList.erase(streamList.begin() + nL);
                 posFront.erase(posFront.begin() + nL);
                 nL--;
                 makeTriangle(surfacePoints, surfaceIndexes, m0,r1,l1);
@@ -261,9 +262,9 @@ namespace
                 // if (ripRibbon(posFront, nL, l0, l1, r0, r1) && posFront[nL][3] != 0) {
                 //     continue;
                 // }
-                // if (remParticle(streamList, posFront, surfacePoints, surfaceIndexes, nL, l0, l1, r0, r1)) {
-                //     std::cout << "removed " << strL << std::endl; 
-                // }
+                if (remParticle(streamList, posFront, surfacePoints, surfaceIndexes, nL, l0, l1, r0, r1)) {
+                    std::cout << "removed " << strL << std::endl; 
+                }
                 if (addParticle(streamList, posFront, nL, posL0, posR0, l0, l1, r0, r1, method, dStep, adStep, nStep, evaluator)) {
                     makeTriangle(surfacePoints, surfaceIndexes, l0, r0, streamList[posFront[nL + 1][2]][0]);
                     posR0 = 0;
