@@ -446,11 +446,6 @@ namespace
             std::vector<PointF<3>> surfacePoints;
             std::vector<unsigned int> surfaceIndexes;
             std::vector<std::vector<size_t>> posFront;
-            /* posFront describes:
-            0,1: Position on left and right Streamline
-            2,3: Position of left and right Streamline vector in Streamlist
-            4: Amount of Points to be drawn 
-            5: 0 if ripped 1 otherwise*/
             for(size_t i = 0; i < streamList.size(); i++) {
                 posFront.push_back({0,0,i,i+1,nStep,1});
             }

@@ -8,7 +8,7 @@
 ################################################################
 fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-4.35244, 6.69739, 5.94351), fantom.math.Vector3(-1.26653, -0.936244, 2.80168), fantom.math.Vector3(0.509697, 0.495519, -0.703327), 1, 1.0472 ) )
 fantom.ui.setCamera( 1, fantom.ui.Camera( fantom.math.Vector3(5.7253, 0, 0), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
-fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -7.62939e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
+fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -8.10623e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
 fantom.ui.setCamera( 3, fantom.ui.Camera( fantom.math.Vector3(0, 0, 5.7253), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 1, 0), 0, 1.0472 ) )
 
 fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 0, fantom.math.Vector4( 1, 0, 0, 1 ), False ) )
@@ -64,7 +64,7 @@ Tasks_GTStartlineGradual.setOption("sy", 1)
 Tasks_GTStartlineGradual.setOption("sz", 0.1)
 Tasks_GTStartlineGradual.setOption("ex", -4)
 Tasks_GTStartlineGradual.setOption("ey", 1)
-Tasks_GTStartlineGradual.setOption("ez", 7)
+Tasks_GTStartlineGradual.setOption("ez", 5)
 Tasks_GTStartlineGradual.setOption("Method", "Runge-Kutta")
 Tasks_GTStartlineGradual.setOption("dStep", 0.05)
 Tasks_GTStartlineGradual.setOption("adStep", 0.02)

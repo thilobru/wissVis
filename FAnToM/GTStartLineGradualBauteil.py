@@ -6,9 +6,9 @@
 ################################################################
 ###                  Reset GUI                               ###
 ################################################################
-fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(-10.4096, 5.1173, 21.5158), fantom.math.Vector3(14.155, -2.51144, 17.9318), fantom.math.Vector3(0.28329, 0.954748, -0.0905758), 1, 1.0472 ) )
+fantom.ui.setCamera( 0, fantom.ui.Camera( fantom.math.Vector3(5.66911, 8.84412, 10.1911), fantom.math.Vector3(17.3695, 6.15615, 21.3083), fantom.math.Vector3(0.271629, 0.960911, -0.053544), 1, 1.0472 ) )
 fantom.ui.setCamera( 1, fantom.ui.Camera( fantom.math.Vector3(5.7253, 0, 0), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
-fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -8.10623e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
+fantom.ui.setCamera( 2, fantom.ui.Camera( fantom.math.Vector3(0, -5.7253, 0), fantom.math.Vector3(0, -9.05991e-06, 0), fantom.math.Vector3(0, 0, 1), 0, 1.0472 ) )
 fantom.ui.setCamera( 3, fantom.ui.Camera( fantom.math.Vector3(0, 0, 5.7253), fantom.math.Vector3(0, 0, 0), fantom.math.Vector3(0, 1, 0), 0, 1.0472 ) )
 
 fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 0, fantom.math.Vector4( 1, 0, 0, 1 ), False ) )
@@ -20,7 +20,7 @@ fantom.ui.setClippingPlane( fantom.ui.ClippingPlane( 5, fantom.math.Vector4( -0,
 
 fantom.ui.setBackgroundColor( fantom.math.Color(1, 1, 1, 1) )
 
-fantom.ui.setRotationCenter( fantom.ui.RotationCenter( fantom.math.Vector3(16.2775, 2.26611, 22.3274), True, True, True ) )
+fantom.ui.setRotationCenter( fantom.ui.RotationCenter( fantom.math.Vector3(16.1075, -6.64531, 19.5278), True, True, True ) )
 
 
 ################################################################
@@ -59,15 +59,15 @@ Grid_ShowGrid.runBlocking()
 Tasks_GTStartlineGradual = fantom.makeAlgorithm("Tasks/GTStartlineGradual")
 Tasks_GTStartlineGradual.setName("Tasks/GTStartlineGradual")
 Tasks_GTStartlineGradual.setAutoSchedule(False)
-Tasks_GTStartlineGradual.setOption("sx", 10)
-Tasks_GTStartlineGradual.setOption("sy", 1)
+Tasks_GTStartlineGradual.setOption("sx", 20)
+Tasks_GTStartlineGradual.setOption("sy", 10)
 Tasks_GTStartlineGradual.setOption("sz", 20)
-Tasks_GTStartlineGradual.setOption("ex", 4)
+Tasks_GTStartlineGradual.setOption("ex", 25)
 Tasks_GTStartlineGradual.setOption("ey", 1)
-Tasks_GTStartlineGradual.setOption("ez", 20)
+Tasks_GTStartlineGradual.setOption("ez", 40)
 Tasks_GTStartlineGradual.setOption("Method", "Runge-Kutta")
 Tasks_GTStartlineGradual.setOption("dStep", 0.05)
-Tasks_GTStartlineGradual.setOption("adStep", 0.02)
+Tasks_GTStartlineGradual.setOption("adStep", 0.001)
 Tasks_GTStartlineGradual.setOption("nStep", 1000)
 Tasks_GTStartlineGradual.setOption("colorStartLine", fantom.math.Color(1, 1, 0, 1))
 Tasks_GTStartlineGradual.setOption("colorStream", fantom.math.Color(1, 0, 0, 1))
